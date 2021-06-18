@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Optimised Path</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<!--    <link rel="stylesheet" href="static/style.css">-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>-->
+
+    <style>
+h2 {text-align: center;}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Container for flexboxes */
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Style the navigation menu */
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Style the content */
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+/* Style the footer */
+footer {
+  background-color: #fff;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+
+<body>
+<form action="/home" method="post">
+    <section>
+  <nav>
+      <h2>Welcome to NetPredict: Real-time Network Traffic Prediction</h2> 
+      <h4>Select search criteria </h5>
+      <button type="button" onclick="alert('Netpredict explore')">Netpredict explore!</button> <button type="button" onclick="alert('Please select type of Network topology (e.g ESnet, GEANT)')">Load topology!</button> <button type="button" onclick="alert('Toggle ESnet!')">Toggle ESnet!</button> <button type="button" onclick="alert('Select type of network data to load (e.g SNMP, Netflow, sflow)!')">Load data!</button> <br> <br>
+    <label for="source">Source:</label><br>             
+  <select name="source" id="source">
+    {% for city in data %}
+      <option value={{city}}>{{city}}</option>
+    {% endfor %}
+  </select>
+  <br><br>
+  <label for="destination">Destination:</label><br>
+  <select name="destination" id="destination">
+    {% for city in data %}
+      <option value={{city}}>{{city}}</option>
+    {% endfor %}
+  </select><br><br>
+
+   <label for="data_transfer">Data Transfer Amount:</label><br>
+  <select name="data_transfer" id="data_transfer">
+    {% for transfer in data_transfer %}
+      <option value={{transfer}}>{{transfer}}</option>
+    {% endfor %}
+  </select><br><br>
+  <input type="submit" value="Submit">
+  </nav>
+
+  <article>
+      <br>
+
+      <center><canvas id="myChart" style="width:100%;max-width:600px"></canvas></center>
+
+<script>
+var xValues = ['14 may', '15 may', '16 may', '17 may', '18 may', '19 may', '20 may', '21 may'];
+var yValues = [0.11, 0.13, 0.07, 0.04, 0.33, 0.66, 0.95, 0.6];
+var barColors = ["red", "green","blue","orange","brown","yellow","purple","pink"];
+
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "Data Transfer Prediction(in TB per week)"
+    }
+  }
+});
+</script>
+
+<!--      <center><img src="../static/images/bar_graph.png" height="280" width="500"></center>-->
+<!--    <center><h1>Welcome to NetPredict</h1>-->
+<!--    <p>Real-time prediction using Deep Learning for network traffic.</p>-->
+<!--    <p>Please enter a search criteria in the right pane to interact with the system.</p></center>-->
+  </article>
+</section>
+<!--  <label for="source">Source:</label>-->
+<!--  <select name="source" id="source">-->
+<!--    {% for city in data %}-->
+<!--      <option value={{city}}>{{city}}</option>-->
+<!--    {% endfor %}-->
+<!--  </select>-->
+<!--  <br><br>-->
+<!--  <label for="destination">Destination:</label>-->
+<!--  <select name="destination" id="destination">-->
+<!--    {% for city in data %}-->
+<!--      <option value={{city}}>{{city}}</option>-->
+<!--    {% endfor %}-->
+<!--  </select><br><br>-->
+
+<!--   <label for="data_transfer">Data Transfer Amount:</label>-->
+<!--  <select name="data_transfer" id="data_transfer">-->
+<!--    {% for transfer in data_transfer %}-->
+<!--      <option value={{transfer}}>{{transfer}}</option>-->
+<!--    {% endfor %}-->
+<!--  </select><br><br>-->
+<!--  <input type="submit" value="Submit">-->
+</form>
+<footer>
+    <img src="../static/images/Figure_1.png" height="1080" width="2000">
+</footer>
+</body>
+</html>

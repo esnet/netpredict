@@ -12,52 +12,38 @@ from modellib.loss import masked_mae_loss
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
-class DCRNNSupervisor(object):
-
-    """
-    Do experiments using Graph Random Walk RNN model.
-    """
-
-    def __init__(self, kwargs):
-
-        self.df_log = pd.DataFrame(columns=['epochs','train_mae','val_mae'])        
-
+class DCRNNSupervisor:
+    def __init__(self, adj_mx, **kwargs):
         self._kwargs = kwargs
         self._data_kwargs = kwargs.get('data')
         self._model_kwargs = kwargs.get('model')
         self._train_kwargs = kwargs.get('train')
 
-        #self.max_grad_norm = self._train_kwargs.get('max_grad_norm', 1.)
+        self.max_grad_norm = self._train_kwargs.get('max_grad_norm', 1.)
 
         # logging.
         self._log_dir = self._get_log_dir(kwargs)
+        self._writer = SummaryWriter('runs/' + self._log_dir)
 
         log_level = self._kwargs.get('log_level', 'INFO')
         self._logger = utils.get_logger(self._log_dir, __name__, 'info.log', level=log_level)
-        
-        self._writer = SummaryWriter('runs/' + self._log_dir)
-        self._logger.info(kwargs)
 
-        # data set preparation
-        self.batch_size = self._data_kwargs.get('batch_size')
-        self.val_batch_size = self._data_kwargs['val_batch_size']
-        self.test_batch_size = 1
-        self.horizon = self._model_kwargs.get('horizon')
-        self.seq_len = self._model_kwargs.get('seq_len')
+        # data set
+        self._data = utils.load_dataset(**self._data_kwargs)
+        self.standard_scaler = self._data['scaler']
 
-        self.validation_ratio = self._data_kwargs['validation_ratio']
-        self.test_ratio = self._data_kwargs['test_ratio']
-        
-                
+        self.num_nodes = int(self._model_kwargs.get('num_nodes', 1))
+        self.input_dim = int(self._model_kwargs.get('input_dim', 1))
+        self.seq_len = int(self._model_kwargs.get('seq_len'))  # for the encoder
+        self.output_dim = int(self._model_kwargs.get('output_dim', 1))
+        self.use_curriculum_learning = bool(
+            self._model_kwargs.get('use_curriculum_learning', False))
+        self.horizon = int(self._model_kwargs.get('horizon', 1))  # for the decoder
+
         # setup model
-        self._train_model = DCRNNModel(is_training=True, 
-                        batch_size=self._data_kwargs['batch_size'],
-                        **self._model_kwargs)
-
-        self._test_model = DCRNNModel(is_training=False, 
-                                              batch_size=self._data_kwargs['test_batch_size'],
-                                              **self._model_kwargs)
-                                              
+        dcrnn_model = DCRNNModel(adj_mx, self._logger, **self._model_kwargs)
+        self.dcrnn_model = dcrnn_model.cuda() if torch.cuda.is_available() else dcrnn_model
+        self._logger.info("Model created")
 
         self._epoch_num = self._train_kwargs.get('epoch', 0)
         if self._epoch_num > 0:

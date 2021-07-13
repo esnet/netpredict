@@ -158,3 +158,4 @@ class DCGRUCell(torch.nn.Module):
         x += biases
         # Reshape res back to 2D: (batch_size, num_node, state_dim) -> (batch_size, num_node * state_dim)
         return torch.reshape(x, [batch_size, self._num_nodes * output_size])
+        

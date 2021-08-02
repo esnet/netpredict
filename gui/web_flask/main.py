@@ -111,10 +111,10 @@ dataTransferredOptions = [
     '100GB - 120GB'
 ]
 
-graph_type=[
+graph_type = [
     'Hourly',
     'Weekly',
-    'Next 3 Months'
+    'Monthly'
 ]
 # map_data = json.load(open('map-data.json'))
 # # print(map_data)
@@ -146,14 +146,47 @@ graph_type=[
 graph_main()
 graph_bar(predictionsData)
 
-Graph_Nodes=graph_nodes()
-Graph_node_line=nodes_join_line()
-graph,predict,barColors,shortest_path_data=[],[],[],[]
-source,destination,data_transmit,gr_type='','','',''
+Graph_Nodes = graph_nodes()
+Graph_node_line = nodes_join_line()
+graph, predict, shortest_path_data = [], [], []
+source, destination, data_transmit, gr_type, xlabel = '', '', '', '', ''
+graph_predict_data = []
+
+
+@app.route('/test')
+def test():
+    graph = ['1 may', '2 may', '3 may', '4 may', '5 may', '6 may', '7 may', '8 may', '9 may', '10 may', '11 may', '12 may', '13 may', '14 may', '15 may', '16 may', '17 may', '18 may', '19 may', '20 may', '21 may', '22 may', '23 may', '24 may','25 may', '26 may', '27 may', '28 may', '29 may', '30 may', '31 may', '32 may', '33 may', '34 may', '35 may', '36 may', '37 may', '38 may', '39 may', '40 may', '41 may', '42 may', '43 may', '44 may', '45 may', '46 may', '47 may', '48 may']
+    predict = [0.9, 0.5, 0.07, 0.04, 0.33, 0.66, 0.95, 0.6, 0.11, 0.13, 0.07, 0.8, 0.9, 0.5, 0.07, 0.04, 0.33, 0.66, 0.95, 0.6, 0.11, 0.13, 0.07, 0.8, 0.11, 0.13, 0.07, 0.04, 0.33, 0.66, 0.95, 0.6, 0.33, 0.66, 0.95, 0.6, 0.11, 0.13, 0.07, 0.04, 0.33, 0.66, 0.95, 0.6, 0.33, 0.66, 0.95, 0.6,]
+    graph_predict_data = []
+    [graph_predict_data.append({"x": int(i.split()[0]), "y": j}) for (i, j) in zip(graph, predict)]
+    return render_template("COLUMN_TEST.html",
+                           Graph_Nodes=Graph_Nodes,
+                           Graph_node_line=Graph_node_line,
+                           Shortest_Path=[],
+                           column_graph=graph_predict_data,
+                           xlabel="may"
+                           # city=city,
+                           # x_coordinate=x_coordinates,
+                           # y_coordinate=y_coordinates
+                           )
+
+
 @app.route('/')
 def home():
-    print(graph,predict,barColors)
+    global city
+    global x_coordinates
+    global y_coordinates
+    graph = ['1 may', '2 may', '3 may', '4 may', '5 may', '6 may', '7 may', '8 may', '9 may', '10 may', '11 may', '12 may', '13 may', '14 may', '15 may', '16 may', '17 may', '18 may', '19 may', '20 may', '21 may', '22 may', '23 may', '24 may','25 may', '26 may', '27 may', '28 may', '29 may', '30 may', '31 may', '32 may', '33 may', '34 may', '35 may', '36 may', '37 may', '38 may', '39 may', '40 may', '41 may', '42 may', '43 may', '44 may', '45 may', '46 may', '47 may', '48 may']
+    predict = [0.9, 0.5, 0.07, 0.04, 0.33, 0.66, 0.95, 0.6, 0.11, 0.13, 0.07, 0.8, 0.9, 0.5, 0.07, 0.04, 0.33, 0.66, 0.95, 0.6, 0.11, 0.13, 0.07, 0.8, 0.11, 0.13, 0.07, 0.04, 0.33, 0.66, 0.95, 0.6, 0.33, 0.66, 0.95, 0.6, 0.11, 0.13, 0.07, 0.04, 0.33, 0.66, 0.95, 0.6, 0.33, 0.66, 0.95, 0.6,]
+    graph_predict_data = []
+    [graph_predict_data.append({"x": int(i.split()[0]), "y": j}) for (i, j) in zip(graph, predict)]
+
+    # print(Graph_Nodes)
+    # print(Graph_node_line)
+    # city,x_coordinates,y_coordinates=[i[0] for i in Graph_Nodes],[i[1] for i in Graph_Nodes],[i[2] for i in Graph_Nodes]
     return render_template("index.html",
+                           column_graph=graph_predict_data,
+                           xlabel="may",
                            data_source=sites,
                            data_destination=sites.copy(),
                            source=source, destination=destination,
@@ -161,80 +194,78 @@ def home():
                            data_transfer=dataTransferredOptions,
                            prediction_data=predictionsData,
                            graph_type=graph_type,
-                           Graph_Nodes=Graph_Nodes,
-                           graph_date=graph,
-                           graph_predict=predict,
-                           graph_color=barColors,
-                           Graph_node_line=Graph_node_line,
-                           Shortest_Path=[])
+                           zip_graph=zip(Graph_Nodes, Graph_node_line),
+                           zip_short=zip(Graph_Nodes, shortest_path_data))
+    # city=city,
+    # x_coordinate=x_coordinates,
+    # y_coordinate=y_coordinates)
 
-@app.route('/home',methods=['GET','POST'])
+
+@app.route('/home', methods=['GET', 'POST'])
 def updated_home():
-    global graph
-    global predict
-    global barColors
     global shortest_path_data
     global source
     global destination
     global data_transmit
     global gr_type
     global data_transfer
-    if request.method=='POST':
-        print('*****************',request.form)
-        source,destination,data_transfer,gr_type = request.form['source'],request.form['destination'],\
-                                                request.form['data_transfer'],request.form['data_type']
+    global graph_predict_data
+    global xlabel
+    if request.method == 'POST':
+        # print('*****************', request.form)
+        request_data = request.form
+        source, destination, data_transfer, gr_type = request_data['source'], request_data['destination'], \
+                                                      request_data['data_transfer'], request_data['data_type']
 
-        barColors = ["#f00", "#0f0", "blue", "orange",
-                     "brown", "yellow", "purple", "pink",
-                     "black","violet","gray","silver",]
-        if gr_type=='Hourly':
-            graph = ['01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00','09:00', '10:00', '11:00', '12:00',]
-            predict = [0.11, 0.13, 0.07, 0.04, 0.33, 0.66, 0.95, 0.6, 0.33, 0.66, 0.95, 0.6]
-        elif gr_type=='Weekly':
-            graph = ['14 may', '15 may', '16 may', '17 may', '18 may', '19 may', '20 may', '21 may']
-            predict = [0.11, 0.13, 0.07, 0.04, 0.33, 0.66, 0.95, 0.6]
+        if gr_type == 'Hourly':
+            graph = ['01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00','09:00', '10:00', '11:00', '12:00','13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00','21:00', '22:00', '23:00', '24:00','25:00', '26:00', '27:00', '28:00', '29:00', '30:00', '31:00', '32:00','33:00', '34:00', '35:00', '36:00','37:00', '38:00', '39:00', '40:00', '41:00', '42:00', '43:00', '44:00','45:00', '46:00', '47:00', '48:00']
+            predict = [0.11, 0.13, 0.07, 0.04, 0.33, 0.66, 0.95, 0.6, 0.33, 0.66, 0.95, 0.6, 0.11, 0.13, 0.07, 0.04, 0.33, 0.66, 0.95, 0.6, 0.33, 0.66, 0.95, 0.6,0.11, 0.13, 0.07, 0.04, 0.33, 0.16, 0.5, 0.6, 0.33, 0.26, 0.95, 0.6, 0.11, 0.13, 0.07, 0.04, 0.33, 0.6, 0.95, 0.2, 0.33, 0.46, 0.55, 0.2]
+            graph_predict_data = []
+            [graph_predict_data.append({"x": int(i.split(':')[0]), "y": j}) for (i, j) in zip(graph, predict)]
+            xlabel = "pm"
+        elif gr_type == 'Weekly':
+            graph = ['14 may', '15 may', '16 may', '17 may', '18 may', '19 may', '20 may']
+            predict = [0.11, 0.13, 0.07, 0.04, 0.33, 0.66, 0.95]
+            graph_predict_data = []
+            [graph_predict_data.append({"x": int(i.split()[0]), "y": j}) for (i, j) in zip(graph, predict)]
+
+            xlabel = graph[0].split()[1]
+            # print(graph, predict, barColors)
             # barColors = ["red", "green", "blue", "orange", "brown", "yellow", "purple", "pink"]
-        elif gr_type=='Next':
-            graph = ['July', 'August', 'September']
+        elif gr_type == 'Next':
+            graph = [(7,'July'), (8,'August'), (9,'September')]
             predict = [0.11, 0.13, 0.12]
-            # barColors = ["red", "green", "blue"]
+            graph_predict_data=[]
+            [graph_predict_data.append({"x": int(i[0]), "y": j}) for (i, j) in zip(graph, predict)]
             # print('------------------inside')
         else:
-            graph = []
-            predict = []
-            barColors = []
+            graph_predict_data = []
 
-        shortest_path_data = Shortest_path_graph(source, destination)
-        # print("----------", shortest_path_data)
-        # print("**********",list(set(Graph_node_line)-set(shortest_path_data)))
+        shortest_path_data = Shortest_path_graph(source, destination, Graph_Nodes)
         return render_template("index.html",
-               data_source=sites,
-               data_destination=sites.copy(),
-               source=source, destination=destination,
-               data_transmit=data_transmit,
-               gr_type=gr_type,
-               data_transfer=dataTransferredOptions,
-               prediction_data=predictionsData,
-               graph_type=graph_type,
-               graph_date=graph,
-               graph_predict=predict,
-               graph_color=barColors[:len(predict)],
-               Graph_node_line=Graph_node_line,
-               Shortest_Path=shortest_path_data,
-               Graph_Nodes=Graph_Nodes,
-               path_color='blue'
-               )
+                               column_graph=graph_predict_data,
+                               xlabel=xlabel,
+                               data_source=sites,
+                               data_destination=sites.copy(),
+                               source=source, destination=destination,
+                               data_transmit=data_transmit,
+                               gr_type=gr_type,
+                               data_transfer=dataTransferredOptions,
+                               prediction_data=predictionsData,
+                               graph_type=graph_type,
+                               zip_graph=zip(Graph_Nodes,Graph_node_line),
+                               zip_short=zip(Graph_Nodes,shortest_path_data),
+                               path_color='navy')
+
 
 
 @app.route('/optimize_home/<source>/<destination>/<traffic>')
-def optimize_path(source,destination,traffic):
-
-    if float(traffic)>=0.5:
-        color='red'
-    else:
-        color='blue'
-    print('*****************', request.form)
+def optimize_path(source, destination, traffic):
+    global xlabel
+    # print('*****************', request.form)
     return render_template("index.html",
+                           column_graph=graph_predict_data,
+                           xlabel=xlabel,
                            data_source=sites,
                            data_destination=sites.copy(),
                            source=source, destination=destination,
@@ -243,14 +274,11 @@ def optimize_path(source,destination,traffic):
                            data_transfer=dataTransferredOptions,
                            prediction_data=predictionsData,
                            graph_type=graph_type,
-                           Graph_Nodes=Graph_Nodes,
-                           graph_date=graph,
-                           graph_predict=predict,
-                           graph_color=barColors,
-                           Graph_node_line=Graph_node_line,
-                           Shortest_Path=Shortest_path_graph(source, destination),
-                           path_color=color)
+                           zip_graph=zip(Graph_Nodes, Graph_node_line),
+                           zip_short=zip(Graph_Nodes, Shortest_path_graph(source, destination, Graph_Nodes, traffic)),
+                           path_color="red" if float(traffic) >= 0.5 else "navy")
+
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()

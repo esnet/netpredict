@@ -6,7 +6,7 @@ from sklearn.preprocessing import LabelEncoder
 import networkx as nx
 from matplotlib import pyplot as plt
 
-from shortest_path import Graph, dijsktra
+from shortest_path import Graph, dijsktra   #, dijsktra_second_path
 
 predictionsData = [
     ['14 may', 0.01, ['FNAL', 'STAR']],
@@ -88,10 +88,10 @@ def graph_nodes():
     map_data = json.load(open('map-data.json'))
     coordinates_location = []
     for city in map_data["data"]['mapTopology']['nodes']:
-        coordinates_location.append([city['name'], city['x'], city['y']])
+        coordinates_location.append([city['name'], int(city['x']), int(city['y'])])
     # # print(coordinates_location)
     df = pd.DataFrame(coordinates_location, columns=['Name', 'X', 'Y'])
-    return df.to_numpy()
+    return df.to_numpy().tolist()
 
 def nodes_join_line():
     map_data = json.load(open('map-data.json'))
@@ -108,47 +108,54 @@ def nodes_join_line():
         # print(a,b)
     return line_coordinates
 
-def Shortest_path_graph(source,destination):
+def Shortest_path_graph(source,destination,graph_nodes,traffic=0.3):
     # map_data = json.load(open('map-data.json'))
     # edges = []
-    nodes_of_sites=[{i[0]: (i[1], i[2])} for i in graph_nodes()]
-    nodes_of_site={}
-    [nodes_of_site.update(i) for i in nodes_of_sites]
-    # print(nodes_of_site)
-    Shortest_path_coordinates=[]
+    try:
+        nodes_of_sites=[{i[0]: (i[1], i[2])} for i in graph_nodes]
+        nodes_of_site={}
+        [nodes_of_site.update(i) for i in nodes_of_sites]
+        # print(nodes_of_site)
+        Shortest_path_coordinates=[]
 
-    graph = Graph()
-    edges = [('AMES', 'STAR', 1), ('BOIS', 'INL', 1), ('PNNL', 'PNWG', 1), ('BOIS', 'PNWG', 1),
-             ('EQX-ASH', 'EQX-CHI', 1), ('LIGO', 'PNWG', 1), ('BOST', 'PSFC', 1), ('KANS', 'KCNSC', 1),
-             ('ATLA', 'ORAU', 1), ('BOST', 'LNS', 1), ('AMST', 'BOST', 1), ('NERSC', 'SUNN', 1), ('JLAB', 'WASH', 1),
-             ('ATLA', 'SRS', 1), ('GA', 'SUNN', 1), ('HOUS', 'PANTEX', 1), ('EQX-ASH', 'NETL-PGH', 1),
-             ('FNAL', 'STAR', 1), ('LBNL', 'NPS', 1), ('HOUS', 'KANS', 1), ('ATLA', 'ETTP', 1), ('CHIC', 'KANS', 1),
-             ('ALBQ', 'DENV', 1), ('JGI', 'SACR', 1), ('LSVN', 'SUNN', 1), ('LBNL', 'SUNN', 1), ('ALBQ', 'KCNSC-NM', 1),
-             ('CHIC', 'STAR', 1), ('DENV', 'LSVN', 1), ('DENV', 'NREL', 1), ('ATLA', 'Y12', 1), ('DENV', 'KANS', 1),
-             ('DENV', 'NGA-SW', 1), ('LSVN', 'NNSS', 1), ('LLNL', 'SUNN', 1), ('HOUS', 'NASH', 1), ('PNWG', 'SACR', 1),
-             ('CHIC', 'WASH', 1), ('LOND', 'NEWY', 1), ('CERN-513', 'CERN-773', 1), ('ATLA', 'NASH', 1),
-             ('AMST', 'CERN-513', 1), ('CERN', 'CERN-513', 1), ('ANL', 'STAR', 1), ('PPPL', 'WASH', 1),
-             ('SLAC', 'SUNN', 1), ('ATLA', 'ORNL', 1), ('BOST', 'STAR', 1), ('ALBQ', 'LANL', 1), ('NASH', 'WASH', 1),
-             ('EQX-ASH', 'WASH', 1), ('AMST', 'LOND', 1), ('AOFA', 'STAR', 1), ('AOFA', 'WASH', 1), ('ELPA', 'HOUS', 1),
-             ('ELPA', 'SUNN', 1), ('ALBQ', 'SNLA', 1), ('SACR', 'SUNN', 1), ('CERN-773', 'LOND', 1),
-             ('CHIC', 'NASH', 1), ('CERN-513', 'WASH', 1), ('DENV', 'PNWG', 1), ('EQX-ASH', 'NETL-MGN', 1),
-             ('AOFA', 'LOND', 1), ('BNL', 'NEWY', 1), ('CHIC', 'EQX-CHI', 1), ('ATLA', 'WASH', 1), ('BOIS', 'DENV', 1),
-             ('AOFA', 'NEWY', 1), ('BOST', 'NEWY', 1), ('ALBQ', 'ELPA', 1), ('DENV', 'SACR', 1), ('SACR', 'SNLL', 1)]
-    
-    for edge in edges:
-        graph.add_edge(*edge)
-    #labels = {LBNL:'LBNL',SLAC:'SLAC'}
-    path_source_destination=dijsktra(graph, source,destination)
-    # print(path_source_destination)
-    for (index,edge) in enumerate(path_source_destination):
-        # for i in x:
-        try:
-            a, b = edge,path_source_destination[index+1]     #edge['name'].split('--')
-        except IndexError:
-            continue
-        Shortest_path_coordinates.append((a,nodes_of_site[a],b,nodes_of_site[b]))
-        # # print(a,b)
-    return Shortest_path_coordinates
+        graph = Graph()
+        edges = [('AMES', 'STAR', 1), ('BOIS', 'INL', 1), ('PNNL', 'PNWG', 1), ('BOIS', 'PNWG', 1),
+                 ('EQX-ASH', 'EQX-CHI', 1), ('LIGO', 'PNWG', 1), ('BOST', 'PSFC', 1), ('KANS', 'KCNSC', 1),
+                 ('ATLA', 'ORAU', 1), ('BOST', 'LNS', 1), ('AMST', 'BOST', 1), ('NERSC', 'SUNN', 1), ('JLAB', 'WASH', 1),
+                 ('ATLA', 'SRS', 1), ('GA', 'SUNN', 1), ('HOUS', 'PANTEX', 1), ('EQX-ASH', 'NETL-PGH', 1),
+                 ('FNAL', 'STAR', 1), ('LBNL', 'NPS', 1), ('HOUS', 'KANS', 1), ('ATLA', 'ETTP', 1), ('CHIC', 'KANS', 1),
+                 ('ALBQ', 'DENV', 1), ('JGI', 'SACR', 1), ('LSVN', 'SUNN', 1), ('LBNL', 'SUNN', 1), ('ALBQ', 'KCNSC-NM', 1),
+                 ('CHIC', 'STAR', 1), ('DENV', 'LSVN', 1), ('DENV', 'NREL', 1), ('ATLA', 'Y12', 1), ('DENV', 'KANS', 1),
+                 ('DENV', 'NGA-SW', 1), ('LSVN', 'NNSS', 1), ('LLNL', 'SUNN', 1), ('HOUS', 'NASH', 1), ('PNWG', 'SACR', 1),
+                 ('CHIC', 'WASH', 1), ('LOND', 'NEWY', 1), ('CERN-513', 'CERN-773', 1), ('ATLA', 'NASH', 1),
+                 ('AMST', 'CERN-513', 1), ('CERN', 'CERN-513', 1), ('ANL', 'STAR', 1), ('PPPL', 'WASH', 1),
+                 ('SLAC', 'SUNN', 1), ('ATLA', 'ORNL', 1), ('BOST', 'STAR', 1), ('ALBQ', 'LANL', 1), ('NASH', 'WASH', 1),
+                 ('EQX-ASH', 'WASH', 1), ('AMST', 'LOND', 1), ('AOFA', 'STAR', 1), ('AOFA', 'WASH', 1), ('ELPA', 'HOUS', 1),
+                 ('ELPA', 'SUNN', 1), ('ALBQ', 'SNLA', 1), ('SACR', 'SUNN', 1), ('CERN-773', 'LOND', 1),
+                 ('CHIC', 'NASH', 1), ('CERN-513', 'WASH', 1), ('DENV', 'PNWG', 1), ('EQX-ASH', 'NETL-MGN', 1),
+                 ('AOFA', 'LOND', 1), ('BNL', 'NEWY', 1), ('CHIC', 'EQX-CHI', 1), ('ATLA', 'WASH', 1), ('BOIS', 'DENV', 1),
+                 ('AOFA', 'NEWY', 1), ('BOST', 'NEWY', 1), ('ALBQ', 'ELPA', 1), ('DENV', 'SACR', 1), ('SACR', 'SNLL', 1)]
+
+        for edge in edges:
+            graph.add_edge(*edge)
+        # if float(traffic)>0.5:
+        #     path_source_destination=dijsktra_second_path(graph, source,destination)
+        # else:
+        #     path_source_destination=dijsktra(graph, source,destination)
+
+        path_source_destination=dijsktra(graph, source, destination, 1 if float(traffic)>0.5 else 0)
+        # print(path_source_destination)
+        for (index,edge) in enumerate(path_source_destination):
+            # for i in x:
+            try:
+                a, b = edge,path_source_destination[index+1]     #edge['name'].split('--')
+            except IndexError:
+                continue
+            Shortest_path_coordinates.append((a,nodes_of_site[a],b,nodes_of_site[b]))
+            # # print(a,b)
+        return Shortest_path_coordinates
+    except:
+        return []
 # # print(Shortest_path_graph())
 # nodes_join_line()
 # graph_bar(predictionsData)

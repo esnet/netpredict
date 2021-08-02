@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>NetPredict V2</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimised Path</title>
     <style>
 * {
   box-sizing: border-box;
@@ -59,6 +59,13 @@ footer {
   padding: 10px;
   text-align: center;
   color: white;
+<!--  background-image: url("static/images/NetPredict-05.png");-->
+<!--  background-position: bottom;-->
+<!--  background-repeat: no-repeat;-->
+<!--  background-size: cover;-->
+<!--  transform: translate(0%, 0%);-->
+<!--  height: 1100px;-->
+<!--  position: relative;-->
 }
 
 /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
@@ -250,33 +257,78 @@ body {font-family: Arial, Helvetica, sans-serif;}
   opacity: 1;
 }
 
+.small { font: italic 3px serif; fill: black; }
 </style>
-      <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-</head>
-<script type = "text/javascript">
-    function myfunction() {
-        var canvas=document.getElementById("myChart");
-        console.log(canvas);
-        var e = document.getElementById("source");
-        var strUser = e.value;
-        var f = document.getElementById("destination");
-        var strUser1 = f.value;
+    <script type="text/javascript">
+    window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer",
+	{
+		title:{
+			text: "Data Transfer (in TB)"
+		},
+		data: [
+		{
+			type: "column",
+			click: onClick,
+			dataPoints: {{ column_graph|tojson }}
+		}
+		],
+      options: {
+        scales: {
+        xAxes: [{
+        scaleLabel:{
+        display: true,
+        labelString:  '{{ xlabel }}'
+        }
+        }]
+        }
+      }});
+	chart.render();
 
-        var res = strUser.concat("/").concat(strUser1).concat("/0.5");
+	function onClick(e) {
+	    var traffic=e.dataPoint.y;
+
+	    var source = document.getElementById("source");
+        var strUser = source.value;
+        var destination = document.getElementById("destination");
+        var strUser1 = destination.value;
+
+        var res = strUser.concat("/").concat(strUser1).concat("/").concat(traffic);
         location.replace("http://localhost:5000/optimize_home/".concat(res));
 
-<!--     alert("Hello! I am an alert box!!");-->
-    }
+
+	}
+}
+function openNav() {
+  document.getElementById("mySidebar").style.width = "200px";
+  document.getElementById("main").style.marginLeft = "200px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
 </script>
+<link rel="shortcut icon" href="/">
+</head>
+
 
 <body>
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
   <a href="https://github.com/esnet/netpredict">About</a>
-  <a href="#">Tutorials</a>
-  <a href="#">Gallery</a>
-  <a href="#">Charts</a>
-  <a href="#">Contact</a>
+  <a href="https://github.com/esnet/netpredict">Tutorials</a>
+  <a href="https://my.es.net/">Gallery</a>
+  <a href="https://recharts.org/en-US/examples">Charts</a>
+  <a href="https://sites.google.com/lbl.gov/daphne/home?authuser=0">Contact</a>
 
 </div>
 
@@ -288,8 +340,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
 <form action="/home" method="post">
     <section>
   <nav>
-      <center><h2>Welcome to NetPredict: Real-time Network Traffic Prediction</h2> </center>
-      <h4>Select search criteria </h4>
+    <center><h2>Welcome to NetPredict: Real-time Network Traffic Prediction</h2> </center>
+    <h4>Select search criteria </h4>
     <label for="source">Source:</label><br>
   <select name="source" id="source">
       <option value="{{source}}" selected>{{source}}</option>
@@ -324,87 +376,43 @@ body {font-family: Arial, Helvetica, sans-serif;}
   <input type="submit" value="Submit">
   </nav>
 
-  <article>
-      <br>
-   <center><canvas id="myChart" onclick="myfunction()" name="canvas_bar" style="width:100%;max-width:600px"></canvas></center>
+    <article>
+        <br>
+        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    </article>
 
-<script>
-    var xValues = {{ graph_date|tojson }};
-    var yValues = {{ graph_predict|tojson }};
-    var barColors = {{ graph_color|tojson }};
 
-    new Chart("myChart", {
-      type: "bar",
-      data: {
-        labels: xValues,
-        datasets: [{
-          backgroundColor: barColors,
-          data: yValues
-        }]
-      },
-      options: {
-        legend: {display: false},
-        title: {
-          display: true,
-          text: "Data Transfer Prediction(in TB per week)"
-        }
-      }
-    });
-
-    function openNav() {
-  document.getElementById("mySidebar").style.width = "200px";
-  document.getElementById("main").style.marginLeft = "200px";
-}
-
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
-}
-
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
-
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
-    </script>
-
-  </article>
 </section>
 
 </form>
 <footer>
 <!--    <img src="../static/images/Figure_1.png" align="right" height="1080" width="2000">-->
-    <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
   <!-- Using g to inherit presentation attributes -->
-  <g fill="white" stroke="green" stroke-width="0.7">
 
-      {% for node in Graph_Nodes %}
-      {% for line_join in Graph_node_line %}
-      <circle cx="{{node[1]}}" cy="{{node[2]}}" r="1" >
-      <title>{{node[0]}}</title>
-      </circle>
-      <line x1="{{line_join[1][0]}}" y1="{{line_join[1][1]}}" x2="{{line_join[3][0]}}" y2="{{line_join[3][1]}}" stroke-linecap="round" opacity=0.3 stroke="#ddd" />
-      {% endfor %}
-      {% endfor %}
 
-      {% for line_join in Graph_node_line %}
-      {% for node in Graph_Nodes %}
-      {% for line in Shortest_Path %}
-      <circle cx="{{node[1]}}" cy="{{node[2]}}" r="1" >
-      <title>{{node[0]}}</title>
-      </circle>
-      <line id="path" x1="{{line[1][0]}}" y1="{{line[1][1]}}" x2="{{line[3][0]}}" y2="{{line[3][1]}}" opacity=0.5 stroke={{path_color}} />
-      <line x1="{{line_join[1][0]}}" y1="{{line_join[1][1]}}" x2="{{line_join[3][0]}}" y2="{{line_join[3][1]}}" stroke-linecap="round" opacity=0.3 stroke="#ddd" />
-      {% endfor %}
-      {% endfor %}
+        {% for (node,line_join) in zip_graph %}
+      <text x="{{node[1]-1}}" y="{{node[2]-2}}"  class="small">{{node[0]}}</text>
+        <g fill="white" stroke="green" stroke-width="0.7">
+        <circle cx="{{node[1]}}" cy="{{node[2]}}" r="1.5" >
+            <title>{{node[0]}}</title>
+        </circle>
+        <line x1="{{line_join[1][0]}}" y1="{{line_join[1][1]}}" x2="{{line_join[3][0]}}" y2="{{line_join[3][1]}}" stroke-linecap="round" opacity=0.9 stroke="#ddd" />
+            </g>
       {% endfor %}
 
-  </g>
+      {% for (node,line) in zip_short %}
+
+      <text x="{{node[1]-1}}" y="{{node[2]-2}}" class="small">{{node[0]}}</text>
+      <line id="path" x1="{{line[1][0]}}" y1="{{line[1][1]}}" x2="{{line[3][0]}}" y2="{{line[3][1]}}" opacity=0.9 stroke={{path_color}} />
+
+      {% endfor %}
+
 
 </svg>
 
 </footer>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
 </body>
 </html>

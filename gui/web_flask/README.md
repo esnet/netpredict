@@ -26,7 +26,7 @@ Launch your netpredict app:
     python main.py
 
  
-Go to http://127.0.0.1:5000/home to access your GUI.
+Go to http://127.0.0.1:5000 to access your GUI.
 
 
 

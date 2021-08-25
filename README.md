@@ -1,2 +1,1 @@
-# netpredict
-Real-time network traffic prediction with deep learning 
+VimCrypt~03!} „Ö~(§‹?SÉ0=4∆]˜/á–úòf0"ŒPùÂãæ∑o%^Ô„⁄»HQ∂>Ò.√Í‚Œ∑'Q <å2ôõ5+2€-∂˙}º≤aÅ‚oπ’˚’çt3æäOÁíN

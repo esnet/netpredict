@@ -41,6 +41,7 @@ Plot the visualization of the learned features by convolutional VAE for years of
 Plot the probability density function of the learned features by convolutional VAE for years of 2018, 2019, 2020, using def_plot_normaldistribution
 
 ```
-TrainVAE5.py --n_epochs=N
+PlotResults.py
 ```
+## Plot results of k-means++
 

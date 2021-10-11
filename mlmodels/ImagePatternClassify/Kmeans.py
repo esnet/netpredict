@@ -81,7 +81,7 @@ def plotElbow(autoencoder, x_set_2018, y_set_2018, x_set_2019, y_set_2019, x_set
     plt.xlabel('Number of cluster')
     plt.ylabel('SSE')  # Sum of squared distances of samples to their closest cluster center
 
-    plt.show()
+    plt.show(block=True)
 
 def kmeans(autoencoder, x_set_2018, y_set_2018, x_set_2019, y_set_2019, x_set_2020, y_set_2020):
 
@@ -208,7 +208,9 @@ def kmeans(autoencoder, x_set_2018, y_set_2018, x_set_2019, y_set_2019, x_set_20
     ax3.set_xlim([0.01, 0.083])
     ax3.set_ylim([0.03, 0.11])
     ax3.set_xlabel('Dimension 1')
-
+    
+    plt.show(block=True)
+    
     return df_2020
 
 if __name__ == '__main__':
@@ -243,8 +245,7 @@ if __name__ == '__main__':
                         device = device)
 
     # # Elbow plot
-    # plotElbow(net_trained, dataset_2018.X, dataset_2018.y_set, dataset_2019.X, dataset_2019.y_set, dataset_2020.X,
-    #           dataset_2020.y_set)
+    plotElbow(net_trained, dataset_2018.X, dataset_2018.y_set, dataset_2019.X, dataset_2019.y_set, dataset_2020.X, dataset_2020.y_set)
 
     # Visualize results by K-means
     data_2020 = kmeans(net_trained, dataset_2018.X, dataset_2018.y_set, dataset_2019.X, dataset_2019.y_set,

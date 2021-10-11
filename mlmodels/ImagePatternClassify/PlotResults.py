@@ -158,6 +158,8 @@ def plot_normaldistribution(autoencoder, x_set_2018, y_set_2018, x_set_2019, y_s
 
     plt.ylabel("pdf")
     plt.xlabel("Extracted features $(10^{-4})$")
+    
+  plt.show(block=True)
 
 if __name__ == '__main__':
 

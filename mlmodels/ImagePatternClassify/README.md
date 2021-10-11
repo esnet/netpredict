@@ -36,4 +36,11 @@ VariationalAutoencoder(
 )
 
 ## Plot the Results
-s
+Plot the visualization of the learned features by convolutional VAE for night, weekdays, and weekeed of 2018, 2019, 2020, using function def_plot_joint
+Plot the visualization of the learned features by convolutional VAE for years of 2018, 2019, 2020, using def_plotYearCompare
+Plot the probability density function of the learned features by convolutional VAE for years of 2018, 2019, 2020, using def_plot_normaldistribution
+
+```
+TrainVAE5.py --n_epochs=N
+```
+

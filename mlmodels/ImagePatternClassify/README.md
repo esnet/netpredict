@@ -12,7 +12,9 @@ TrainVAE5.py --n_epochs=N
 Below please find the model structure information. The overall architecture of the VAE consists of five convolutional layers, five transposed convolutional layers, and three fully-connected layers.
 
 VariationalAutoencoder(
+
   (encoder): Encoder(
+  
     (conv1): Conv2d(1, 32, kernel_size=(5, 5), stride=(3, 3))
     (conv2): Conv2d(32, 64, kernel_size=(4, 4), stride=(2, 2))
     (conv3): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2))
@@ -21,7 +23,9 @@ VariationalAutoencoder(
     (fc_mu): Linear(in_features=1152, out_features=2, bias=True)
     (fc_logvar): Linear(in_features=1152, out_features=2, bias=True)
   )
+  
   (decoder): Decoder(
+  
     (fc): Linear(in_features=2, out_features=1152, bias=True)
     (conv5): ConvTranspose2d(128, 128, kernel_size=(3, 3), stride=(1, 1))
     (conv4): ConvTranspose2d(128, 128, kernel_size=(3, 3), stride=(1, 1))

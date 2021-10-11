@@ -177,7 +177,7 @@ def plot_latent(autoencoder, x_set, y_set, num_batches=100):
     # plt.ylim([5, 50])
 
     plt.tight_layout()
-    plt.show()
+    plt.show(block=True)
 
 
 if __name__ == '__main__':

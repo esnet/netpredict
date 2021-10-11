@@ -35,7 +35,7 @@ VariationalAutoencoder(
   )
 )
 
-## Plot the Results
+## Visualizing the learned features
 Plot the visualization of the learned features by convolutional VAE for night, weekdays, and weekeed of 2018, 2019, 2020, using function def_plot_joint
 Plot the visualization of the learned features by convolutional VAE for years of 2018, 2019, 2020, using def_plotYearCompare
 Plot the probability density function of the learned features by convolutional VAE for years of 2018, 2019, 2020, using def_plot_normaldistribution
@@ -44,4 +44,8 @@ Plot the probability density function of the learned features by convolutional V
 PlotResults.py
 ```
 ## Plot results of k-means++
+Once the VAE training process was done, the extracted useful features were fed into the clustering method k-means++. The k-means++ then was employed to explore the complex dependency of the network traffic pattern on these compressed features extracted from the network flow changes between connected research sites. Specifically, we initialized the clustering centers by randomly picking up one samples as the centers. The optimal number of k was experimentally investigated using an elbow method (def_plotElbow). Then, we computed the sum of squared distance between each input and the selected centers and assigned the inputs to closest center. Finally, we updated the clustering centers by a weighted probability distribution. The process was repeated until the newly clustering center keeping constant or the maximum number of iterations reached. The final clustering results are shown using def_kmeans
 
+```
+kmeans.py
+```

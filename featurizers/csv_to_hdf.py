@@ -2,11 +2,12 @@ import numpy as np
 import pandas as pd
 
 #filename = '/tmp/test.hdf5'
-filename = 'snmp_2019_data.hdf5'
-inputfile= "../datasets/snmp_2019_data.csv"
+filename = '../datasets/snmp_esnet/snmp_2020_data.hdf5'
+inputfile= "../datasets/snmp_esnet/snmp_2020.csv"
 
 
 df = pd.read_csv(inputfile)
+df=df.replace(np.nan, 0)
 
 print(df)
 df=df.iloc[:,1:]

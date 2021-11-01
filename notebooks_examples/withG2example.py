@@ -5,6 +5,7 @@ import csv
 import yaml
 import networkx as nx
 import matplotlib.pyplot as plt
+import time
 
 network_yaml="../example_topos/PRP_topo.yaml"
 
@@ -24,27 +25,36 @@ def main():
     print(NetworkDict['links'])
     
     g = nx.DiGraph()
+
+    for i in NetworkDict['regions']:
+        g.add_node(i['name'])
+
+
     for i in NetworkDict['links']:
         src=i['src']
         dst=i['dst']
-        g.add_edge(src, dst, weight=1)
+        g.add_edge(src, dst, weight=2)
 
     pos = nx.circular_layout(g)
   
-    nx.draw_networkx_nodes(g,pos,node_size=500)
+    nx.draw(g,pos,node_size=500, with_labels='True')
     plt.title("PRP topology")
     plt.axis('off')
     plt.show()
 
+
     print("G2 started......")
 
-    print("G2 collects 1 min data......")
-
+    print("G2 starts collecting 1 min interval data......")
+    time.sleep(2)
     print("G2 calls netpredict to predict future flows....")
+    time.sleep(2)
+    link1,link2,link3 = call_netpredict_arima(10, send historical (last 10 steps, hist range))
 
     ##### no pretrained ML model
     #record history and build it over time
 
+    #### pretrained
 
 
 

@@ -1,0 +1,13 @@
+# Function dependencies, for example:
+# package>=version
+
+
+numpy
+pandas
+statsmodels
+datetime 
+simplejson
+google-cloud-core
+google-cloud-storage
+google-cloud-firestore
+

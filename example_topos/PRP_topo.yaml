@@ -14,5 +14,7 @@ regions:
 links:
 - src: region1
   dst: region2
+- src: region2
+  dst: region3
 - src: region1
-  dst: region2
+  dst: region3

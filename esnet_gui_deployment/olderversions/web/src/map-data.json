@@ -1,0 +1,1111 @@
+{
+   "data":{
+      "mapTopology":{
+         "nodes":[
+            {
+               "name":"ALBQ",
+               "attr":"{\"type\": \"hub\", \"capacity\": \"100G\", \"site\": null}",
+               "x":75.0,
+               "y":85.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"left"
+            },
+            {
+               "name":"AMES",
+               "attr":"{\"site\": 5, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"SC Lab\", \"site_link\": \"/site/ames/summary\"}",
+               "x":100.0,
+               "y":50.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"top"
+            },
+            {
+               "name":"AMST",
+               "attr":"{\"capacity\": \"100G\", \"type\": \"hub\", \"site\": null}",
+               "x":230.0,
+               "y":50.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"right"
+            },
+            {
+               "name":"ANL",
+               "attr":"{\"site\": 1, \"type\": \"esnet_site\", \"capacity\": \"100G\", \"site_type\": \"SC Lab\", \"site_link\": \"/site/anl/summary\"}",
+               "x":115.0,
+               "y":45.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"top"
+            },
+            {
+               "name":"AOFA",
+               "attr":"{\"type\": \"hub\", \"capacity\": \"100G\", \"site\": null}",
+               "x":168.0,
+               "y":67.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"bottomright"
+            },
+            {
+               "name":"ATLA",
+               "attr":"{\"type\": \"hub\", \"capacity\": \"100G\", \"site\": null}",
+               "x":135.0,
+               "y":100.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"right"
+            },
+            {
+               "name":"BNL",
+               "attr":"{\"site\": 4, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"SC Lab\", \"site_link\": \"/site/bnl/summary\"}",
+               "x":182.0,
+               "y":53.0,
+               "site":null,
+               "labelDx":5.0,
+               "labelDy":null,
+               "labelPosition":"right"
+            },
+            {
+               "name":"BOIS",
+               "attr":"{\"type\": \"hub\", \"capacity\": \"10G\", \"site\": null}",
+               "x":37.5,
+               "y":41.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"left"
+            },
+            {
+               "name":"BOST",
+               "attr":"{\"type\": \"hub\", \"capacity\": \"10G\", \"site\": null}",
+               "x":175.0,
+               "y":40.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":-13.0,
+               "labelPosition":"top"
+            },
+            {
+               "name":"CERN",
+               "attr":"{\"site\": 1, \"type\": \"esnet_site\", \"capacity\": \"100G\", \"site_type\": \"Collaborator\", \"site_link\": \"/site/cern/summary\"}",
+               "x":240.0,
+               "y":70.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"right"
+            },
+            {
+               "name":"CERN-513",
+               "attr":"{\"capacity\": \"100G\", \"type\": \"hub\", \"site\": null}",
+               "x":230.0,
+               "y":70.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"bottom"
+            },
+            {
+               "name":"CERN-773",
+               "attr":"{\"capacity\": \"100G\", \"type\": \"hub\", \"site\": null}",
+               "x":225.0,
+               "y":65.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"left"
+            },
+            {
+               "name":"CHIC",
+               "attr":"{\"type\": \"hub\", \"capacity\": \"100G\", \"site\": null}",
+               "x":120.0,
+               "y":60.0,
+               "site":null,
+               "labelDx":8.0,
+               "labelDy":-9.0,
+               "labelPosition":"topright"
+            },
+            {
+               "name":"DENV",
+               "attr":"{\"type\": \"hub\", \"capacity\": \"100G\", \"site\": null}",
+               "x":75.0,
+               "y":60.0,
+               "site":null,
+               "labelDx":-5.0,
+               "labelDy":18.0,
+               "labelPosition":"bottomright"
+            },
+            {
+               "name":"ELPA",
+               "attr":"{\"type\": \"hub\", \"capacity\": \"100G\", \"site\": null}",
+               "x":75.0,
+               "y":105.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"bottom"
+            },
+            {
+               "name":"EQX-ASH",
+               "attr":"{\"type\": \"hub\", \"capacity\": \"100G\", \"site\": null}",
+               "x":142.0,
+               "y":75.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"top"
+            },
+            {
+               "name":"EQX-CHI",
+               "attr":"{\"type\": \"hub\", \"capacity\": \"100G\", \"site\": null}",
+               "x":130.0,
+               "y":69.631,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"left"
+            },
+            {
+               "name":"ETTP",
+               "attr":"{\"site\": 37, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"Non-SC\", \"site_link\": \"/site/ettp/summary\"}",
+               "x":123.0,
+               "y":108.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"left"
+            },
+            {
+               "name":"FNAL",
+               "attr":"{\"site\": 3, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"SC Lab\", \"site_link\": \"/site/fnal/summary\"}",
+               "x":120.0,
+               "y":40.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"top"
+            },
+            {
+               "name":"GA",
+               "attr":"{\"site\": 9, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"SC Facility\", \"site_link\": \"/site/ga/summary\"}",
+               "x":20.0,
+               "y":105.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"left"
+            },
+            {
+               "name":"HOUS",
+               "attr":"{\"type\": \"hub\", \"capacity\": \"100G\", \"site\": null}",
+               "x":100.0,
+               "y":105.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"right"
+            },
+            {
+               "name":"INL",
+               "attr":"{\"site\": 11, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"Non-SC\", \"site_link\": \"/site/inl/summary\"}",
+               "x":37.5,
+               "y":50.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"bottom"
+            },
+            {
+               "name":"JGI",
+               "attr":"{\"site\": 12, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"SC Collaboration\", \"site_link\": \"/site/jgi/summary\"}",
+               "x":10.0,
+               "y":60.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"left"
+            },
+            {
+               "name":"JLAB",
+               "attr":"{\"site\": 13, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"SC Lab\", \"site_link\": \"/site/jlab/summary\"}",
+               "x":158.0,
+               "y":85.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"bottom"
+            },
+            {
+               "name":"KANS",
+               "attr":"{\"type\": \"hub\", \"capacity\": \"100G\", \"site\": null}",
+               "x":100.0,
+               "y":60.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":-13.0,
+               "labelPosition":"top"
+            },
+            {
+               "name":"KCNSC",
+               "attr":"{\"site\": 14, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"Non-SC\", \"site_link\": \"/site/kcp/summary\"}",
+               "x":95.0,
+               "y":65.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"bottom"
+            },
+            {
+               "name":"KCNSC-NM",
+               "attr":"{\"site\": 35, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"Non-SC\", \"site_link\": \"/site/kcp-albq/summary\"}",
+               "x":82.0,
+               "y":92.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"right"
+            },
+            {
+               "name":"LANL",
+               "attr":"{\"site\": 15, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"Multi-purpose Lab\", \"site_link\": \"/site/lanl/summary\"}",
+               "x":68.0,
+               "y":92.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"left"
+            },
+            {
+               "name":"LBNL",
+               "attr":"{\"site\": 2, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"SC Lab\", \"site_link\": \"/site/lbl/summary\"}",
+               "x":10.0,
+               "y":76.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"left"
+            },
+            {
+               "name":"LIGO",
+               "attr":"{\"site\": 17, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"Non-SC\", \"site_link\": \"/site/ligo/summary\"}",
+               "x":10.0,
+               "y":20.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"left"
+            },
+            {
+               "name":"LLNL",
+               "attr":"{\"site\": 18, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"Multi-purpose Lab\", \"site_link\": \"/site/llnl/summary\"}",
+               "x":28.0,
+               "y":77.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"right"
+            },
+            {
+               "name":"LNS",
+               "attr":"{\"site\": 34, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"SC Collaboration\", \"site_link\": \"/site/lns/summary\"}",
+               "x":182.0,
+               "y":47.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"right"
+            },
+            {
+               "name":"LOND",
+               "attr":"{\"capacity\": \"100G\", \"type\": \"hub\", \"site\": null}",
+               "x":220.0,
+               "y":60.1,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"topleft"
+            },
+            {
+               "name":"LSVN",
+               "attr":"{\"type\": \"hub\", \"capacity\": \"10G\", \"site\": null}",
+               "x":55.0,
+               "y":75.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":-13.0,
+               "labelPosition":"right"
+            },
+            {
+               "name":"NASH",
+               "attr":"{\"type\": \"hub\", \"capacity\": \"100G\", \"site\": null}",
+               "x":120.0,
+               "y":85.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"left"
+            },
+            {
+               "name":"NERSC",
+               "attr":"{\"site\": 21, \"type\": \"esnet_site\", \"capacity\": \"100G\", \"site_type\": \"SC Facility\", \"site_link\": \"/site/nersc/summary\"}",
+               "x":10.0,
+               "y":85.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"left"
+            },
+            {
+               "name":"NETL-MGN",
+               "attr":"{\"site\": 125, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"SC Lab\", \"site_link\": \"/site/netl-mgn/summary\"}",
+               "x":135.0,
+               "y":79.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"left"
+            },
+            {
+               "name":"NETL-PGH",
+               "attr":"{\"site\": 126, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"SC Lab\", \"site_link\": \"/site/netl-pgh/summary\"}",
+               "x":135.0,
+               "y":76.25,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"left"
+            },
+            {
+               "name":"NEWY",
+               "attr":"{\"type\": \"hub\", \"capacity\": \"100G\", \"site\": null}",
+               "x":175.0,
+               "y":60.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"left"
+            },
+            {
+               "name":"NGA-SW",
+               "attr":"{\"site\": 41, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"Non-SC\", \"site_link\": \"/site/nga-sw/summary\"}",
+               "x":82.0,
+               "y":53.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"right"
+            },
+            {
+               "name":"NNSS",
+               "attr":"{\"site\": 6, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"Non-SC\", \"site_link\": \"/site/nso/summary\"}",
+               "x":55.0,
+               "y":85.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"right"
+            },
+            {
+               "name":"NPS",
+               "attr":"{\"site\": 44, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"SC Collaboration\", \"site_link\": \"/site/nps/summary\"}",
+               "x":10.0,
+               "y":70.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"left"
+            },
+            {
+               "name":"NREL",
+               "attr":"{\"site\": 22, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"Non-SC\", \"site_link\": \"/site/nrel/summary\"}",
+               "x":75.0,
+               "y":53.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"top"
+            },
+            {
+               "name":"ORAU",
+               "attr":"{\"site\": 23, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"SC Collaboration\", \"site_link\": \"/site/orau/summary\"}",
+               "x":141.0,
+               "y":108.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"bottom"
+            },
+            {
+               "name":"ORNL",
+               "attr":"{\"site\": 24, \"type\": \"esnet_site\", \"capacity\": \"100G\", \"site_type\": \"SC Lab\", \"site_link\": \"/site/ornl/summary\"}",
+               "x":135.0,
+               "y":90.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"top"
+            },
+            {
+               "name":"PANTEX",
+               "attr":"{\"site\": 27, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"Non-SC\", \"site_link\": \"/site/pantex/summary\"}",
+               "x":100.0,
+               "y":112.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"bottom"
+            },
+            {
+               "name":"PNNL",
+               "attr":"{\"site\": 26, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"SC Lab\", \"site_link\": \"/site/pnnl/summary\"}",
+               "x":30.0,
+               "y":20.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"top"
+            },
+            {
+               "name":"PNWG",
+               "attr":"{\"type\": \"hub\", \"capacity\": \"100G\", \"site\": null}",
+               "x":20.0,
+               "y":20.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":-13.0,
+               "labelPosition":"top"
+            },
+            {
+               "name":"PPPL",
+               "attr":"{\"site\": 33, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"SC Lab\", \"site_link\": \"/site/pppl/summary\"}",
+               "x":158.0,
+               "y":69.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"top"
+            },
+            {
+               "name":"PSFC",
+               "attr":"{\"site\": 43, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"SC Collaboration\", \"site_link\": \"/site/psfc/summary\"}",
+               "x":168.0,
+               "y":47.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"left"
+            },
+            {
+               "name":"SACR",
+               "attr":"{\"type\": \"hub\", \"capacity\": \"100G\", \"site\": null}",
+               "x":20.0,
+               "y":60.0,
+               "site":null,
+               "labelDx":5.0,
+               "labelDy":-10.0,
+               "labelPosition":"topright"
+            },
+            {
+               "name":"SLAC",
+               "attr":"{\"site\": 28, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"SC Lab\", \"site_link\": \"/site/slac/summary\"}",
+               "x":10.0,
+               "y":94.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"left"
+            },
+            {
+               "name":"SNLA",
+               "attr":"{\"site\": 29, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"Non-SC\", \"site_link\": \"/site/snla/summary\"}",
+               "x":85.0,
+               "y":85.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"right"
+            },
+            {
+               "name":"SNLL",
+               "attr":"{\"site\": 30, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"Multi-purpose Lab\", \"site_link\": \"/site/snll/summary\"}",
+               "x":28.0,
+               "y":68.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"right"
+            },
+            {
+               "name":"SRS",
+               "attr":"{\"site\": 31, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"Non-SC\", \"site_link\": \"/site/srs/summary\"}",
+               "x":135.0,
+               "y":108.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"bottom"
+            },
+            {
+               "name":"STAR",
+               "attr":"{\"type\": \"hub\", \"capacity\": \"100G\", \"site\": null}",
+               "x":120.0,
+               "y":50.0,
+               "site":null,
+               "labelDx":-13.0,
+               "labelDy":15.0,
+               "labelPosition":"bottomleft"
+            },
+            {
+               "name":"SUNN",
+               "attr":"{\"type\": \"hub\", \"capacity\": \"100G\", \"site\": null}",
+               "x":20.0,
+               "y":85.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"bottom"
+            },
+            {
+               "name":"WASH",
+               "attr":"{\"type\": \"hub\", \"capacity\": \"100G\", \"site\": null}",
+               "x":158.0,
+               "y":77.0,
+               "site":null,
+               "labelDx":14.0,
+               "labelDy":null,
+               "labelPosition":"bottomright"
+            },
+            {
+               "name":"Y12",
+               "attr":"{\"site\": 32, \"type\": \"esnet_site\", \"capacity\": \"\", \"site_type\": \"Non-SC\", \"site_link\": \"/site/y12/summary\"}",
+               "x":129.0,
+               "y":108.0,
+               "site":null,
+               "labelDx":null,
+               "labelDy":null,
+               "labelPosition":"bottom"
+            }
+         ],
+         "edges":[
+            {
+               "id":"1945",
+               "name":"AMES--STAR",
+               "attr":"{\n    \"capacity\": \"10G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"ameslab-rt3\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-0/1/0.920\", \n            \"iface_target\": null, \n            \"loc_source\": \"AMES\", \n            \"loc_target\": \"STAR\"\n        }, \n        {\n            \"device_source\": \"ameslab-rt3\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-0/1/0.922\", \n            \"iface_target\": null, \n            \"loc_source\": \"AMES\", \n            \"loc_target\": \"STAR\"\n        }, \n        {\n            \"device_source\": \"ameslab-rt3\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-1/3/0.912\", \n            \"iface_target\": null, \n            \"loc_source\": \"AMES\", \n            \"loc_target\": \"STAR\"\n        }, \n        {\n            \"device_source\": \"ameslab-rt3\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-1/3/0.902\", \n            \"iface_target\": null, \n            \"loc_source\": \"AMES\", \n            \"loc_target\": \"STAR\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"AMES\", \n    \"total_capacity\": 40000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"AMES--STAR\", \"STAR--AMES\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047902276, 9776043.323338203, 21623087.439998873]]}"
+            },
+            {
+               "id":"1947",
+               "name":"BOIS--INL",
+               "attr":"{\n    \"capacity\": \"10G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"bois-cr1\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-1/2/0.1524\", \n            \"iface_target\": null, \n            \"loc_source\": \"BOIS\", \n            \"loc_target\": \"INL\"\n        }, \n        {\n            \"device_source\": \"bois-cr1\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-1/2/0.1526\", \n            \"iface_target\": null, \n            \"loc_source\": \"BOIS\", \n            \"loc_target\": \"INL\"\n        }, \n        {\n            \"device_source\": \"bois-cr1\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-7/0/0.1506\", \n            \"iface_target\": null, \n            \"loc_source\": \"BOIS\", \n            \"loc_target\": \"INL\"\n        }, \n        {\n            \"device_source\": \"bois-cr1\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-7/0/0.1504\", \n            \"iface_target\": null, \n            \"loc_source\": \"BOIS\", \n            \"loc_target\": \"INL\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"INL\", \n    \"total_capacity\": 40000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"BOIS--INL\", \"INL--BOIS\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047902631, 507783342.0157251, 206769061.51598307]]}"
+            },
+            {
+               "id":"1948",
+               "name":"PNNL--PNWG",
+               "attr":"{\n    \"capacity\": \"10G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"bois-cr1\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-0/1/0.964\", \n            \"iface_target\": null, \n            \"loc_source\": \"PNNL\", \n            \"loc_target\": \"PNWG\"\n        }, \n        {\n            \"device_source\": \"pnwg-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_pnnl_ip-b-v4\", \n            \"iface_target\": null, \n            \"loc_source\": \"PNNL\", \n            \"loc_target\": \"PNWG\"\n        }, \n        {\n            \"device_source\": \"bois-cr1\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-1/0/0.2016\", \n            \"iface_target\": null, \n            \"loc_source\": \"PNNL\", \n            \"loc_target\": \"PNWG\"\n        }, \n        {\n            \"device_source\": \"bois-cr1\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-0/1/0.994\", \n            \"iface_target\": null, \n            \"loc_source\": \"PNNL\", \n            \"loc_target\": \"PNWG\"\n        }, \n        {\n            \"device_source\": \"pnwg-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_pnnl_ip-a-v4\", \n            \"iface_target\": null, \n            \"loc_source\": \"PNNL\", \n            \"loc_target\": \"PNWG\"\n        }, \n        {\n            \"device_source\": \"pnwg-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_pnnl_ip-a-v6\", \n            \"iface_target\": null, \n            \"loc_source\": \"PNNL\", \n            \"loc_target\": \"PNWG\"\n        }\n    ], \n    \"saps\": [\n        {\n            \"device_source\": \"pnwg-cr5\", \n            \"device_target\": null, \n            \"loc_source\": \"PNNL\", \n            \"loc_target\": \"PNWG\", \n            \"sap_source\": \"111-lag-1-2015\", \n            \"sap_target\": null\n        }\n    ], \n    \"site\": \"PNNL\", \n    \"total_capacity\": 60000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"PNNL--PNWG\", \"PNWG--PNNL\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047896607, 794874105.1742015, 760604578.91926]]}"
+            },
+            {
+               "id":"1949",
+               "name":"BOIS--PNWG",
+               "attr":"{\n    \"capacity\": \"10G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"bois-cr1\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-0/0/0.5\", \n            \"iface_target\": null, \n            \"loc_source\": \"BOIS\", \n            \"loc_target\": \"PNWG\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 10000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"BOIS--PNWG\", \"PNWG--BOIS\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047900700, 179963337.99166667, 185714509.00833333]]}"
+            },
+            {
+               "id":"1950",
+               "name":"EQX-ASH--EQX-CHI",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"eqx-ash-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"2/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"EQX-ASH\", \n            \"loc_target\": \"EQX-CHI\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"EQX-ASH--EQX-CHI\", \"EQX-CHI--EQX-ASH\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047893113, 29054545422.933334, 31033506357.333332]]}"
+            },
+            {
+               "id":"1951",
+               "name":"LIGO--PNWG",
+               "attr":"{\n    \"capacity\": \"10G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"bois-cr1\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-0/1/0.993\", \n            \"iface_target\": null, \n            \"loc_source\": \"LIGO\", \n            \"loc_target\": \"PNWG\"\n        }, \n        {\n            \"device_source\": \"pnwg-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_ligo_se-420\", \n            \"iface_target\": null, \n            \"loc_source\": \"LIGO\", \n            \"loc_target\": \"PNWG\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"LIGO\", \n    \"total_capacity\": 20000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"LIGO--PNWG\", \"PNWG--LIGO\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047899878, 56450638.89114583, 34934977.14133504]]}"
+            },
+            {
+               "id":"1953",
+               "name":"BOST--PSFC",
+               "attr":"{\n    \"capacity\": \"10G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"bost-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_psfc_ip-a_v4v6\", \n            \"iface_target\": null, \n            \"loc_source\": \"BOST\", \n            \"loc_target\": \"PSFC\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"PSFC\", \n    \"total_capacity\": 10000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"BOST--PSFC\", \"PSFC--BOST\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047893666, 35028708.608333334, 21004565.933333334]]}"
+            },
+            {
+               "id":"1954",
+               "name":"KANS--KCNSC",
+               "attr":"{\n    \"capacity\": \"10G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"kans-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"10/1/6\", \n            \"iface_target\": null, \n            \"loc_source\": \"KANS\", \n            \"loc_target\": \"KCNSC\"\n        }, \n        {\n            \"device_source\": \"kans-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_kcnsc_se-423\", \n            \"iface_target\": null, \n            \"loc_source\": \"KANS\", \n            \"loc_target\": \"KCNSC\"\n        }, \n        {\n            \"device_source\": \"kans-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_kcnsc_se-424\", \n            \"iface_target\": null, \n            \"loc_source\": \"KANS\", \n            \"loc_target\": \"KCNSC\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"KCNSC\", \n    \"total_capacity\": 30000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"KANS--KCNSC\", \"KCNSC--KANS\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047893781, 847874658.6291616, 384971515.16722894]]}"
+            },
+            {
+               "id":"1880",
+               "name":"ATLA--ORAU",
+               "attr":"{\n    \"capacity\": \"10G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"orau-rt4\", \n            \"device_target\": null, \n            \"iface_source\": \"ge-0/1/2.2186\", \n            \"iface_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"ORAU\"\n        }, \n        {\n            \"device_source\": \"orau-rt4\", \n            \"device_target\": null, \n            \"iface_source\": \"ge-0/1/2.2184\", \n            \"iface_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"ORAU\"\n        }, \n        {\n            \"device_source\": \"orau-rt4\", \n            \"device_target\": null, \n            \"iface_source\": \"ge-0/1/1.2111\", \n            \"iface_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"ORAU\"\n        }, \n        {\n            \"device_source\": \"orau-rt4\", \n            \"device_target\": null, \n            \"iface_source\": \"ge-0/1/1.2112\", \n            \"iface_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"ORAU\"\n        }, \n        {\n            \"device_source\": \"osti-rt2\", \n            \"device_target\": null, \n            \"iface_source\": \"ae0.2154\", \n            \"iface_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"ORAU\"\n        }, \n        {\n            \"device_source\": \"osti-rt2\", \n            \"device_target\": null, \n            \"iface_source\": \"ae0.2156\", \n            \"iface_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"ORAU\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"ORAU\", \n    \"total_capacity\": 44000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"ATLA--ORAU\", \"ORAU--ATLA\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047901924, 52521967.4257243, 20471812.844528224]]}"
+            },
+            {
+               "id":"1955",
+               "name":"BOST--LNS",
+               "attr":"{\n    \"capacity\": \"10G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"bost-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_lns_ip-a_v4\", \n            \"iface_target\": null, \n            \"loc_source\": \"BOST\", \n            \"loc_target\": \"LNS\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"LNS\", \n    \"total_capacity\": 10000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"BOST--LNS\", \"LNS--BOST\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047893008, 3703536.6166666667, 13284056.225]]}"
+            },
+            {
+               "id":"1956",
+               "name":"AMST--BOST",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"amst-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"5/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"AMST\", \n            \"loc_target\": \"BOST\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"AMST--BOST\", \"BOST--AMST\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047900340, 2678854886.4, 17647844288]]}"
+            },
+            {
+               "id":"1865",
+               "name":"NERSC--SUNN",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"sunn-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_nersc_ip-b_v6\", \n            \"iface_target\": null, \n            \"loc_source\": \"NERSC\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"sacr-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_nersc_ip-e\", \n            \"iface_target\": null, \n            \"loc_source\": \"NERSC\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"sunn-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_nersc_ip-d_v6\", \n            \"iface_target\": null, \n            \"loc_source\": \"NERSC\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"sunn-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_nersc_ip-d_v4\", \n            \"iface_target\": null, \n            \"loc_source\": \"NERSC\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"sunn-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_nersc_ip-b\", \n            \"iface_target\": null, \n            \"loc_source\": \"NERSC\", \n            \"loc_target\": \"SUNN\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"NERSC\", \n    \"total_capacity\": 500000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"NERSC--SUNN\", \"SUNN--NERSC\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047901520, 886271055.273797, 5833820156.138552]]}"
+            },
+            {
+               "id":"1957",
+               "name":"JLAB--WASH",
+               "attr":"{\n    \"capacity\": \"10G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"atla-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_jlab_ip-c\", \n            \"iface_target\": null, \n            \"loc_source\": \"JLAB\", \n            \"loc_target\": \"WASH\"\n        }, \n        {\n            \"device_source\": \"eqx-ash-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_jlab_ip-b\", \n            \"iface_target\": null, \n            \"loc_source\": \"JLAB\", \n            \"loc_target\": \"WASH\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"JLAB\", \n    \"total_capacity\": 20000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"JLAB--WASH\", \"WASH--JLAB\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047894769, 820165458.0833334, 176185868.90712893]]}"
+            },
+            {
+               "id":"1939",
+               "name":"ATLA--SRS",
+               "attr":"{\n    \"capacity\": \"1G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"srs-rt3\", \n            \"device_target\": null, \n            \"iface_source\": \"ge-0/0/0.661\", \n            \"iface_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"SRS\"\n        }, \n        {\n            \"device_source\": \"srs-rt3\", \n            \"device_target\": null, \n            \"iface_source\": \"ge-0/0/0.663\", \n            \"iface_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"SRS\"\n        }, \n        {\n            \"device_source\": \"srs-rt3\", \n            \"device_target\": null, \n            \"iface_source\": \"ge-0/0/0.662\", \n            \"iface_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"SRS\"\n        }, \n        {\n            \"device_source\": \"srs-rt3\", \n            \"device_target\": null, \n            \"iface_source\": \"ge-1/2/0.664\", \n            \"iface_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"SRS\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"SRS\", \n    \"total_capacity\": 4000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"ATLA--SRS\", \"SRS--ATLA\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047895306, 998021954.7803385, 185471712.1018229]]}"
+            },
+            {
+               "id":"1923",
+               "name":"GA--SUNN",
+               "attr":"{\n    \"capacity\": \"10G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"ga-rt2\", \n            \"device_target\": null, \n            \"iface_source\": \"ge-1/0/5.1311\", \n            \"iface_target\": null, \n            \"loc_source\": \"GA\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"ga-rt2\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-0/2/0.1312\", \n            \"iface_target\": null, \n            \"loc_source\": \"GA\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"ga-rt2\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-0/1/0.0\", \n            \"iface_target\": null, \n            \"loc_source\": \"GA\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"ga-rt2\", \n            \"device_target\": null, \n            \"iface_source\": \"ge-1/0/5.1301\", \n            \"iface_target\": null, \n            \"loc_source\": \"GA\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"ga-rt2\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-0/2/0.1302\", \n            \"iface_target\": null, \n            \"loc_source\": \"GA\", \n            \"loc_target\": \"SUNN\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"GA\", \n    \"total_capacity\": 32000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"GA--SUNN\", \"SUNN--GA\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047901023, 9496122.852872722, 34588446.90533855]]}"
+            },
+            {
+               "id":"1959",
+               "name":"HOUS--PANTEX",
+               "attr":"{\n    \"capacity\": \"1G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"pantex-rt4\", \n            \"device_target\": null, \n            \"iface_source\": \"ge-0/0/2.16\", \n            \"iface_target\": null, \n            \"loc_source\": \"HOUS\", \n            \"loc_target\": \"PANTEX\"\n        }, \n        {\n            \"device_source\": \"pantex-rt4\", \n            \"device_target\": null, \n            \"iface_source\": \"ge-0/0/2.10\", \n            \"iface_target\": null, \n            \"loc_source\": \"HOUS\", \n            \"loc_target\": \"PANTEX\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"PANTEX\", \n    \"total_capacity\": 2000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"HOUS--PANTEX\", \"PANTEX--HOUS\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047901023, 142224385.034867, 22826612.303125]]}"
+            },
+            {
+               "id":"1960",
+               "name":"EQX-ASH--NETL-PGH",
+               "attr":"{\n    \"capacity\": \"10G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"netl-pgh-rt1\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-2/0/1.653\", \n            \"iface_target\": null, \n            \"loc_source\": \"EQX-ASH\", \n            \"loc_target\": \"NETL-PGH\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"NETL-PGH\", \n    \"total_capacity\": 10000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"EQX-ASH--NETL-PGH\", \"NETL-PGH--EQX-ASH\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047900699, 3010.915738932292, 1428.2067189534505]]}"
+            },
+            {
+               "id":"1900",
+               "name":"FNAL--STAR",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"star-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_fnal_ip-b_v4\", \n            \"iface_target\": null, \n            \"loc_source\": \"FNAL\", \n            \"loc_target\": \"STAR\"\n        }, \n        {\n            \"device_source\": \"star-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_fnal_ip-b_v6\", \n            \"iface_target\": null, \n            \"loc_source\": \"FNAL\", \n            \"loc_target\": \"STAR\"\n        }, \n        {\n            \"device_source\": \"chic-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_fnal_ip-o_v6\", \n            \"iface_target\": null, \n            \"loc_source\": \"FNAL\", \n            \"loc_target\": \"STAR\"\n        }, \n        {\n            \"device_source\": \"chic-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_fnal_ip-o_v4\", \n            \"iface_target\": null, \n            \"loc_source\": \"FNAL\", \n            \"loc_target\": \"STAR\"\n        }, \n        {\n            \"device_source\": \"anl-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"ae10.1805\", \n            \"iface_target\": null, \n            \"loc_source\": \"FNAL\", \n            \"loc_target\": \"STAR\"\n        }\n    ], \n    \"saps\": [\n        {\n            \"device_source\": \"star-cr5\", \n            \"device_target\": null, \n            \"loc_source\": \"FNAL\", \n            \"loc_target\": \"STAR\", \n            \"sap_source\": \"111-lag-1-2201\", \n            \"sap_target\": null\n        }, \n        {\n            \"device_source\": \"chic-cr5\", \n            \"device_target\": null, \n            \"loc_source\": \"FNAL\", \n            \"loc_target\": \"STAR\", \n            \"sap_source\": \"111-3/2/1-2202\", \n            \"sap_target\": null\n        }\n    ], \n    \"site\": \"FNAL\", \n    \"total_capacity\": 610000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"FNAL--STAR\", \"STAR--FNAL\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047902631, 45172652883.41568, 12968965062.184553]]}"
+            },
+            {
+               "id":"1928",
+               "name":"LBNL--NPS",
+               "attr":"{\n    \"capacity\": \"1G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"lbl-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"ge-9/0/7.0\", \n            \"iface_target\": null, \n            \"loc_source\": \"LBNL\", \n            \"loc_target\": \"NPS\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"NPS\", \n    \"total_capacity\": 1000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"LBNL--NPS\", \"NPS--LBNL\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047872345, 7905.277322387696, 28848.667653910317]]}"
+            },
+            {
+               "id":"1929",
+               "name":"HOUS--KANS",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"hous-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"2/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"HOUS\", \n            \"loc_target\": \"KANS\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"HOUS--KANS\", \"KANS--HOUS\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047894770, 4010316674.9333334, 399888111.46666664]]}"
+            },
+            {
+               "id":"1930",
+               "name":"ATLA--ETTP",
+               "attr":"{\n    \"capacity\": \"10G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"ornl-rt4\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-2/0/0.1501\", \n            \"iface_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"ETTP\"\n        }, \n        {\n            \"device_source\": \"ornl-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_ettp_se-438\", \n            \"iface_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"ETTP\"\n        }, \n        {\n            \"device_source\": \"ornl-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_ettp_ip-a_v4\", \n            \"iface_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"ETTP\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"ETTP\", \n    \"total_capacity\": 30000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"ATLA--ETTP\", \"ETTP--ATLA\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047895822, 101625995.175, 11629659.8875]]}"
+            },
+            {
+               "id":"1931",
+               "name":"CHIC--KANS",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"chic-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"3/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"CHIC\", \n            \"loc_target\": \"KANS\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"CHIC--KANS\", \"KANS--CHIC\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047893113, 35091896632, 30398469351.466667]]}"
+            },
+            {
+               "id":"1932",
+               "name":"ALBQ--DENV",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"albq-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"1/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"ALBQ\", \n            \"loc_target\": \"DENV\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"ALBQ--DENV\", \"DENV--ALBQ\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047893008, 536527451.40833336, 3526688078.5]]}"
+            },
+            {
+               "id":"1933",
+               "name":"JGI--SACR",
+               "attr":"{\n    \"capacity\": \"10G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"lbl-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-2/2/0.4\", \n            \"iface_target\": null, \n            \"loc_source\": \"JGI\", \n            \"loc_target\": \"SACR\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"JGI\", \n    \"total_capacity\": 10000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"JGI--SACR\", \"SACR--JGI\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047877425, 0, 52.381772744655606]]}"
+            },
+            {
+               "id":"1935",
+               "name":"LSVN--SUNN",
+               "attr":"{\n    \"capacity\": \"10G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"lsvn-cr1\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-1/2/0.5\", \n            \"iface_target\": null, \n            \"loc_source\": \"LSVN\", \n            \"loc_target\": \"SUNN\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 10000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"LSVN--SUNN\", \"SUNN--LSVN\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047898754, 24221044.835416667, 146914607.3375]]}"
+            },
+            {
+               "id":"1936",
+               "name":"LBNL--SUNN",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"sunn-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_lbnl_ip-b_v6\", \n            \"iface_target\": null, \n            \"loc_source\": \"LBNL\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"sunn-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_lbnl_se-418\", \n            \"iface_target\": null, \n            \"loc_source\": \"LBNL\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"sunn-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_lbnl_ip-f_v6\", \n            \"iface_target\": null, \n            \"loc_source\": \"LBNL\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"lbl-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-0/2/0.1206\", \n            \"iface_target\": null, \n            \"loc_source\": \"LBNL\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"lbl-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-0/2/0.1204\", \n            \"iface_target\": null, \n            \"loc_source\": \"LBNL\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"lbl-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"ge-9/0/4.1124\", \n            \"iface_target\": null, \n            \"loc_source\": \"LBNL\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"lbl-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"ge-9/0/4.1126\", \n            \"iface_target\": null, \n            \"loc_source\": \"LBNL\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"sunn-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_lbnl_ip-f\", \n            \"iface_target\": null, \n            \"loc_source\": \"LBNL\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"sunn-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_lbnl_ip-a_v6\", \n            \"iface_target\": null, \n            \"loc_source\": \"LBNL\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"sunn-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_lbnl_se-417\", \n            \"iface_target\": null, \n            \"loc_source\": \"LBNL\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"sunn-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_lbnl_ip-a\", \n            \"iface_target\": null, \n            \"loc_source\": \"LBNL\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"sunn-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_lbnl_ip-b\", \n            \"iface_target\": null, \n            \"loc_source\": \"LBNL\", \n            \"loc_target\": \"SUNN\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"LBNL\", \n    \"total_capacity\": 822000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"LBNL--SUNN\", \"SUNN--LBNL\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047903369, 2480524552.2527833, 1131767382.4104319]]}"
+            },
+            {
+               "id":"1934",
+               "name":"ALBQ--KCNSC-NM",
+               "attr":"{\n    \"capacity\": \"10G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"albq-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_kcnsc-nm_ip-a\", \n            \"iface_target\": null, \n            \"loc_source\": \"ALBQ\", \n            \"loc_target\": \"KCNSC-NM\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"KCNSC-NM\", \n    \"total_capacity\": 10000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"ALBQ--KCNSC-NM\", \"KCNSC-NM--ALBQ\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047892182, 105124264.43333334, 47882489.177083336]]}"
+            },
+            {
+               "id":"1937",
+               "name":"CHIC--STAR",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"chic-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"6/2/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"CHIC\", \n            \"loc_target\": \"STAR\"\n        }, \n        {\n            \"device_source\": \"chic-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"2/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"CHIC\", \n            \"loc_target\": \"STAR\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 200000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"CHIC--STAR\", \"STAR--CHIC\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047896082, 6848697779.383333, 16392029461.466667]]}"
+            },
+            {
+               "id":"1938",
+               "name":"DENV--LSVN",
+               "attr":"{\n    \"capacity\": \"10G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"denv-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"10/1/10\", \n            \"iface_target\": null, \n            \"loc_source\": \"DENV\", \n            \"loc_target\": \"LSVN\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 10000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"DENV--LSVN\", \"LSVN--DENV\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047898831, 390690213.26666665, 30930611.9]]}"
+            },
+            {
+               "id":"1942",
+               "name":"DENV--NREL",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"denv-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_nrel_ip-b_v6\", \n            \"iface_target\": null, \n            \"loc_source\": \"DENV\", \n            \"loc_target\": \"NREL\"\n        }, \n        {\n            \"device_source\": \"denv-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_nrel_ip-c\", \n            \"iface_target\": null, \n            \"loc_source\": \"DENV\", \n            \"loc_target\": \"NREL\"\n        }, \n        {\n            \"device_source\": \"denv-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_nrel_ip-b\", \n            \"iface_target\": null, \n            \"loc_source\": \"DENV\", \n            \"loc_target\": \"NREL\"\n        }, \n        {\n            \"device_source\": \"denv-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_nrel_ip-d\", \n            \"iface_target\": null, \n            \"loc_source\": \"DENV\", \n            \"loc_target\": \"NREL\"\n        }, \n        {\n            \"device_source\": \"denv-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_nrel_ip-c_v6\", \n            \"iface_target\": null, \n            \"loc_source\": \"DENV\", \n            \"loc_target\": \"NREL\"\n        }, \n        {\n            \"device_source\": \"denv-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_nrel_ip-d_v6\", \n            \"iface_target\": null, \n            \"loc_source\": \"DENV\", \n            \"loc_target\": \"NREL\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"NREL\", \n    \"total_capacity\": 240000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"DENV--NREL\", \"NREL--DENV\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047900874, 515447414.3925659, 3275392953.1697426]]}"
+            },
+            {
+               "id":"1940",
+               "name":"ATLA--Y12",
+               "attr":"{\n    \"capacity\": \"10G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"ornl-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_y12_ip-b\", \n            \"iface_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"Y12\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"Y12\", \n    \"total_capacity\": 10000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"ATLA--Y12\", \"Y12--ATLA\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047892068, 179872551.7, 38462361.30833333]]}"
+            },
+            {
+               "id":"1941",
+               "name":"DENV--KANS",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"denv-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"1/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"DENV\", \n            \"loc_target\": \"KANS\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"DENV--KANS\", \"KANS--DENV\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047895360, 22950791671.466667, 25143291042.133335]]}"
+            },
+            {
+               "id":"1943",
+               "name":"DENV--NGA-SW",
+               "attr":"{\n    \"capacity\": \"10G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"denv-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_nga-sw_ip-b_v4\", \n            \"iface_target\": null, \n            \"loc_source\": \"DENV\", \n            \"loc_target\": \"NGA-SW\"\n        }, \n        {\n            \"device_source\": \"denv-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_nga-sw_ip-b_v6\", \n            \"iface_target\": null, \n            \"loc_source\": \"DENV\", \n            \"loc_target\": \"NGA-SW\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"NGA-SW\", \n    \"total_capacity\": 19906000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"DENV--NGA-SW\", \"NGA-SW--DENV\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047899477, 6983410.664583334, 35090981.09609375]]}"
+            },
+            {
+               "id":"1944",
+               "name":"LSVN--NNSS",
+               "attr":"{\n    \"capacity\": \"10G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"lsvn-cr1\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-2/0/0.500\", \n            \"iface_target\": null, \n            \"loc_source\": \"LSVN\", \n            \"loc_target\": \"NNSS\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"NNSS\", \n    \"total_capacity\": 10000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"LSVN--NNSS\", \"NNSS--LSVN\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047897409, 97539040.24583334, 45947229.60208333]]}"
+            },
+            {
+               "id":"1840",
+               "name":"LLNL--SUNN",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"llnl-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-2/1/0.44\", \n            \"iface_target\": null, \n            \"loc_source\": \"LLNL\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"sunn-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_llnl_ip-a\", \n            \"iface_target\": null, \n            \"loc_source\": \"LLNL\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"albq-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_llnl_ip-a\", \n            \"iface_target\": null, \n            \"loc_source\": \"LLNL\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"sunn-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_llnl_ip-a_v6\", \n            \"iface_target\": null, \n            \"loc_source\": \"LLNL\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"snll-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-2/3/0.1126\", \n            \"iface_target\": null, \n            \"loc_source\": \"LLNL\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"snll-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-2/3/0.1120\", \n            \"iface_target\": null, \n            \"loc_source\": \"LLNL\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"llnl-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-2/1/0.46\", \n            \"iface_target\": null, \n            \"loc_source\": \"LLNL\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"llnl-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-1/0/0.166\", \n            \"iface_target\": null, \n            \"loc_source\": \"LLNL\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"llnl-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-1/0/0.164\", \n            \"iface_target\": null, \n            \"loc_source\": \"LLNL\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"llnl-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-0/0/0.156\", \n            \"iface_target\": null, \n            \"loc_source\": \"LLNL\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"llnl-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-0/0/0.154\", \n            \"iface_target\": null, \n            \"loc_source\": \"LLNL\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"llnl-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"ge-3/0/7.0\", \n            \"iface_target\": null, \n            \"loc_source\": \"LLNL\", \n            \"loc_target\": \"SUNN\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"LLNL\", \n    \"total_capacity\": 381000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"LLNL--SUNN\", \"SUNN--LLNL\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047903047, 5095733697.265071, 2001670728.208367]]}"
+            },
+            {
+               "id":"1839",
+               "name":"HOUS--NASH",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"hous-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"3/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"HOUS\", \n            \"loc_target\": \"NASH\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"HOUS--NASH\", \"NASH--HOUS\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047895306, 9443562311.466667, 3492155447.4666667]]}"
+            },
+            {
+               "id":"1841",
+               "name":"PNWG--SACR",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"pnwg-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"1/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"PNWG\", \n            \"loc_target\": \"SACR\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"PNWG--SACR\", \"SACR--PNWG\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047896040, 1886092945.0666666, 1018933632]]}"
+            },
+            {
+               "id":"1842",
+               "name":"CHIC--WASH",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"chic-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"1/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"CHIC\", \n            \"loc_target\": \"WASH\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"CHIC--WASH\", \"WASH--CHIC\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047899091, 8967656908.8, 12636857463.466667]]}"
+            },
+            {
+               "id":"1846",
+               "name":"LOND--NEWY",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"lond-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"3/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"LOND\", \n            \"loc_target\": \"NEWY\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"LOND--NEWY\", \"NEWY--LOND\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047893665, 10187191633.066668, 21856439786.666668]]}"
+            },
+            {
+               "id":"1848",
+               "name":"CERN-513--CERN-773",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"cern-513-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"1/2/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"CERN-513\", \n            \"loc_target\": \"CERN-773\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"CERN-513--CERN-773\", \"CERN-773--CERN-513\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047897435, 7000297663.466666, 4196416821.3333335]]}"
+            },
+            {
+               "id":"1850",
+               "name":"ATLA--NASH",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"atla-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"2/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"NASH\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"ATLA--NASH\", \"NASH--ATLA\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047894769, 4307593358.933333, 11452016957.866667]]}"
+            },
+            {
+               "id":"1858",
+               "name":"AMST--CERN-513",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"amst-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"1/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"AMST\", \n            \"loc_target\": \"CERN-513\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"AMST--CERN-513\", \"CERN-513--AMST\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047896768, 17316793548.8, 2828820823.4666667]]}"
+            },
+            {
+               "id":"1849",
+               "name":"CERN--CERN-513",
+               "attr":"{\n    \"capacity\": \"10G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"cern-513-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_cern_ip-a\", \n            \"iface_target\": null, \n            \"loc_source\": \"CERN\", \n            \"loc_target\": \"CERN-513\"\n        }, \n        {\n            \"device_source\": \"cern-773-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_cern_ip-a\", \n            \"iface_target\": null, \n            \"loc_source\": \"CERN\", \n            \"loc_target\": \"CERN-513\"\n        }\n    ], \n    \"saps\": [\n        {\n            \"device_source\": \"cern-513-cr5\", \n            \"device_target\": null, \n            \"loc_source\": \"CERN\", \n            \"loc_target\": \"CERN-513\", \n            \"sap_source\": \"111-lag-2-521\", \n            \"sap_target\": null\n        }, \n        {\n            \"device_source\": \"cern-773-cr5\", \n            \"device_target\": null, \n            \"loc_source\": \"CERN\", \n            \"loc_target\": \"CERN-513\", \n            \"sap_source\": \"111-lag-2-522\", \n            \"sap_target\": null\n        }\n    ], \n    \"site\": \"CERN\", \n    \"total_capacity\": 40000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"CERN--CERN-513\", \"CERN-513--CERN\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047894934, 2595774810.3333335, 12530395910.2]]}"
+            },
+            {
+               "id":"1853",
+               "name":"ANL--STAR",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"star-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_anl_hpc_ip-b_v4v6\", \n            \"iface_target\": null, \n            \"loc_source\": \"ANL\", \n            \"loc_target\": \"STAR\"\n        }, \n        {\n            \"device_source\": \"anl-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"ae0.1820\", \n            \"iface_target\": null, \n            \"loc_source\": \"ANL\", \n            \"loc_target\": \"STAR\"\n        }, \n        {\n            \"device_source\": \"fnal-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-8/3/0.1799\", \n            \"iface_target\": null, \n            \"loc_source\": \"ANL\", \n            \"loc_target\": \"STAR\"\n        }, \n        {\n            \"device_source\": \"anl-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"ae0.1940\", \n            \"iface_target\": null, \n            \"loc_source\": \"ANL\", \n            \"loc_target\": \"STAR\"\n        }, \n        {\n            \"device_source\": \"star-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_anl_ip-b\", \n            \"iface_target\": null, \n            \"loc_source\": \"ANL\", \n            \"loc_target\": \"STAR\"\n        }, \n        {\n            \"device_source\": \"star-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_anl_ip-a\", \n            \"iface_target\": null, \n            \"loc_source\": \"ANL\", \n            \"loc_target\": \"STAR\"\n        }, \n        {\n            \"device_source\": \"fnal-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-8/3/0.1800\", \n            \"iface_target\": null, \n            \"loc_source\": \"ANL\", \n            \"loc_target\": \"STAR\"\n        }, \n        {\n            \"device_source\": \"star-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_anl_hpc_ip-a_v4v6\", \n            \"iface_target\": null, \n            \"loc_source\": \"ANL\", \n            \"loc_target\": \"STAR\"\n        }, \n        {\n            \"device_source\": \"chic-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_anl_ip-g-hpc\", \n            \"iface_target\": null, \n            \"loc_source\": \"ANL\", \n            \"loc_target\": \"STAR\"\n        }, \n        {\n            \"device_source\": \"anl-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"ae0.1830\", \n            \"iface_target\": null, \n            \"loc_source\": \"ANL\", \n            \"loc_target\": \"STAR\"\n        }, \n        {\n            \"device_source\": \"chic-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_anl_ip-g\", \n            \"iface_target\": null, \n            \"loc_source\": \"ANL\", \n            \"loc_target\": \"STAR\"\n        }\n    ], \n    \"saps\": [\n        {\n            \"device_source\": \"star-cr5\", \n            \"device_target\": null, \n            \"loc_source\": \"ANL\", \n            \"loc_target\": \"STAR\", \n            \"sap_source\": \"111-1/2/1-1818\", \n            \"sap_target\": null\n        }, \n        {\n            \"device_source\": \"chic-cr5\", \n            \"device_target\": null, \n            \"loc_source\": \"ANL\", \n            \"loc_target\": \"STAR\", \n            \"sap_source\": \"111-7/2/1-1876\", \n            \"sap_target\": null\n        }\n    ], \n    \"site\": \"ANL\", \n    \"total_capacity\": 680000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"ANL--STAR\", \"STAR--ANL\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047903692, 2373292141.2748613, 2110328458.827087]]}"
+            },
+            {
+               "id":"1854",
+               "name":"PPPL--WASH",
+               "attr":"{\n    \"capacity\": \"10G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"pppl-rt5\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-1/2/0.4\", \n            \"iface_target\": null, \n            \"loc_source\": \"PPPL\", \n            \"loc_target\": \"WASH\"\n        }, \n        {\n            \"device_source\": \"pppl-rt5\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-1/2/0.6\", \n            \"iface_target\": null, \n            \"loc_source\": \"PPPL\", \n            \"loc_target\": \"WASH\"\n        }, \n        {\n            \"device_source\": \"pppl-rt5\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-1/1/0.11\", \n            \"iface_target\": null, \n            \"loc_source\": \"PPPL\", \n            \"loc_target\": \"WASH\"\n        }, \n        {\n            \"device_source\": \"pppl-rt5\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-1/1/0.10\", \n            \"iface_target\": null, \n            \"loc_source\": \"PPPL\", \n            \"loc_target\": \"WASH\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"PPPL\", \n    \"total_capacity\": 40000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"PPPL--WASH\", \"WASH--PPPL\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047900804, 41763107.666666664, 173526230.6624775]]}"
+            },
+            {
+               "id":"1857",
+               "name":"SLAC--SUNN",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"slac-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-0/1/0.1132\", \n            \"iface_target\": null, \n            \"loc_source\": \"SLAC\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"sunn-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_slac_ip-c\", \n            \"iface_target\": null, \n            \"loc_source\": \"SLAC\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"sacr-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_slac_ip-b\", \n            \"iface_target\": null, \n            \"loc_source\": \"SLAC\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"sunn-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_slac_ip-c_v6\", \n            \"iface_target\": null, \n            \"loc_source\": \"SLAC\", \n            \"loc_target\": \"SUNN\"\n        }, \n        {\n            \"device_source\": \"slac-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-0/1/0.1127\", \n            \"iface_target\": null, \n            \"loc_source\": \"SLAC\", \n            \"loc_target\": \"SUNN\"\n        }\n    ], \n    \"saps\": [\n        {\n            \"device_source\": \"sacr-cr5\", \n            \"device_target\": null, \n            \"loc_source\": \"SLAC\", \n            \"loc_target\": \"SUNN\", \n            \"sap_source\": \"111-5/1/1-2203\", \n            \"sap_target\": null\n        }, \n        {\n            \"device_source\": \"sunn-cr5\", \n            \"device_target\": null, \n            \"loc_source\": \"SLAC\", \n            \"loc_target\": \"SUNN\", \n            \"sap_source\": \"111-8/2/1-2202\", \n            \"sap_target\": null\n        }\n    ], \n    \"site\": \"SLAC\", \n    \"total_capacity\": 320000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"SLAC--SUNN\", \"SUNN--SLAC\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047904120, 190348451.7994409, 1371512645.8977559]]}"
+            },
+            {
+               "id":"1856",
+               "name":"ATLA--ORNL",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"nash-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_ornl_ip-d_v6\", \n            \"iface_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"ORNL\"\n        }, \n        {\n            \"device_source\": \"ornl-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_ornl_ip-a\", \n            \"iface_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"ORNL\"\n        }, \n        {\n            \"device_source\": \"ornl-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_ornl_ip-a_v6\", \n            \"iface_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"ORNL\"\n        }, \n        {\n            \"device_source\": \"nash-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_ornl_ip-d\", \n            \"iface_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"ORNL\"\n        }\n    ], \n    \"saps\": [\n        {\n            \"device_source\": \"ornl-cr5\", \n            \"device_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"ORNL\", \n            \"sap_source\": \"111-7/1/1-2160\", \n            \"sap_target\": null\n        }, \n        {\n            \"device_source\": \"ornl-cr5\", \n            \"device_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"ORNL\", \n            \"sap_source\": \"111-7/1/1-2161\", \n            \"sap_target\": null\n        }, \n        {\n            \"device_source\": \"nash-cr5\", \n            \"device_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"ORNL\", \n            \"sap_source\": \"111-1/2/1-2162\", \n            \"sap_target\": null\n        }, \n        {\n            \"device_source\": \"nash-cr5\", \n            \"device_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"ORNL\", \n            \"sap_source\": \"111-1/2/1-2173\", \n            \"sap_target\": null\n        }, \n        {\n            \"device_source\": \"nash-cr5\", \n            \"device_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"ORNL\", \n            \"sap_source\": \"111-1/2/1-2172\", \n            \"sap_target\": null\n        }, \n        {\n            \"device_source\": \"nash-cr5\", \n            \"device_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"ORNL\", \n            \"sap_source\": \"111-1/2/1-2163\", \n            \"sap_target\": null\n        }, \n        {\n            \"device_source\": \"ornl-cr5\", \n            \"device_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"ORNL\", \n            \"sap_source\": \"111-7/1/1-2171\", \n            \"sap_target\": null\n        }, \n        {\n            \"device_source\": \"ornl-cr5\", \n            \"device_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"ORNL\", \n            \"sap_source\": \"111-7/1/1-2170\", \n            \"sap_target\": null\n        }\n    ], \n    \"site\": \"ORNL\", \n    \"total_capacity\": 400000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"ATLA--ORNL\", \"ORNL--ATLA\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047903562, 4456986112.291083, 7317401652.99781]]}"
+            },
+            {
+               "id":"1862",
+               "name":"BOST--STAR",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"bost-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"2/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"BOST\", \n            \"loc_target\": \"STAR\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"BOST--STAR\", \"STAR--BOST\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047894769, 2674056584.5333333, 17580672883.2]]}"
+            },
+            {
+               "id":"1861",
+               "name":"ALBQ--LANL",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"llnl-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-2/2/0.1144\", \n            \"iface_target\": null, \n            \"loc_source\": \"ALBQ\", \n            \"loc_target\": \"LANL\"\n        }, \n        {\n            \"device_source\": \"llnl-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-2/2/0.1140\", \n            \"iface_target\": null, \n            \"loc_source\": \"ALBQ\", \n            \"loc_target\": \"LANL\"\n        }, \n        {\n            \"device_source\": \"albq-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_lanl_ip-a_v6\", \n            \"iface_target\": null, \n            \"loc_source\": \"ALBQ\", \n            \"loc_target\": \"LANL\"\n        }, \n        {\n            \"device_source\": \"albq-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_lanl_ip-a\", \n            \"iface_target\": null, \n            \"loc_source\": \"ALBQ\", \n            \"loc_target\": \"LANL\"\n        }, \n        {\n            \"device_source\": \"albq-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_lanl_ip-b\", \n            \"iface_target\": null, \n            \"loc_source\": \"ALBQ\", \n            \"loc_target\": \"LANL\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"LANL\", \n    \"total_capacity\": 320000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"ALBQ--LANL\", \"LANL--ALBQ\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047902058, 2067151683.2753806, 212122744.11441725]]}"
+            },
+            {
+               "id":"1863",
+               "name":"NASH--WASH",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"nash-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"4/2/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"NASH\", \n            \"loc_target\": \"WASH\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"NASH--WASH\", \"WASH--NASH\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047894769, 6279223846.933333, 1116542726.4]]}"
+            },
+            {
+               "id":"1867",
+               "name":"EQX-ASH--WASH",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"eqx-ash-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"1/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"EQX-ASH\", \n            \"loc_target\": \"WASH\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"EQX-ASH--WASH\", \"WASH--EQX-ASH\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047892468, 30922902570.666668, 28666058033.066666]]}"
+            },
+            {
+               "id":"1869",
+               "name":"AMST--LOND",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"amst-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"2/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"AMST\", \n            \"loc_target\": \"LOND\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"AMST--LOND\", \"LOND--AMST\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047901924, 28245105395.2, 21043052279.466667]]}"
+            },
+            {
+               "id":"1875",
+               "name":"AOFA--STAR",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"aofa-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"5/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"AOFA\", \n            \"loc_target\": \"STAR\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"AOFA--STAR\", \"STAR--AOFA\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047903073, 9598243865.6, 13137243362.133333]]}"
+            },
+            {
+               "id":"1874",
+               "name":"AOFA--WASH",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"aofa-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"6/2/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"AOFA\", \n            \"loc_target\": \"WASH\"\n        }, \n        {\n            \"device_source\": \"aofa-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"1/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"AOFA\", \n            \"loc_target\": \"WASH\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 200000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"AOFA--WASH\", \"WASH--AOFA\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047899661, 32058853433.600002, 19192793254.4]]}"
+            },
+            {
+               "id":"1877",
+               "name":"ELPA--HOUS",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"elpa-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"1/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"ELPA\", \n            \"loc_target\": \"HOUS\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"ELPA--HOUS\", \"HOUS--ELPA\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047895307, 3152605540.266667, 1476276800]]}"
+            },
+            {
+               "id":"1881",
+               "name":"ELPA--SUNN",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"elpa-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"3/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"ELPA\", \n            \"loc_target\": \"SUNN\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"ELPA--SUNN\", \"SUNN--ELPA\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047892181, 2008542137.6, 4567293828.266666]]}"
+            },
+            {
+               "id":"1882",
+               "name":"ALBQ--SNLA",
+               "attr":"{\n    \"capacity\": \"10G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"snla-rt3\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-0/0/0.1156\", \n            \"iface_target\": null, \n            \"loc_source\": \"ALBQ\", \n            \"loc_target\": \"SNLA\"\n        }, \n        {\n            \"device_source\": \"snla-rt3\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-0/0/0.1155\", \n            \"iface_target\": null, \n            \"loc_source\": \"ALBQ\", \n            \"loc_target\": \"SNLA\"\n        }, \n        {\n            \"device_source\": \"snll-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-0/1/0.1152\", \n            \"iface_target\": null, \n            \"loc_source\": \"ALBQ\", \n            \"loc_target\": \"SNLA\"\n        }, \n        {\n            \"device_source\": \"snll-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-0/1/0.1150\", \n            \"iface_target\": null, \n            \"loc_source\": \"ALBQ\", \n            \"loc_target\": \"SNLA\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"SNLA\", \n    \"total_capacity\": 40000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"ALBQ--SNLA\", \"SNLA--ALBQ\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047901924, 3205630044.559817, 787788524.4547375]]}"
+            },
+            {
+               "id":"1884",
+               "name":"SACR--SUNN",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"sacr-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"1/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"SACR\", \n            \"loc_target\": \"SUNN\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"SACR--SUNN\", \"SUNN--SACR\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047893008, 17538309435.733334, 22042141849.6]]}"
+            },
+            {
+               "id":"1888",
+               "name":"CERN-773--LOND",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"cern-773-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"1/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"CERN-773\", \n            \"loc_target\": \"LOND\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"CERN-773--LOND\", \"LOND--CERN-773\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047898831, 9186607940.266666, 6343361859.2]]}"
+            },
+            {
+               "id":"1886",
+               "name":"CHIC--NASH",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"chic-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"4/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"CHIC\", \n            \"loc_target\": \"NASH\"\n        }, \n        {\n            \"device_source\": \"chic-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"6/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"CHIC\", \n            \"loc_target\": \"NASH\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 200000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"CHIC--NASH\", \"NASH--CHIC\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047896083, 9552977874.133333, 2764370063.4666667]]}"
+            },
+            {
+               "id":"1892",
+               "name":"CERN-513--WASH",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"cern-513-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"1/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"CERN-513\", \n            \"loc_target\": \"WASH\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"CERN-513--WASH\", \"WASH--CERN-513\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047898346, 14939230859.2, 28821829902.933334]]}"
+            },
+            {
+               "id":"1894",
+               "name":"DENV--PNWG",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"denv-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"10/1/4\", \n            \"iface_target\": null, \n            \"loc_source\": \"DENV\", \n            \"loc_target\": \"PNWG\"\n        }, \n        {\n            \"device_source\": \"denv-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"4/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"DENV\", \n            \"loc_target\": \"PNWG\"\n        }, \n        {\n            \"device_source\": \"denv-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"10/1/6\", \n            \"iface_target\": null, \n            \"loc_source\": \"DENV\", \n            \"loc_target\": \"PNWG\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 120000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"DENV--PNWG\", \"PNWG--DENV\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047900874, 8187709820.367922, 3118347336.7195926]]}"
+            },
+            {
+               "id":"1893",
+               "name":"EQX-ASH--NETL-MGN",
+               "attr":"{\n    \"capacity\": \"10G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"netl-mgn-rt1\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-2/0/1.651\", \n            \"iface_target\": null, \n            \"loc_source\": \"EQX-ASH\", \n            \"loc_target\": \"NETL-MGN\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"NETL-MGN\", \n    \"total_capacity\": 10000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"EQX-ASH--NETL-MGN\", \"NETL-MGN--EQX-ASH\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047896768, 572.7679036458334, 5060.985546875]]}"
+            },
+            {
+               "id":"1896",
+               "name":"AOFA--LOND",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"aofa-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"7/2/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"AOFA\", \n            \"loc_target\": \"LOND\"\n        }, \n        {\n            \"device_source\": \"aofa-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"2/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"AOFA\", \n            \"loc_target\": \"LOND\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 200000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"AOFA--LOND\", \"LOND--AOFA\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047897844, 25619801501.866665, 35733586790.4]]}"
+            },
+            {
+               "id":"1895",
+               "name":"BNL--NEWY",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"newy-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_bnl_ip-m_v6\", \n            \"iface_target\": null, \n            \"loc_source\": \"BNL\", \n            \"loc_target\": \"NEWY\"\n        }, \n        {\n            \"device_source\": \"aofa-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_bnl_ip-a_v6\", \n            \"iface_target\": null, \n            \"loc_source\": \"BNL\", \n            \"loc_target\": \"NEWY\"\n        }, \n        {\n            \"device_source\": \"aofa-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_bnl_ip-a_v4\", \n            \"iface_target\": null, \n            \"loc_source\": \"BNL\", \n            \"loc_target\": \"NEWY\"\n        }, \n        {\n            \"device_source\": \"newy-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"to_bnl_ip-m_v4\", \n            \"iface_target\": null, \n            \"loc_source\": \"BNL\", \n            \"loc_target\": \"NEWY\"\n        }\n    ], \n    \"saps\": [\n        {\n            \"device_source\": \"newy-cr5\", \n            \"device_target\": null, \n            \"loc_source\": \"BNL\", \n            \"loc_target\": \"NEWY\", \n            \"sap_source\": \"111-3/1/1-2200\", \n            \"sap_target\": null\n        }, \n        {\n            \"device_source\": \"aofa-cr5\", \n            \"device_target\": null, \n            \"loc_source\": \"BNL\", \n            \"loc_target\": \"NEWY\", \n            \"sap_source\": \"111-4/2/1-3900\", \n            \"sap_target\": null\n        }\n    ], \n    \"site\": \"BNL\", \n    \"total_capacity\": 400000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"BNL--NEWY\", \"NEWY--BNL\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047900339, 10818036996.457294, 1746551337.051992]]}"
+            },
+            {
+               "id":"1898",
+               "name":"CHIC--EQX-CHI",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"chic-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"7/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"CHIC\", \n            \"loc_target\": \"EQX-CHI\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"CHIC--EQX-CHI\", \"EQX-CHI--CHIC\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047899477, 33526929984, 31198021527.466667]]}"
+            },
+            {
+               "id":"1903",
+               "name":"ATLA--WASH",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"atla-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"1/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"ATLA\", \n            \"loc_target\": \"WASH\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"ATLA--WASH\", \"WASH--ATLA\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047892181, 11965144298.666666, 5213081090.133333]]}"
+            },
+            {
+               "id":"1904",
+               "name":"BOIS--DENV",
+               "attr":"{\n    \"capacity\": \"10G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"bois-cr1\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-7/1/0.5\", \n            \"iface_target\": null, \n            \"loc_source\": \"BOIS\", \n            \"loc_target\": \"DENV\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 10000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"BOIS--DENV\", \"DENV--BOIS\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047902059, 61042607.85, 327486060.46666664]]}"
+            },
+            {
+               "id":"1901",
+               "name":"AOFA--NEWY",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"aofa-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"3/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"AOFA\", \n            \"loc_target\": \"NEWY\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"AOFA--NEWY\", \"NEWY--AOFA\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047896884, 22182955656.533333, 14867539938.133333]]}"
+            },
+            {
+               "id":"1907",
+               "name":"BOST--NEWY",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"bost-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"1/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"BOST\", \n            \"loc_target\": \"NEWY\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"BOST--NEWY\", \"NEWY--BOST\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047892840, 462358205.8666667, 265812757.33333334]]}"
+            },
+            {
+               "id":"1902",
+               "name":"ALBQ--ELPA",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"albq-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"2/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"ALBQ\", \n            \"loc_target\": \"ELPA\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"ALBQ--ELPA\", \"ELPA--ALBQ\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047892181, 568923118.9333333, 1451415964.8]]}"
+            },
+            {
+               "id":"1906",
+               "name":"DENV--SACR",
+               "attr":"{\n    \"capacity\": \"100G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"denv-cr5\", \n            \"device_target\": null, \n            \"iface_source\": \"2/1/1\", \n            \"iface_target\": null, \n            \"loc_source\": \"DENV\", \n            \"loc_target\": \"SACR\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": null, \n    \"total_capacity\": 100000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"DENV--SACR\", \"SACR--DENV\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047895360, 15860426417.066668, 20472765865.6]]}"
+            },
+            {
+               "id":"1910",
+               "name":"SACR--SNLL",
+               "attr":"{\n    \"capacity\": \"10G\", \n    \"ifaces\": [\n        {\n            \"device_source\": \"snla-rt3\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-0/0/0.1151\", \n            \"iface_target\": null, \n            \"loc_source\": \"SACR\", \n            \"loc_target\": \"SNLL\"\n        }, \n        {\n            \"device_source\": \"llnl-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-1/1/0.0\", \n            \"iface_target\": null, \n            \"loc_source\": \"SACR\", \n            \"loc_target\": \"SNLL\"\n        }, \n        {\n            \"device_source\": \"snll-mr2\", \n            \"device_target\": null, \n            \"iface_source\": \"xe-0/1/0.1149\", \n            \"iface_target\": null, \n            \"loc_source\": \"SACR\", \n            \"loc_target\": \"SNLL\"\n        }\n    ], \n    \"saps\": [], \n    \"site\": \"SNLL\", \n    \"total_capacity\": 30000000000.0\n}",
+               "index":null,
+               "netbeamTraffic":"{\"utc\": true, \"labels\": [\"SACR--SNLL\", \"SNLL--SACR\"], \"name\": \"\", \"columns\": [\"time\", \"atoz\", \"ztoa\"], \"points\": [[1561047896109, 122662066.92427132, 83502326.78147309]]}"
+            }
+         ]
+      }
+   }
+}

@@ -6,6 +6,8 @@ import yaml
 import networkx as nx
 import matplotlib.pyplot as plt
 import time
+import pandas as pd
+import numpy as np
 
 network_yaml="../example_topos/PRP_topo.yaml"
 g2_snapshots="../datasets/g2_outputs/esnet_2013_groupbypath.json"
@@ -19,20 +21,46 @@ def gen_flow_data_g2():
     #iterating through snapshots has time periods
     nosnapshots=0
     nolinks=0
-    linkflowsdict={}
+    linknamelist=[]
+    linkflowsdf=[]
+    
+    nosnapshots=g2_snapshot_data['data']['num_snapshots']
+    
+    #in the snapshot first parse topology to find number of unique links
+    #then parse the snapshot again to match number of flows per link
+    num=0
 
     for i in g2_snapshot_data['data']['snapshots']:
-        nosnapshots=nosnapshots+1
-        nolinks=0
-        for j in g2_snapshot_data['data']['snapshots'][i]['topo']['topology']['links']:
+        nolinks=0 
+        for j in i['topo']['topology']['links']:
+            print(j['id'])
+            linknamelist.append(j['id'])
             nolinks=nolinks+1
-        
-        linkflowdict['time']=nosnapshots
-        linkflowdict['time']   
 
-    for j in 
+        linkflowsdf = pd.DataFrame(columns = linknamelist)
+        tempDf = pd.DataFrame(columns=linknamelist)
+
+        #now add flow numbers per link
+        for m in linknamelist:
+            for k in i['flows']['flowgroups']:
+                print("reading flow id", k['id'])
+                for l in k['links']:
+                    if l['id']==m:
+                        print(m)
+                        tempDf[m]=+1
+
+                linkflowsdf = pd.concat([linkflowsdf,tempDf])
+
+
+        #linkflowdict['time']=nosnapshots
+        #linkflowdict['time']   
+
+    #for j in 
     #close file
     print("Number of snapshots found:",nosnapshots)
+    print("Number of links found:",nolinks)
+    print(linkflowsdf)
+    
     g2_snapshot_json.close()
 
 

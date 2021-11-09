@@ -29,27 +29,40 @@ def gen_flow_data_g2():
     #in the snapshot first parse topology to find number of unique links
     #then parse the snapshot again to match number of flows per link
     num=0
-
+    # loop to read topology only
     for i in g2_snapshot_data['data']['snapshots']:
         nolinks=0 
         for j in i['topo']['topology']['links']:
             print(j['id'])
-            linknamelist.append(j['id'])
+            linknamelist.append(j['id']) #records the id of the link
             nolinks=nolinks+1
 
-        linkflowsdf = pd.DataFrame(columns = linknamelist)
-        tempDf = pd.DataFrame(columns=linknamelist)
+        linkflowsdf = pd.DataFrame(columns = linknamelist)#creates column names with links
+        tempDf = pd.DataFrame(index=[0],columns=linknamelist)
 
+        for col in tempDf.columns:
+            tempDf[col]=tempDf[col].fillna(0)
+
+
+        #print("$$")
+        #print(tempDf.head())
+    #create new loop to loop through all snapshots
+    for i in g2_snapshot_data['data']['snapshots']:
         #now add flow numbers per link
-        for m in linknamelist:
-            for k in i['flows']['flowgroups']:
-                print("reading flow id", k['id'])
-                for l in k['links']:
+        for k in i['flows']['flowgroups']:
+            print("reading flow id", k['id'])
+            for l in k['links']:
+                print(l['id'])
+                for m in linknamelist:
+                    #print("####")
+                    #print(m)
                     if l['id']==m:
-                        print(m)
-                        tempDf[m]=+1
+                        print("match")
+                #        print(m)
+                        tempDf[m][0]=tempDf[m][0]+1
+                        print(tempDf[m][0])
 
-                linkflowsdf = pd.concat([linkflowsdf,tempDf])
+        linkflowsdf = pd.concat([linkflowsdf,tempDf])
 
 
         #linkflowdict['time']=nosnapshots

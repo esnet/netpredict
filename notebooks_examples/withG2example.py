@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+import sys
+sys.path.append('../')
 
 import json
 import csv
@@ -8,6 +10,7 @@ import matplotlib.pyplot as plt
 import time
 import pandas as pd
 import numpy as np
+from mlmodels.statsmodels.multioutput_regression import NP_LinearRegression 
 
 network_yaml="../example_topos/PRP_topo.yaml"
 g2_snapshots="../datasets/g2_outputs/esnet_2013_groupbypath.json"
@@ -52,15 +55,15 @@ def gen_flow_data_g2():
         for k in i['flows']['flowgroups']:
             print("reading flow id", k['id'])
             for l in k['links']:
-                print(l['id'])
+                #print(l['id'])
                 for m in linknamelist:
                     #print("####")
                     #print(m)
                     if l['id']==m:
-                        print("match")
+                        #print("match")
                 #        print(m)
                         tempDf[m][0]=tempDf[m][0]+1
-                        print(tempDf[m][0])
+                        #print(tempDf[m][0])
 
         linkflowsdf = pd.concat([linkflowsdf,tempDf])
 
@@ -70,11 +73,10 @@ def gen_flow_data_g2():
 
     #for j in 
     #close file
-    print("Number of snapshots found:",nosnapshots)
-    print("Number of links found:",nolinks)
-    print(linkflowsdf)
+    
     
     g2_snapshot_json.close()
+    return linkflowsdf,nosnapshots,nolinks
 
 
 
@@ -84,6 +86,10 @@ def main():
     print("Welcome to our Demo!!!!!")
     print("This is our PRP topology where we have active data moving")
     #show topology and active animation
+    flowsperlinkdf=[]
+    nosnapshotsm=0
+    nolinksm=0
+
     NetworkDict={}
     with open(network_yaml, "r") as stream:
         try:
@@ -119,8 +125,24 @@ def main():
     print("G2 calls netpredict to predict future flows....")
     
     #time.sleep(2)
-    gen_flow_data_g2()
+    #lets build of ML models on our historical data
+    flowsperlinkdf,nosnapshotsm,nolinksm=gen_flow_data_g2()
+    print("Number of snapshots found:",nosnapshotsm)
+    print("Number of links found:",nolinksm)
+    print(flowsperlinkdf)
+    print("Building ML models for Predictions......")
 
+    for col in flowsperlinkdf:
+        for v in col:
+            NP_LinearRegression(v)
+
+    #call netpredict to build ML models per link,
+    #  since the topology is constantly changing
+    # we will build ML models per link and just 
+    # read in latest data to predict 5 future steps
+
+
+    #call netpredict for predicting 5 steps ahead
 
     #netpredict_arima(hist, a,b,c)
     #link1,link2,link3 =call_netpredict_arima(10, send historical (last 10 steps, hist range))

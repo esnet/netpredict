@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import sys
 sys.path.append('../')
-
+import os
 import json
 import csv
 import yaml
@@ -13,57 +13,96 @@ import numpy as np
 from mlmodels.statsmodels.multioutput_regression import NP_LinearRegression 
 
 network_yaml="../example_topos/PRP_topo.yaml"
-g2_snapshots="../datasets/g2_outputs/esnet_2013_groupbypath.json"
+g2_snapshots_dir="../datasets/g2_outputs/temp/"
 
 
 def gen_flow_data_g2():
-    g2_snapshot_json=open(g2_snapshots)
 
-    g2_snapshot_data=json.load(g2_snapshot_json)
-
-    #iterating through snapshots has time periods
+    #load all snapshots to build a dataframe
+    data_list = []
     nosnapshots=0
     nolinks=0
     linknamelist=[]
     linkflowsdf=[]
+
+
+    for file in os.listdir(g2_snapshots_dir):
+
+    #If file is a json, construct it's full path and open it, append all json data to list
+        if 'json' in file:
+            json_path = os.path.join(g2_snapshots_dir, file)
+            json_data_df = pd.read_json(json_path, lines=True)
+            print("Reading file....")
+            print(json_path)
+            nosnapshots=nosnapshots+1
+
+            #print(json_data_df.head())
+
+            #g2_snapshot_json=open(json_data)
+            #json_object=json.loads(json_data_df)
+
+            print(json_data_df['data'])#g2_snapshot_data=json.loads(json_data)
+            for obj in json_data_df['data']:
+                print(obj['num_snapshots'])    
+            #print("###")
+            #data_list.append(json_data)
     
-    nosnapshots=g2_snapshot_data['data']['num_snapshots']
+            #print(data_list)
+            #iterating through snapshots has time periods
+            #g2_snapshot_data['data']['num_snapshots']
     
-    #in the snapshot first parse topology to find number of unique links
-    #then parse the snapshot again to match number of flows per link
-    num=0
-    # loop to read topology only
-    for i in g2_snapshot_data['data']['snapshots']:
-        nolinks=0 
-        for j in i['topo']['topology']['links']:
-            print(j['id'])
-            linknamelist.append(j['id']) #records the id of the link
-            nolinks=nolinks+1
+            #in the snapshot first parse topology to find number of unique links
+            #then parse the snapshot again to match number of flows per link
+            num=0
+            # loop to read topology only
+            for obj in json_data_df['data']:
+                for i in obj['snapshots']:
+                    nolinks=0 
+                    for j in i['topo']['topology']['links']:
+                        #print(j['id'])
+                        #if linkname not in list add it
+                        #if len(linknamelist)<=0:
+                         #   linknamelist.append(j['id'])
+                        if j['id'] in linknamelist:
+                            print("found")
+                        else:
+                            linknamelist.append(j['id']) 
+                            #print(ln)
+                                 #records the id of the link
+                        #nolinks=nolinks+1
+                    print("range ", len(linknamelist))
+          
+        
+        
+    linkflowsdf = pd.DataFrame(columns = linknamelist)#creates column names with links
+    tempDf = pd.DataFrame(index=[0],columns=linknamelist)
 
-        linkflowsdf = pd.DataFrame(columns = linknamelist)#creates column names with links
-        tempDf = pd.DataFrame(index=[0],columns=linknamelist)
+    for col in tempDf.columns:
+        tempDf[col]=tempDf[col].fillna(0)
 
-        for col in tempDf.columns:
-            tempDf[col]=tempDf[col].fillna(0)
+    print(tempDf)
 
+    print("filling values in DF")
 
-        #print("$$")
-        #print(tempDf.head())
     #create new loop to loop through all snapshots
-    for i in g2_snapshot_data['data']['snapshots']:
-        #now add flow numbers per link
-        for k in i['flows']['flowgroups']:
-            print("reading flow id", k['id'])
-            for l in k['links']:
-                #print(l['id'])
-                for m in linknamelist:
-                    #print("####")
-                    #print(m)
-                    if l['id']==m:
-                        #print("match")
-                #        print(m)
-                        tempDf[m][0]=tempDf[m][0]+1
-                        #print(tempDf[m][0])
+    for file in os.listdir(g2_snapshots_dir):
+
+        #If file is a json, construct it's full path and open it, append all json data to list
+        if 'json' in file:
+            json_path = os.path.join(g2_snapshots_dir, file)
+            json_data_df = pd.read_json(json_path, lines=True)
+            for obj in json_data_df['data']:
+                for i in obj['snapshots']:
+                    #now add flow numbers per link
+                    for k in i['flows']['flowgroups']:
+                        #print("reading flow id", k['id'])
+                        for l in k['links']:
+                            print(l['id'])
+                            colname=l['id']
+                            print("print column")
+                            print(tempDf.name[colname])
+                            #tempDf[l['id']][0]=tempDf[l][0]+1
+                                #print(tempDf[m][0])
 
         linkflowsdf = pd.concat([linkflowsdf,tempDf])
 
@@ -73,10 +112,12 @@ def gen_flow_data_g2():
 
     #for j in 
     #close file
+    print(linkflowsdf)
     
+   
+    #g2_snapshot_json.close()
     
-    g2_snapshot_json.close()
-    return linkflowsdf,nosnapshots,nolinks
+    #return linkflowsdf,nosnapshots,nolinks
 
 
 
@@ -126,16 +167,18 @@ def main():
     
     #time.sleep(2)
     #lets build of ML models on our historical data
-    flowsperlinkdf,nosnapshotsm,nolinksm=gen_flow_data_g2()
+    #flowsperlinkdf,nosnapshotsm,nolinksm=
+    gen_flow_data_g2()
     print("Number of snapshots found:",nosnapshotsm)
     print("Number of links found:",nolinksm)
     print(flowsperlinkdf)
     print("Building ML models for Predictions......")
 
+    """
     for col in flowsperlinkdf:
         for v in col:
             NP_LinearRegression(v)
-
+    """
     #call netpredict to build ML models per link,
     #  since the topology is constantly changing
     # we will build ML models per link and just 

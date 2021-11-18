@@ -12,6 +12,10 @@ import time
 import pandas as pd
 import numpy as np
 from mlmodels.statsmodels.multioutput_regression import NP_LinearRegression 
+import warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+warnings.simplefilter(action='ignore', category=FutureWarning)
+
 
 network_yaml="../example_topos/PRP_topo.yaml"
 g2_snapshots_dir="../datasets/g2_outputs/sc21_data/"

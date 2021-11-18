@@ -4,6 +4,10 @@ from sklearn.datasets import make_regression
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 import pandas as pd
+import warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+warnings.simplefilter(action='ignore', category=FutureWarning)
+
 
 test_samplex=[0.21947749, 0.32948997, 0.81560036, 0.440956, -0.0606303]
 test_sampley=[-0.29257894, -0.2820059]

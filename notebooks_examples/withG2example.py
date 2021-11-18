@@ -2,6 +2,7 @@
 import sys
 sys.path.append('../')
 import os
+import glob
 import json
 import csv
 import yaml
@@ -13,7 +14,7 @@ import numpy as np
 from mlmodels.statsmodels.multioutput_regression import NP_LinearRegression 
 
 network_yaml="../example_topos/PRP_topo.yaml"
-g2_snapshots_dir="../datasets/g2_outputs/temp/"
+g2_snapshots_dir="../datasets/g2_outputs/sc21_data/"
 
 
 def gen_flow_data_g2():
@@ -25,13 +26,16 @@ def gen_flow_data_g2():
     linknamelist=[]
     linkflowsdf=[]
 
+    list_of_files = filter(os.path.isfile,glob.glob(g2_snapshots_dir + '*') )
+    list_of_files = sorted(list_of_files,key = os.path.getmtime)
 
-    for file in os.listdir(g2_snapshots_dir):
+    for file in list_of_files: #os.listdir(g2_snapshots_dir):
 
     #If file is a json, construct it's full path and open it, append all json data to list
         if 'json' in file:
-            json_path = os.path.join(g2_snapshots_dir, file)
-            json_data_df = pd.read_json(json_path, lines=True)
+            json_path = file #os.path.join(g2_snapshots_dir, file)
+            #print(json_path)
+            json_data_df = pd.read_json(json_path)
             print("Reading file....")
             print(json_path)
             nosnapshots=nosnapshots+1
@@ -40,10 +44,9 @@ def gen_flow_data_g2():
 
             #g2_snapshot_json=open(json_data)
             #json_object=json.loads(json_data_df)
-
-            print(json_data_df['data'])#g2_snapshot_data=json.loads(json_data)
-            for obj in json_data_df['data']:
-                print(obj['num_snapshots'])    
+            print("num of snapshots: ", json_data_df['data'][0])#g2_snapshot_data=json.loads(json_data)
+            #for obj in json_data_df['data']:
+            #    print(obj)    
             #print("###")
             #data_list.append(json_data)
     
@@ -55,26 +58,28 @@ def gen_flow_data_g2():
             #then parse the snapshot again to match number of flows per link
             num=0
             # loop to read topology only
-            for obj in json_data_df['data']:
-                for i in obj['snapshots']:
+            for obj in json_data_df['data']['snapshots']:
+                #print("OBJ")
+                #print(obj['topo'])
+                for i in obj['topo']['topology']['links']:
                     nolinks=0 
-                    for j in i['topo']['topology']['links']:
-                        #print(j['id'])
+                    #print(i['id'])
                         #if linkname not in list add it
                         #if len(linknamelist)<=0:
                          #   linknamelist.append(j['id'])
-                        if j['id'] in linknamelist:
-                            print("found")
-                        else:
-                            linknamelist.append(j['id']) 
+                    if not i['id'] in linknamelist:
+                            #print("found")
+                        #else:
+                        linknamelist.append(i['id']) 
                             #print(ln)
                                  #records the id of the link
                         #nolinks=nolinks+1
-                    print("range ", len(linknamelist))
+                print("links found in range ", len(linknamelist))
           
         
         
     linkflowsdf = pd.DataFrame(columns = linknamelist)#creates column names with links
+    
     tempDf = pd.DataFrame(index=[0],columns=linknamelist)
 
     for col in tempDf.columns:
@@ -82,27 +87,30 @@ def gen_flow_data_g2():
 
     print(tempDf)
 
-    print("filling values in DF")
+    print("filling values in the DF")
 
     #create new loop to loop through all snapshots
-    for file in os.listdir(g2_snapshots_dir):
+    for file in list_of_files: #for file in os.listdir(g2_snapshots_dir):
 
         #If file is a json, construct it's full path and open it, append all json data to list
         if 'json' in file:
-            json_path = os.path.join(g2_snapshots_dir, file)
-            json_data_df = pd.read_json(json_path, lines=True)
-            for obj in json_data_df['data']:
-                for i in obj['snapshots']:
-                    #now add flow numbers per link
-                    for k in i['flows']['flowgroups']:
-                        #print("reading flow id", k['id'])
-                        for l in k['links']:
-                            print(l['id'])
-                            colname=l['id']
-                            print("print column")
-                            print(tempDf.name[colname])
-                            #tempDf[l['id']][0]=tempDf[l][0]+1
-                                #print(tempDf[m][0])
+            json_path = file #os.path.join(g2_snapshots_dir, file)
+            #print(json_path)
+            json_data_df = pd.read_json(json_path)
+            for obj in json_data_df['data']['snapshots']:
+                for i in obj['flows']['flowgroups']:
+                    print("here")
+                    #print("reading flow id", k['id'])
+                    for l in i['links']:
+                        print(l['id'])
+                        colname=l['id']
+                        if not colname in linkflowsdf:
+                            print("not found link...")
+                            #linkflowsdf.append(colname) 
+                        else:
+                            
+                            tempDf[colname]=tempDf[colname]+1
+                            print(tempDf[colname])
 
         linkflowsdf = pd.concat([linkflowsdf,tempDf])
 
@@ -112,12 +120,13 @@ def gen_flow_data_g2():
 
     #for j in 
     #close file
+    print("database formed....")
     print(linkflowsdf)
-    
+   
    
     #g2_snapshot_json.close()
     
-    #return linkflowsdf,nosnapshots,nolinks
+    return linkflowsdf
 
 
 
@@ -168,17 +177,16 @@ def main():
     #time.sleep(2)
     #lets build of ML models on our historical data
     #flowsperlinkdf,nosnapshotsm,nolinksm=
-    gen_flow_data_g2()
-    print("Number of snapshots found:",nosnapshotsm)
-    print("Number of links found:",nolinksm)
-    print(flowsperlinkdf)
+    flowsperlinkdf=gen_flow_data_g2()
+    #print("Number of snapshots found:",nosnapshotsm)
+    #print("Number of links found:",nolinksm)
+    #print(flowsperlinkdf)
     print("Building ML models for Predictions......")
 
-    """
-    for col in flowsperlinkdf:
-        for v in col:
-            NP_LinearRegression(v)
-    """
+    
+    #for col in flowsperlinkdf:
+    NP_LinearRegression(flowsperlinkdf)
+
     #call netpredict to build ML models per link,
     #  since the topology is constantly changing
     # we will build ML models per link and just 

@@ -37,7 +37,7 @@ Create a NetPredict database by running the following MYSQL syntax
 
     create database NetPredict
     
-Then go to: netpredict/esnet_gui_deployment/current/web_flask/  and run
+Then go to: netpredict/esnet_gui_deployment/current/web_flask/  and run the following:
 
     python3 database_connectivity.py
 

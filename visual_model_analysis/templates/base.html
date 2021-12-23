@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>GNNVisML</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src='http://d3js.org/d3.v3.min.js' type="text/javascript"></script>
+	<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+
+    <!-- Bootstrap Select -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+  	<script src="http://cdnjs.cloudflare.com/ajax/libs/mathjs/3.2.1/math.min.js"></script>
+
+	<!-- Images -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/application.css') }}">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/css/bootstrap-slider.css">
+
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.14.1"> </script>
+
+	<style>
+		.paddedPanel {
+			padding-top: 60px;
+			padding-bottom: 60px;
+		}
+		.panel-custom {
+			box-shadow: 0 10px 10px 0 rgba(58, 7, 243, 0.3);
+		}
+	</style>
+
+
+
+
+	<!-- Initialize global and Flask variables -->
+	<script type="text/javascript">
+		// Variables in the data for better exploration
+		var Class_Data_B = {{Class_Data_B|safe}}
+		var Class_Data_A = {{Class_Data_A|safe}}
+
+		// Variables in the data for better exploration
+		var statistics = {{statistics|safe}}
+
+		// Enables filtering of test instances, exploration of data 
+		var sentenceFilter = {{sentenceFilter|safe}}
+
+		// Data for the treemap, exploring different sizes and lengths of the data     
+		var calculateAgreement = {{calculateAgreement|safe}}
+
+		// Identifying True Positives, False Positives, False Negatives, etc      
+		var Model_A_Name = {{Model_A_Name | safe}}
+		var Model_B_Name = {{Model_B_Name| safe}}
+
+		// Identifying the size of the input and the abilities to change the data
+		var Test_input_size = {{Test_input_size|safe}}
+
+
+
+		// Refreshing heatmap size
+		var refreshHeatmapButton = []
+		var currentClassData = [] 
+		
+		// Modelling rows and columns of the dataset
+		var ModelAgreementRows = []
+		
+		var tableHeading = ""
+		var rowSortData = {}
+
+		// The color scale of the dataset, tooltip with positive and negative sentiments 
+		var tip = d3.tip()
+		var colorScale_P = {}
+		var colorScale_N = {}
+
+		// Row Sort data within data points 
+		rowSortData[1] = 0 
+		rowSortData[2] = 0 
+
+		// Values that can be added to the treemap
+		var MLValues = ["Negative","Positive"]
+		var instance_clicked = []
+		
+		// Different menu items in the data
+		var select_Menu = ["positive", "right","right"] 
+
+		var agree_checkbox = [true, false]
+		var disagree_checkbox = [true, false]
+
+		// The checkboxes for the data
+		var _00Checkbox = [true, false]
+		var _01Checkbox = [true, false]
+		var _10Checkbox = [true, false]
+		var _11Checkbox = [true, false]
+
+		var F1 = ["True Negative","True Positive","False Negative","False Positive"]
+	</script>
+
+	<!-- UI Components during the start -->
+	<script type="text/javascript" src="{{ url_for('static', filename='js/controller/startupJS.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/controller/UIComponentController.js') }}"></script>
+	{% block extrahead %} {% endblock %}
+</head>
+
+<body>
+	<div class="container" id="container">
+		<div class="nav">
+			<h3 style="float: left; color: white; width: 300px;">
+			</h3>
+			<div class="navBarActions">
+			</div>
+		</div>
+
+
+			<div class="content">
+				{% block content %}{% endblock %}
+			</div>
+
+	</div>
+
+	<!-- Third Party Data -->
+	<script type="text/javascript" src="{{ url_for('static', filename='js/controller/cloud.js') }}"></script>
+
+	<!-- Table Population of data -->
+	<script type="text/javascript" src="{{ url_for('static', filename='js/controller/tradiationalMLScores.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/controller/treemap_Sentence_Capture.js') }}"></script>
+
+	<!-- Table in the middle Raw Input Test Data -->
+	<script type="text/javascript" src="{{ url_for('static', filename='js/controller/TabularData.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/controller/wordCloud.js') }}"></script>
+
+	<!-- Weights of the data  -->
+	<script type="text/javascript" src="{{ url_for('static', filename='js/controller/MisclassificationHeatmap.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/controller/MisclassificationExploration.js') }}"></script>
+
+	<!-- Heatmap data within it-->
+	<script type="text/javascript" src="{{ url_for('static', filename='js/controller/heatmap_weights.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/controller/ModelAgreementData.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/controller/UIComponents.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/controller/summarizeNeurons.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/controller/SentenceHighlighting.js') }}"></script>
+
+	<!-- Heatmap data within it-->
+	<script type="text/javascript" src="{{ url_for('static', filename='js/controller/genericHeatmapWeights.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/controller/dataPreprocessingForHeatmap.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/controller/comparisonData.js') }}"></script>
+
+	<!-- <script type="text/javascript" src="{{ url_for('static', filename='js/controller/Model_Data.js') }}"></script> -->
+	<!-- <script type="text/javascript" src="{{ url_for('static', filename='js/controller/visualize_data.js') }}"></script> -->
+
+  </body>
+</html>

@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row center">
+
+	<div id="RawInput" class="col-sm-8" style="border:1px solid #ccc; margin-left: -50px; width: 100px; padding-top: 90px" class ="center rotated">
+
+		<div class="v-label center rotated">
+			<div class="label-header rotated">Graph Neural Network Visualization</div>
+		</div>
+
+	</div>
+
+
+	<!-- Raw visualization of input data-->
+	<div id ="raw_input_graphs">
+		<div id="RawInput" class="col-sm-8" style="border:1px solid #ccc; margin-left: 30px; width: 1000px; padding-top: 5px" class ="center">
+			<div class="v-label center">
+				<div class="label-header">Raw Input FEATURES</div>
+				<!-- <div id="model-a-label"> Timestep</div> -->
+			</div>
+					<div id="Weightss" class="col-sm-10">
+						<div id ="raw_input_features"> </div>
+					</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="neuron_patterns"  style="border:1px solid #ccc; margin-left: 30px; width: 1000px; padding-top: 255px" class ="center">
+		<!-- Weights determining what to choose, what not to choose-->
+		<div id="Weights" class="col-sm-8">
+			<div class="v-label center">
+				<div class="label-header">GCNN Neuron Weights</div>
+				<div id="model-a-label"> Layer 1</div>
+				<div id="model-b-label"> Layer 2</div>
+			</div>
+			<div id="Weight" class="col-sm-10">
+				<div id ="layer_1_result"> </div>
+				<div id="legend"></div>
+				<div id ="layer_2_result"> </div>
+			</div>
+
+			<!-- Get a summary of the neuron weights -->
+			<div id="SummaryNeuro" class="col-sm-2">
+				<div id ="Results8"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- Summarize the activation patterns underlying the data -->
+	<div id="SummarizeNeurons" class="col-sm-2">
+		<!-- <div class="label-header">Neuron Activation Summary</div>
+		<div id ="Results7"><i>No neuron selected.</i></div> -->
+	</div>
+
+</div>
+
+<div class="row" style="margin-top: 20px">
+	<!-- Result data points-->
+	<!-- <div id="Results1" class="col-sm-9"  style="border: 1px #ccc solid; padding: 0px; margin-left:16px; width: 1015px"> -->
+		<!-- <div align="center">  -->
+			<!-- <div class="label-header">Test Results</div> -->
+			<!-- Filter test instances using polarity model A's agreement, model B's agreement data -->
+			<!-- <br/>Filter by:
+					<select class="selectpicker" id="Polarity" data-width="17%">
+					  <option value="all">All</option>
+					  <option value="Positive">Positive Reviews</option>
+					  <option value="Negative">Negative Reviews</option>
+					</select>
+					 where <mark>{{Model_A_Name[0] | safe}}</mark> was
+					<select class="selectpicker" id="AAgreement" data-width="10%">
+					  <option value="Either">Either</option>
+					  <option value="Right">Right</option>
+					  <option value="Wrong">Wrong</option>
+					</select>
+					 and <mark>{{Model_B_Name[0] | safe}}</mark> was
+					<select class="selectpicker" id="BAgreement" data-width="10%">
+					  <option value="Either">Either</option>
+					  <option value="Right">Right</option>
+					  <option value="Wrong">Wrong</option>
+					</select> -->
+		<!-- </div><br/> -->
+
+		<!-- Comparing test instances and their results -->
+			<div id ="featureVisualization">
+
+			</div>
+
+			<!-- Results determining the depiction of data and its size-->
+			<div id ="ML_plots">
+
+			</div>
+</div>
+
+	<!-- <div id="SummaryViz1s" class="col-sm-3">
+		<div class="label-header">Test Result Summary</div>
+		<div id="test-summary-content">
+				Heatmaps and legends for the data
+				<i class="fas fa-circle" style="color: rgb(161,217,155)"></i>  Positive
+				<i class="fas fa-circle" style="color: rgb(253,187,132); margin-left: 10px"></i> Negative
+			Word Histogram
+			<div id="wrapper"></div>
+			Summary Bar within the data
+			<div id ="SummaryBar"> </div>
+		</div>
+	</div> -->
+
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript fillText Demo</title>
+<!--    <link rel="stylesheet" href="css/style.css">-->
+    <style>
+
+    .small { font: italic 3px serif; fill: black; }
+    </style>
+</head>
+<body>
+
+<!--    <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">-->
+<!--    <g fill="white" stroke="green" stroke-width="0.7">-->
+<!--        {% for node in Graph_Nodes %}-->
+<!--        <text x="{{node[1]}}" y="{{node[2]+5}}" fill="#000000" font="tahoma" font-size="2.5">{{node[0]}}</text>-->
+<!--        {% endfor %}-->
+<!--      {% for node in Graph_Nodes %}-->
+<!--      {% for line_join in Graph_node_line %}-->
+<!--      <circle cx="{{node[1]}}" cy="{{node[2]}}" r="1" ></circle>-->
+
+
+<!--      <line x1="{{line_join[1][0]}}" y1="{{line_join[1][1]}}" x2="{{line_join[3][0]}}" y2="{{line_join[3][1]}}" stroke-linecap="round" opacity=0.3 stroke="#ddd" />-->
+<!--      {% endfor %}-->
+<!--      {% endfor %}-->
+
+<!--      {% for node in Graph_Nodes %}-->
+<!--      {% for line_join in Graph_node_line %}-->
+<!--      {% for line in Shortest_Path %}-->
+<!--      <circle cx="{{node[1]}}" cy="{{node[2]}}" r="1" >-->
+<!--      <text x="{{node[1]}}" y="{{node[2]}}" fill="#000000" font-size="1">{{node[0]}}</text>-->
+<!--      </circle>-->
+<!--      <line id="path" x1="{{line[1][0]}}" y1="{{line[1][1]}}" x2="{{line[3][0]}}" y2="{{line[3][1]}}" opacity=0.5 stroke={{path_color}} />-->
+<!--      <line x1="{{line_join[1][0]}}" y1="{{line_join[1][1]}}" x2="{{line_join[3][0]}}" y2="{{line_join[3][1]}}" stroke-linecap="round" opacity=0.3 stroke="#ddd" />-->
+<!--      {% endfor %}-->
+<!--      {% endfor %}-->
+<!--      {% endfor %}-->
+<!--    </g>-->
+<!--</svg>-->
+
+<div id="demo">
+    <p>hello</p>
+<button type="button" onclick="loadDoc()">Change Content</button>
+</div>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "../ajax_info.txt", true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>

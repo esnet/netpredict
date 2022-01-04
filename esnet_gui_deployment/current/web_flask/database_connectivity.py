@@ -7,9 +7,9 @@ import mysql.connector
 def create_database():
   mydb = mysql.connector.connect(
     host="localhost",
-    user="root",
+    user="netpred",
     password="rootroot",
-    database="NetPredict"
+    database="netpredictdb"
   )
 
   cursor=mydb.cursor()
@@ -29,9 +29,9 @@ def create_database():
 def read_database():
   mydb = mysql.connector.connect(
     host="localhost",
-    user="root",
+    user="netpred",
     password="rootroot",
-    database='NetPredict'
+    database='netpredictdb'
   )
 
   cursor=mydb.cursor()

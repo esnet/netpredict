@@ -13,6 +13,8 @@ from sensors2graph import *
 import torch.nn as nn
 import argparse
 import scipy.sparse as sp
+import networkx as nx
+import matplotlib.pyplot as plt
 
 ########################################
 #data files:
@@ -57,12 +59,19 @@ def main():
         link_ids = f.read().strip().split(',')
 
     print(link_ids)
+    print("Number of nodes:", len(link_ids))
 
-    #bwcap_df=pd.read_csv(link_weights, dtype={'from': 'str', 'to': 'str'})
 
-    """adj_mx = get_adjacency_matrix(bwcap_df, link_ids)
+    #MK:change the link details file
+
+    bwcap_df=pd.read_csv(link_bw_capacity, dtype={'from': 'str', 'to': 'str'})
+    #print(bwcap_df)
+    adj_mx = get_adjacency_matrix(bwcap_df, link_ids)
     sp_mx = sp.coo_matrix(adj_mx)
     G = dgl.from_scipy(sp_mx)
-    """
+    #print(G)
+
+    #nx.draw(G.to_networkx(), with_labels=True)
+    #plt.show()
 
 main()

@@ -27,8 +27,8 @@ import matplotlib.pyplot as plt
 
 ########################################
 
-graph_link_ids="../../datasets/snmp_esnet/esnet_links_ids.txt" #txt
-link_bw_capacity="../../datasets/snmp_esnet/link_capacity.csv" #csv
+graph_link_ids="../../datasets/snmp_esnet/esnet_node_ids.txt"#graph_sensor_id.txt"#" #txt
+link_bw_capacity="../../datasets/snmp_esnet/link_capacity.csv"#distances_la_2012.csv"#" #csv
 link_data="" #h5
 
 n_window_size=144
@@ -55,23 +55,47 @@ def trainSTGCN():
 """
 def main():
     #prepare and load the data set
+    i=0
+    #G=nx.Graph()
+
     with open(graph_link_ids) as f:
         link_ids = f.read().strip().split(',')
-
     print(link_ids)
     print("Number of nodes:", len(link_ids))
-
+    #G.add_nodes_from(link_ids)
 
     #MK:change the link details file
-
+    
+    
     bwcap_df=pd.read_csv(link_bw_capacity, dtype={'from': 'str', 'to': 'str'})
-    #print(bwcap_df)
+    #print(bwcap_df['from'][3])
+    print(len(bwcap_df))
+    #sz=len(bwcap_df)
     adj_mx = get_adjacency_matrix(bwcap_df, link_ids)
+    print(adj_mx)
     sp_mx = sp.coo_matrix(adj_mx)
     G = dgl.from_scipy(sp_mx)
-    #print(G)
-
-    #nx.draw(G.to_networkx(), with_labels=True)
-    #plt.show()
+    """
+    for i in bwcap_df.index:
+        #print(bwcap_df['to'][i])
+        #print(sz[2])
+        G.add_edge(bwcap_df['from'][i],bwcap_df['to'][i])
+    mapping={0:"SACR",1:"SUNN",2:"NEWY",3:"JGI",4:"PANTEX",
+    5:"BOIS",6:"CHIC",7:"WASH",8:"LLNL",9:"LSVN",10:"KANS",
+    11:"STAR",12:"DENV",13:"AMST",14:"CERN-513",16:"GA",17:"EQX-ASH",
+    18:"NETL-MGN",19:"NASH",20:"NETL-PGH",
+    21:"ALBQ",22:"SNLA",23:"SLAC",24:"ELPA",25:"ATLA",26:"EQX-CHI",27:"NERSC",
+    28:"BOST",29:"ORNL",30:"AOFA",31:"LOND",32:"HOUS",33:"ANL",34:"CERN-773",35:"SNLL",36:"SRS",37:"PNWG",38:"FNAL"}
+    """
+    print(G)
+    #for e in G.edges:
+    #    print(e)
+    
+    #G = nx.relabel_nodes(G, mapping) 
+    # this represents the adjacency matrix not the actual graph!
+    nx.draw_circular(G.to_networkx(), with_labels=True)
+    #nx.draw(G, with_labels=True)
+    
+    plt.show()
 
 main()

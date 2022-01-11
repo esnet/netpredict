@@ -1,4 +1,5 @@
 # This is an implementation to DCRNN by Yu et al.
+# original code is here: https://github.com/dmlc/dgl/blob/master/examples/pytorch/stgcn_wave/main.py
 
 import dgl
 import random
@@ -27,8 +28,8 @@ import matplotlib.pyplot as plt
 
 ########################################
 
-graph_link_ids="../../datasets/snmp_esnet/esnet_node_ids.txt"#graph_sensor_id.txt"#" #txt
-link_bw_capacity="../../datasets/snmp_esnet/link_capacity.csv"#distances_la_2012.csv"#" #csv
+graph_link_ids="../../datasets/snmp_esnet/esnet_links_ids2019-2020.txt"#graph_sensor_id.txt"#" #txt
+link_bw_capacity="../../datasets/snmp_esnet/esnet_link_graph2019-2020.csv"#distances_la_2012.csv"#" #csv
 link_data="" #h5
 
 n_window_size=144

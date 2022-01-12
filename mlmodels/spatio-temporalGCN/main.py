@@ -30,11 +30,22 @@ import matplotlib.pyplot as plt
 
 graph_link_ids="../../datasets/snmp_esnet/esnet_links_ids2019-2020.txt"#graph_sensor_id.txt"#" #txt
 link_bw_capacity="../../datasets/snmp_esnet/esnet_link_graph2019-2020.csv"#distances_la_2012.csv"#" #csv
-link_data="" #h5
+link_data="../../datasets/snmp_esnet/snmp_2019_data.hdf5" #h5
 
-n_window_size=144
-save_path=""
-predicted_len=20
+
+
+LR=0.001
+BATCH_SIZE=50
+EPOCHS=50
+NUM_LAYERS=9
+WINDOW_LENGTH=144
+SAVE_MODEL="stgcnwavemodel.pt"
+PRED_LEN=5
+CHANNELS=[1, 16, 32, 64, 32, 128]
+control_str='TNTSTNTST'
+#parser.add_argument('--control_str', type=str, default='TNTSTNTST', help='model strcture controller, T: Temporal Layer, S: Spatio Layer, N: Norm Layer')
+#parser.add_argument('--channels', type=int, nargs='+', default=[1, 16, 32, 64, 32, 128], help='model strcture controller, T: Temporal Layer, S: Spatio Layer, N: Norm Layer')
+
 
 
 """
@@ -58,6 +69,10 @@ def main():
     #prepare and load the data set
     i=0
     #G=nx.Graph()
+
+
+    device = torch.device("cuda") if torch.cuda.is_available() and not args.disablecuda else torch.device("cpu")
+
 
     with open(graph_link_ids) as f:
         link_ids = f.read().strip().split(',')
@@ -97,6 +112,97 @@ def main():
     nx.draw_circular(G.to_networkx(), with_labels=True)
     #nx.draw(G, with_labels=True)
     
-    plt.show()
+    #plt.show()
+
+
+    timedatadf = pd.read_hdf(link_data)
+    num_samples, num_nodes = timedatadf.shape
+    print("HDF data")
+    tsdata = timedatadf.to_numpy()
+    #print(tsdata)
+
+
+    n_his = WINDOW_LENGTH
+
+    save_path = SAVE_MODEL
+
+    n_pred = PRED_LEN
+    n_route = num_nodes
+    blocks = CHANNELS
+    # blocks = [1, 16, 32, 64, 32, 128]
+    drop_prob = 0
+    num_layers = NUM_LAYERS
+
+    batch_size = BATCH_SIZE
+    epochs = EPOCHS
+    lr = LR
+    
+    W = adj_mx
+    len_val = round(num_samples * 0.1)
+    len_train = round(num_samples * 0.7)
+    train = timedatadf[: len_train]
+    val = timedatadf[len_train: len_train + len_val]
+    test = timedatadf[len_train + len_val:]
+
+    print("SIZE OF DATA")
+    print(len(val))
+    print(len(test))
+
+    scaler = StandardScaler()
+    train = scaler.fit_transform(train)
+    val = scaler.transform(val)
+    test = scaler.transform(test)
+
+    x_train, y_train = data_transform(train, n_his, n_pred, device)
+    x_val, y_val = data_transform(val, n_his, n_pred, device)
+    x_test, y_test = data_transform(test, n_his, n_pred, device)
+
+    train_data = torch.utils.data.TensorDataset(x_train, y_train)
+    train_iter = torch.utils.data.DataLoader(train_data, batch_size, shuffle=True)
+    val_data = torch.utils.data.TensorDataset(x_val, y_val)
+    val_iter = torch.utils.data.DataLoader(val_data, batch_size)
+    test_data = torch.utils.data.TensorDataset(x_test, y_test)
+    test_iter = torch.utils.data.DataLoader(test_data, batch_size)
+
+
+
+    loss = nn.MSELoss()
+    G = G.to(device)
+    model = STGCN_WAVE(blocks, n_his, n_route, G, drop_prob, num_layers, device, control_str).to(device)
+    optimizer = torch.optim.RMSprop(model.parameters(), lr=lr)
+    print(model)
+
+    scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=5, gamma=0.7)
+
+    min_val_loss = np.inf
+    for epoch in range(1, epochs + 1):
+        print("Epoch NO:", epoch)
+        l_sum, n = 0.0, 0
+        model.train()
+        for x, y in train_iter:
+            #print("infor")
+            y_pred = model(x).view(len(x), -1)
+            l = loss(y_pred, y)
+            optimizer.zero_grad()
+            l.backward()
+            optimizer.step()
+            l_sum += l.item() * y.shape[0]
+            n += y.shape[0]
+        scheduler.step()
+        val_loss = evaluate_model(model, loss, val_iter)
+        if val_loss < min_val_loss:
+            min_val_loss = val_loss
+            torch.save(model.state_dict(), save_path)
+        print("epoch", epoch, ", train loss:", l_sum / n, ", validation loss:", val_loss)
+
+    
+    best_model = STGCN_WAVE(blocks, n_his, n_route, G, drop_prob, num_layers, device, args.control_str).to(device)
+    best_model.load_state_dict(torch.load(save_path))
+
+
+    l = evaluate_model(best_model, loss, test_iter)
+    MAE, MAPE, RMSE = evaluate_metric(best_model, test_iter, scaler)
+    print("test loss:", l, "\nMAE:", MAE, ", MAPE:", MAPE, ", RMSE:", RMSE)
+
 
 main()

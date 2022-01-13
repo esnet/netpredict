@@ -1,6 +1,12 @@
 # This is an implementation to DCRNN by Yu et al.
 # original code is here: https://github.com/dmlc/dgl/blob/master/examples/pytorch/stgcn_wave/main.py
 
+#dataset generation:
+# The data is located under the datasets/snmp_esnet folder
+#for the h5 file, Please run the file featurizers/csv_to_hdf.py. This will generate a time series HDF5 file for this code to run
+#
+#
+
 import dgl
 import random
 import torch

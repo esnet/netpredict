@@ -171,6 +171,8 @@ def main():
     model = STGCN_WAVE(blocks, n_his, n_route, G, drop_prob, num_layers, device, control_str).to(device)
     optimizer = torch.optim.RMSprop(model.parameters(), lr=lr)
     print(model)
+    print(model.parameters)
+    print(sum(p.numel() for p in model.parameters()))
 
     scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=5, gamma=0.7)
 

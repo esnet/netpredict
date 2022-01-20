@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import tables
 
 #filename = '/tmp/test.hdf5'
 filename = '../datasets/snmp_esnet/snmp_2019_data.hdf5'

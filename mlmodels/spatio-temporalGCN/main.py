@@ -46,7 +46,7 @@ EPOCHS=50
 NUM_LAYERS=9
 WINDOW_LENGTH=144
 SAVE_MODEL="stgcnwavemodel.pt"
-PRED_LEN=5
+PRED_LEN=48
 CHANNELS=[1, 16, 32, 64, 32, 128]
 control_str='TNTSTNTST'
 #parser.add_argument('--control_str', type=str, default='TNTSTNTST', help='model strcture controller, T: Temporal Layer, S: Spatio Layer, N: Norm Layer')
@@ -183,6 +183,8 @@ def main():
     scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=5, gamma=0.7)
 
     min_val_loss = np.inf
+    train_losses, valid_losses = [], []
+
     for epoch in range(1, epochs + 1):
         print("Epoch NO:", epoch)
         l_sum, n = 0.0, 0
@@ -201,16 +203,26 @@ def main():
         if val_loss < min_val_loss:
             min_val_loss = val_loss
             torch.save(model.state_dict(), save_path)
-        print("epoch", epoch, ", train loss:", l_sum / n, ", validation loss:", val_loss)
+        train_loss = l_sum / n
+        train_losses.append(train_loss)
+        valid_losses.append(val_loss)
+
+        print("epoch", epoch, ", train loss:", train_loss, ", validation loss:", val_loss)
 
     
-    best_model = STGCN_WAVE(blocks, n_his, n_route, G, drop_prob, num_layers, device, args.control_str).to(device)
+    best_model = STGCN_WAVE(blocks, n_his, n_route, G, drop_prob, num_layers, device).to(device)
     best_model.load_state_dict(torch.load(save_path))
 
 
     l = evaluate_model(best_model, loss, test_iter)
     MAE, MAPE, RMSE = evaluate_metric(best_model, test_iter, scaler)
-    print("test loss:", l, "\nMAE:", MAE, ", MAPE:", MAPE, ", RMSE:", RMSE)
-
-
+    
+    with open("results.txt","w") as f:
+        for i in range (epochs):
+            f.write("Epoch {}:\n".format(i+1))
+            f.write("\ttrain loss: {}, valid loss: {}\n ".format(train_losses[i], valid_losses[i]))
+        f.write("MAE: {}\n".format(MAE))
+        f.write("MAPE: {}\n".format(MAPE))
+        f.write("RMSE: {}\n".format(RMSE))
+        
 main()

@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4776d284-d8bb-4993-9d93-7468b2041759" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/netpredict.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/netpredict.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/featurizers/csv_to_hdf.py" beforeDir="false" afterPath="$PROJECT_DIR$/featurizers/csv_to_hdf.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mlmodels/spatio-temporalGCN/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/mlmodels/spatio-temporalGCN/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mlmodels/spatio-temporalGCN/results.txt" beforeDir="false" afterPath="$PROJECT_DIR$/mlmodels/spatio-temporalGCN/results.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mlmodels/spatio-temporalGCN/stgcnwavemodel.pt" beforeDir="false" afterPath="$PROJECT_DIR$/mlmodels/spatio-temporalGCN/stgcnwavemodel.pt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

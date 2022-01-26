@@ -20,3 +20,8 @@ Change to [spatio-temporalGCN](https://github.com/esnet/netpredict/tree/main/mlm
 	cd netpredict/mlmodels/spatio-temporalGCN/
 
 	python3 main.py
+
+
+Once Complete, all results are written to results.txt. Run the following to view.
+
+    cat results.txt

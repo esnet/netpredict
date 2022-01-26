@@ -15,7 +15,7 @@ Change to featurizers folder and run the [csv_to_hdf.py](https://github.com/esne
 	python3 csv_to_hdf.py
 
 
-Change to spatio-temporalGCN folder and run the main.py file:
+Change to [spatio-temporalGCN](https://github.com/esnet/netpredict/tree/main/mlmodels/spatio-temporalGCN) folder and run the main.py file:
 
 	cd netpredict/mlmodels/spatio-temporalGCN/
 

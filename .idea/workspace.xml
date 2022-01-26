@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4776d284-d8bb-4993-9d93-7468b2041759" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/snmp_esnet/snmp_2020.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/snmp_esnet/snmp_2020.csv" afterDir="false" />
-    </list>
+    <list default="true" id="4776d284-d8bb-4993-9d93-7468b2041759" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

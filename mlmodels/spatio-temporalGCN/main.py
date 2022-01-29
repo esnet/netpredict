@@ -7,21 +7,28 @@
 #
 #
 
-import dgl
+# System
+import os
 import random
+import argparse
+import logging
+
+# External
+import dgl
 import torch
+import torch.nn as nn
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
-from load_data import *
-from utils import *
-from model import *
-from sensors2graph import *
-import torch.nn as nn
-import argparse
 import scipy.sparse as sp
 import networkx as nx
 import matplotlib.pyplot as plt
+
+# Local
+from .load_data import *
+from .utils import *
+from .model import *
+from .sensors2graph import *
 
 ########################################
 #data files:
@@ -31,24 +38,17 @@ import matplotlib.pyplot as plt
 # actual speed data
 # metr_la.h5 shape [x,y], where x shows number of timesteps and y is the number of sensors- GNN will use
 # this histroical speed to predict future speed
-
 ########################################
 
-graph_link_ids="../../datasets/snmp_esnet/esnet_links_ids2019-2020.txt"#graph_sensor_id.txt"#" #txt
-link_bw_capacity="../../datasets/snmp_esnet/esnet_link_graph2019-2020.csv"#distances_la_2012.csv"#" #csv
-link_data="../../datasets/snmp_esnet/snmp_2019_data.hdf5" #h5
-
-
-
-LR=0.001
-BATCH_SIZE=50
-EPOCHS=50
-NUM_LAYERS=2
-WINDOW_LENGTH=144
-SAVE_MODEL="stgcnwavemodel.pt"
-PRED_LEN=48
-CHANNELS=[1, 16, 32, 64, 32, 128]
-control_str='TNTSTNTST'
+# LR=0.001
+# BATCH_SIZE=50
+# EPOCHS=50
+# NUM_LAYERS=2
+# WINDOW_LENGTH=144
+# SAVE_MODEL="stgcnwavemodel.pt"
+# PRED_LEN=48
+# CHANNELS=[1, 16, 32, 64, 32, 128]
+# control_str='TNTSTNTST'
 #parser.add_argument('--control_str', type=str, default='TNTSTNTST', help='model strcture controller, T: Temporal Layer, S: Spatio Layer, N: Norm Layer')
 #parser.add_argument('--channels', type=int, nargs='+', default=[1, 16, 32, 64, 32, 128], help='model strcture controller, T: Temporal Layer, S: Spatio Layer, N: Norm Layer')
 
@@ -71,30 +71,33 @@ def trainSTGCN():
     num_samples, num_nodes = df.shape
     tsdata = df.to_numpy()
 """
-def main():
+def main(lr=0.001,batch_size=50,epochs=50,num_layers=2,window_length=144,save_model="stgcnwavemodel.pt",
+         pred_len=48,channels=[1, 16, 32, 64, 32, 128],control_str='TNTSTNTST',output_dir='log_training',**kwargs):
+    
+    graph_link_ids=os.path.expandvars("$HOME/netpredict/datasets/snmp_esnet/esnet_links_ids2019-2020.txt")#graph_sensor_id.txt"#" #txt
+    link_bw_capacity=os.path.expandvars("$HOME/netpredict/datasets/snmp_esnet/esnet_link_graph2019-2020.csv")#distances_la_2012.csv"#" #csv
+    link_data=os.path.expandvars("$HOME/netpredict/datasets/snmp_esnet/snmp_2019_data.hdf5") #h5
+
     #prepare and load the data set
     i=0
     #G=nx.Graph()
 
-
-    device = torch.device("cuda") if torch.cuda.is_available() and not args.disablecuda else torch.device("cpu")
-
+    device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
 
     with open(graph_link_ids) as f:
         link_ids = f.read().strip().split(',')
-    print(link_ids)
-    print("Number of nodes:", len(link_ids))
+    # print(link_ids)
+    # print("Number of nodes:", len(link_ids))
     #G.add_nodes_from(link_ids)
 
     #MK:change the link details file
     
-    
     bwcap_df=pd.read_csv(link_bw_capacity, dtype={'from': 'str', 'to': 'str'})
     #print(bwcap_df['from'][3])
-    print(len(bwcap_df))
+    # print(len(bwcap_df))
     #sz=len(bwcap_df)
     adj_mx = get_adjacency_matrix(bwcap_df, link_ids)
-    print(adj_mx)
+    # print(adj_mx)
     sp_mx = sp.coo_matrix(adj_mx)
     G = dgl.from_scipy(sp_mx)
     """
@@ -109,7 +112,7 @@ def main():
     21:"ALBQ",22:"SNLA",23:"SLAC",24:"ELPA",25:"ATLA",26:"EQX-CHI",27:"NERSC",
     28:"BOST",29:"ORNL",30:"AOFA",31:"LOND",32:"HOUS",33:"ANL",34:"CERN-773",35:"SNLL",36:"SRS",37:"PNWG",38:"FNAL"}
     """
-    print(G)
+    # print(G)
     #for e in G.edges:
     #    print(e)
     
@@ -123,25 +126,14 @@ def main():
 
     timedatadf = pd.read_hdf(link_data)
     num_samples, num_nodes = timedatadf.shape
-    print("HDF data")
+    # print("HDF data")
     tsdata = timedatadf.to_numpy()
     #print(tsdata)
 
 
-    n_his = WINDOW_LENGTH
-
-    save_path = SAVE_MODEL
-
-    n_pred = PRED_LEN
     n_route = num_nodes
-    blocks = CHANNELS
-    # blocks = [1, 16, 32, 64, 32, 128]
+    # channels = [1, 16, 32, 64, 32, 128]
     drop_prob = 0
-    num_layers = NUM_LAYERS
-
-    batch_size = BATCH_SIZE
-    epochs = EPOCHS
-    lr = LR
     
     W = adj_mx
     len_val = round(num_samples * 0.1)
@@ -159,9 +151,9 @@ def main():
     val = scaler.transform(val)
     test = scaler.transform(test)
 
-    x_train, y_train = data_transform(train, n_his, n_pred, device)
-    x_val, y_val = data_transform(val, n_his, n_pred, device)
-    x_test, y_test = data_transform(test, n_his, n_pred, device)
+    x_train, y_train = data_transform(train, window_length, pred_len, device)
+    x_val, y_val = data_transform(val, window_length, pred_len, device)
+    x_test, y_test = data_transform(test, window_length, pred_len, device)
 
     train_data = torch.utils.data.TensorDataset(x_train, y_train)
     train_iter = torch.utils.data.DataLoader(train_data, batch_size, shuffle=True)
@@ -170,29 +162,35 @@ def main():
     test_data = torch.utils.data.TensorDataset(x_test, y_test)
     test_iter = torch.utils.data.DataLoader(test_data, batch_size)
 
-
-
     loss = nn.MSELoss()
     G = G.to(device)
-    model = STGCN_WAVE(blocks, n_his, n_route, G, drop_prob, num_layers, device, control_str).to(device)
+    model = STGCN_WAVE(channels, window_length, n_route, G, drop_prob, num_layers, device, control_str).to(device)
     optimizer = torch.optim.RMSprop(model.parameters(), lr=lr)
-    print(model)
-    print(model.parameters)
-    print(sum(p.numel() for p in model.parameters()))
+    # print(model)
+    # print(model.parameters)
+    # print(sum(p.numel() for p in model.parameters()))
+    
+    logging.info('-'*40)
+    logging.info('Number of parameters : {:,d}'.format(sum(p.numel() for p in model.parameters())))
+    logging.info('-'*40)
 
     scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=5, gamma=0.7)
 
     min_val_loss = np.inf
     train_losses, valid_losses = [], []
 
+    os.makedirs(output_dir, exist_ok=True)
+
     for epoch in range(1, epochs + 1):
-        print("Epoch NO:", epoch)
+        logging.info('-'*40)
+        logging.info('{} {:>14} {:>3} / {:<3}'.format('TRAINING','EPOCH',epoch+1,epochs))
+        logging.info('-'*40)
         l_sum, n = 0.0, 0
         model.train()
-        for x, y in train_iter:
-            #print("infor")
+        for i,(x, y) in enumerate(train_iter):
             y_pred = model(x).view(len(x), -1)
             l = loss(y_pred, y)
+            logging.info('\t\tITER {:>3} / {:<3}: {:>11.5f}'.format(i,len(train_iter),l.item()))
             optimizer.zero_grad()
             l.backward()
             optimizer.step()
@@ -202,22 +200,20 @@ def main():
         val_loss = evaluate_model(model, loss, val_iter)
         if val_loss < min_val_loss:
             min_val_loss = val_loss
-            torch.save(model.state_dict(), save_path)
+            torch.save(model.state_dict(), '%s/%s' % (output_dir,save_model))
         train_loss = l_sum / n
         train_losses.append(train_loss)
         valid_losses.append(val_loss)
-
-        print("epoch", epoch, ", train loss:", train_loss, ", validation loss:", val_loss)
-
+        logging.info('\tTrain Loss : {:>11.5f}'.format(train_loss))
+        logging.info('\tValid Loss : {:>11.5f}'.format(val_loss))
     
-    best_model = STGCN_WAVE(blocks, n_his, n_route, G, drop_prob, num_layers, device).to(device)
-    best_model.load_state_dict(torch.load(save_path))
-
+    best_model = STGCN_WAVE(channels, window_length, n_route, G, drop_prob, num_layers, device).to(device)
+    best_model.load_state_dict(torch.load(save_model))
 
     l = evaluate_model(best_model, loss, test_iter)
     MAE, MAPE, RMSE = evaluate_metric(best_model, test_iter, scaler)
     
-    with open("results.txt","w") as f:
+    with open("%s/results.txt" % output_dir,"w") as f:
         for i in range (epochs):
             f.write("Epoch {}:\n".format(i+1))
             f.write("\ttrain loss: {}, valid loss: {}\n ".format(train_losses[i], valid_losses[i]))
@@ -225,4 +221,6 @@ def main():
         f.write("MAPE: {}\n".format(MAPE))
         f.write("RMSE: {}\n".format(RMSE))
         
-main()
+    return RMSE
+        
+# main()

@@ -1,4 +1,4 @@
-#!/bin/bash
+ #!/bin/bash
 #SBATCH --qos=regular
 #SBATCH --time=00:30:00
 #SBATCH --nodes=1

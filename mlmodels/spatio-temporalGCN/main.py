@@ -183,14 +183,14 @@ def main(lr=0.001,batch_size=50,epochs=50,num_layers=2,window_length=144,save_mo
 
     for epoch in range(1, epochs + 1):
         logging.info('-'*40)
-        logging.info('{} {:>14} {:>3} / {:<3}'.format('TRAINING','EPOCH',epoch+1,epochs))
+        logging.info('{} {:>14} {:>3} / {:<3}'.format('TRAINING','EPOCH',epoch,epochs))
         logging.info('-'*40)
         l_sum, n = 0.0, 0
         model.train()
         for i,(x, y) in enumerate(train_iter):
             y_pred = model(x).view(len(x), -1)
             l = loss(y_pred, y)
-            logging.info('\t\tITER {:>3} / {:<3}: {:>11.5f}'.format(i,len(train_iter),l.item()))
+            # logging.info('\t\tITER {:>3} / {:<3}: {:>11.5f}'.format(i,len(train_iter),l.item()))
             optimizer.zero_grad()
             l.backward()
             optimizer.step()
@@ -208,7 +208,7 @@ def main(lr=0.001,batch_size=50,epochs=50,num_layers=2,window_length=144,save_mo
         logging.info('\tValid Loss : {:>11.5f}'.format(val_loss))
     
     best_model = STGCN_WAVE(channels, window_length, n_route, G, drop_prob, num_layers, device).to(device)
-    best_model.load_state_dict(torch.load(save_model))
+    best_model.load_state_dict(torch.load('%s/%s' % (output_dir,save_model)))
 
     l = evaluate_model(best_model, loss, test_iter)
     MAE, MAPE, RMSE = evaluate_metric(best_model, test_iter, scaler)

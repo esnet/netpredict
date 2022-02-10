@@ -221,6 +221,6 @@ def main(lr=0.001,batch_size=50,epochs=50,num_layers=2,window_length=144,save_mo
         f.write("MAPE: {}\n".format(MAPE))
         f.write("RMSE: {}\n".format(RMSE))
         
-    return RMSE
+    return l
         
 # main()

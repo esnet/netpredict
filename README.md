@@ -25,3 +25,8 @@ Change to [spatio-temporalGCN](https://github.com/esnet/netpredict/tree/main/mlm
 Once Complete, all results are written to results.txt. Run the following to view.
 
     cat results.txt
+	
+Additional notes from Vincent, when using this ESNET algorithm on Perlmutter, the correct DGL version (compiled with CUDA) should be installed:
+
+	module load pytorch/1.9.0
+	pip install dgl-cu110 -f https://data.dgl.ai/wheels/repo.html

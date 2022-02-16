@@ -172,7 +172,6 @@ def main(lr=0.001,batch_size=50,epochs=50,num_layers=2,window_length=144,save_mo
     
     logging.info('-'*40)
     logging.info('Number of parameters : {:,d}'.format(sum(p.numel() for p in model.parameters())))
-    logging.info('-'*40)
 
     scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=5, gamma=0.7)
 
@@ -183,7 +182,7 @@ def main(lr=0.001,batch_size=50,epochs=50,num_layers=2,window_length=144,save_mo
 
     for epoch in range(1, epochs + 1):
         logging.info('-'*40)
-        logging.info('{} {:>14} {:>3} / {:<3}'.format('TRAINING','EPOCH',epoch,epochs))
+        logging.info('{} {:>3} / {:<3} {:>24}'.format('EPOCH',epoch,epochs,'TRAINING'))
         logging.info('-'*40)
         l_sum, n = 0.0, 0
         model.train()

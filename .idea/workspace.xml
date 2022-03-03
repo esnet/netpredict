@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4776d284-d8bb-4993-9d93-7468b2041759" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/esnet_gui_deployment/current/web_flask/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/esnet_gui_deployment/current/web_flask/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/esnet_gui_deployment/current/web_flask/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/esnet_gui_deployment/current/web_flask/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/esnet_gui_deployment/current/docker-netpredict/static/images/bar_graph.png" beforeDir="false" afterPath="$PROJECT_DIR$/esnet_gui_deployment/current/docker-netpredict/static/images/bar_graph.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/esnet_gui_deployment/current/docker-netpredict/static/images/out.png" beforeDir="false" afterPath="$PROJECT_DIR$/esnet_gui_deployment/current/docker-netpredict/static/images/out.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,10 +13,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/esnet_gui_deployment/current/web_flask/database_connectivity.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
+            <state relative-caret-position="598">
               <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
             </state>
           </provider>
@@ -36,10 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/esnet_gui_deployment/current/web_flask/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="45">
+              <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -76,8 +77,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="36" />
-    <option name="y" value="70" />
+    <option name="x" value="83" />
+    <option name="y" value="84" />
     <option name="width" value="1343" />
     <option name="height" value="696" />
   </component>
@@ -198,13 +199,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/esnet_gui_deployment/current/web_flask/database_connectivity.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/esnet_gui_deployment/current/web_flask/templates/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -217,10 +211,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/esnet_gui_deployment/current/web_flask/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="45">
+          <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/esnet_gui_deployment/current/web_flask/database_connectivity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
         </state>
       </provider>
     </entry>

@@ -1,9 +1,74 @@
-from flask import Flask, render_template, request
+import os
+import mysql.connector
+from flask import Flask, render_template, request, g, url_for 
 
-from database_connectivity import read_database
+# from database_connectivity import read_database
 from network_map import graph_main, graph_bar, graph_nodes, nodes_join_line, Shortest_path_graph
 
+config = {
+    "database": {
+        "user": "netpred",
+        "password": os.environ.get("MYSQL_PASSWORD"),
+        "host": "netpredictdb",
+        "database": "netpredictdb",
+    }, 
+} 
+
+# config = {
+#     "database": {
+#         "user": "netpred",
+#         "password": "rootroot",
+#         "host": "localhost",
+#         "database": "netpredictdb",
+#     }, 
+# } 
+
 app = Flask(__name__)
+
+@app.before_first_request
+def before_first_request():
+    connection = create_connection(**config["database"]) 
+    try:
+        cursor = connection.cursor()
+        cursor.execute('create table predicted_values(duration VARCHAR(50), predict DOUBLE);')
+        graph = ['14 may', '15 may', '16 may', '17 may', '18 may', '19 may', '20 may', '21 may']
+        predict = [0.11, 0.13, 0.07, 0.04, 0.33, 0.66, 0.95, 0.6]
+        for (duration,predicted) in zip(graph,predict):
+            cursor.execute(f'insert into predicted_values (duration,predict) values ("{duration}",{predicted});')
+            connection.commit()
+    except:
+        pass  
+    else:
+        cursor.close()
+    connection.close()
+    
+@app.before_request
+def before_request():
+    g.connection = create_connection(**config["database"])
+    g.cursor = g.connection.cursor()
+    
+@app.after_request
+def after_request(response):
+    g.cursor.close()
+    g.connection.close()
+    return response
+
+def create_connection(host=None, user=None, password=None, database=None):
+    return mysql.connector.connect(
+            host=host,
+            user=user,
+            password=password,
+            database=database)
+    
+
+def read_database():
+  g.cursor.execute("select name, filename from data")
+  
+  graph, predict = [i[0] for i in g.cursor], [i[1] for i in g.cursor]
+
+  return [graph,predict]
+    
+
 sites = [
     'ALBQ',
     'AMES',
@@ -130,7 +195,7 @@ graph_predict_data = []
 
 @app.route('/test')
 def test():
-    graph,predict=read_database()
+    graph, predict=read_database()
     # graph = ['14 may', '15 may', '16 may', '17 may', '18 may', '19 may', '20 may', '21 may']
     # predict = [0.11, 0.13, 0.07, 0.04, 0.33, 0.66, 0.95, 0.6]
     graph_predict_data = []
@@ -246,4 +311,4 @@ def optimize_path(source, destination, traffic):
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000, host="0.0.0.0")
+    app.run(debug=True, host='0.0.0.0') 

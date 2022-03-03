@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="4776d284-d8bb-4993-9d93-7468b2041759" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/esnet_gui_deployment/current/docker-netpredict/static/images/bar_graph.png" beforeDir="false" afterPath="$PROJECT_DIR$/esnet_gui_deployment/current/docker-netpredict/static/images/bar_graph.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/esnet_gui_deployment/current/docker-netpredict/static/images/out.png" beforeDir="false" afterPath="$PROJECT_DIR$/esnet_gui_deployment/current/docker-netpredict/static/images/out.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+=======
+    <list default="true" id="4776d284-d8bb-4993-9d93-7468b2041759" name="Default Changelist" comment="" />
+>>>>>>> c2605e1929bf5bcf06eb6b1cc776bc0254712071
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
@@ -100,21 +105,19 @@
       </pane>
       <pane id="Scope" />
     </panes>
+=======
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="23yONTxZ2WdvWkoVK0mMMhRsGff" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+>>>>>>> c2605e1929bf5bcf06eb6b1cc776bc0254712071
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -157,6 +160,7 @@
     </task>
     <servers />
   </component>
+<<<<<<< HEAD
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1440" height="813" extended-state="6" />
     <layout>
@@ -227,4 +231,6 @@
       </provider>
     </entry>
   </component>
+=======
+>>>>>>> c2605e1929bf5bcf06eb6b1cc776bc0254712071
 </project>

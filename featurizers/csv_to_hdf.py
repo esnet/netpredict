@@ -1,9 +1,10 @@
 import numpy as np
 import pandas as pd
+import tables
 
 #filename = '/tmp/test.hdf5'
-filename = '../datasets/snmp_esnet/snmp_2020_data.hdf5'
-inputfile= "../datasets/snmp_esnet/snmp_2020.csv"
+filename = '../datasets/snmp_esnet/snmp_2019_data.hdf5'
+inputfile= "../datasets/snmp_esnet/snmp_2019.csv"
 
 
 df = pd.read_csv(inputfile)

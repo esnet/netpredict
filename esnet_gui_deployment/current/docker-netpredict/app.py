@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
 
 from database_connectivity import read_database
 from network_map import graph_main, graph_bar, graph_nodes, nodes_join_line, Shortest_path_graph
@@ -146,24 +146,7 @@ def test():
 
 @app.route('/')
 def home():
-    global city
-    global x_coordinates
-    global y_coordinates
-    graph = ['1 may', '2 may', '3 may', '4 may', '5 may', '6 may', '7 may', '8 may', '9 may', '10 may', '11 may', '12 may', '13 may', '14 may', '15 may', '16 may', '17 may', '18 may', '19 may', '20 may', '21 may', '22 may', '23 may', '24 may','25 may', '26 may', '27 may', '28 may', '29 may', '30 may', '31 may', '32 may', '33 may', '34 may', '35 may', '36 may', '37 may', '38 may', '39 may', '40 may', '41 may', '42 may', '43 may', '44 may', '45 may', '46 may', '47 may', '48 may']
-    predict = [0.1, 0.2, 0.07, 0.04, 0.33, 0.36, 0.45, 0.6, 0.11, 0.13, 0.07, 0.1, 0.2, 0.5, 0.07, 0.04, 0.33, 0.66, 0.95, 0.6, 0.11, 0.13, 0.07, 0.8, 0.11, 0.13, 0.07, 0.04, 0.33, 0.66, 0.95, 0.6, 0.33, 0.66, 0.95, 0.6, 0.11, 0.13, 0.07, 0.04, 0.33, 0.66, 0.95, 0.6, 0.33, 0.66, 0.95, 0.6,]
-    graph_predict_data = []
-    [graph_predict_data.append({"x": int(i.split()[0]), "y": j}) for (i, j) in zip(graph, predict)]
-
     return render_template("index.html",
-                           column_graph=graph_predict_data,
-                           xlabel="Time (Houly, Weekly, Monthly)",
-                           data_source=sites,
-                           data_destination=sites.copy(),
-                           source=source, destination=destination,
-                           data_transmit=data_transmit,
-                           data_transfer=dataTransferredOptions,
-                           prediction_data=predictionsData,
-                           graph_type=graph_type,
                            zip_graph=zip(Graph_Nodes, Graph_node_line),
                            zip_short=zip(Graph_Nodes, shortest_path_data))
 
@@ -223,7 +206,6 @@ def updated_home():
                                path_color='navy')
 
 
-
 @app.route('/optimize_home/<source>/<destination>/<traffic>')
 def optimize_path(source, destination, traffic):
     global xlabel
@@ -243,6 +225,39 @@ def optimize_path(source, destination, traffic):
                            zip_short=zip(Graph_Nodes, Shortest_path_graph(source, destination, Graph_Nodes, traffic)),
                            path_color="red" if float(traffic) >= 0.5 else "navy")
 
+
+@app.route('/planner')
+def planner():
+    global city
+    global x_coordinates
+    global y_coordinates
+    graph = ['1 may', '2 may', '3 may', '4 may', '5 may', '6 may', '7 may', '8 may', '9 may', '10 may', '11 may',
+             '12 may', '13 may', '14 may', '15 may', '16 may', '17 may', '18 may', '19 may', '20 may', '21 may',
+             '22 may', '23 may', '24 may', '25 may', '26 may', '27 may', '28 may', '29 may', '30 may', '31 may',
+             '32 may', '33 may', '34 may', '35 may', '36 may', '37 may', '38 may', '39 may', '40 may', '41 may',
+             '42 may', '43 may', '44 may', '45 may', '46 may', '47 may', '48 may']
+    predict = [0.1, 0.2, 0.07, 0.04, 0.33, 0.36, 0.45, 0.6, 0.11, 0.13, 0.07, 0.1, 0.2, 0.5, 0.07, 0.04, 0.33, 0.66,
+               0.95, 0.6, 0.11, 0.13, 0.07, 0.8, 0.11, 0.13, 0.07, 0.04, 0.33, 0.66, 0.95, 0.6, 0.33, 0.66, 0.95, 0.6,
+               0.11, 0.13, 0.07, 0.04, 0.33, 0.66, 0.95, 0.6, 0.33, 0.66, 0.95, 0.6, ]
+    graph_predict_data = []
+    [graph_predict_data.append({"x": int(i.split()[0]), "y": j}) for (i, j) in zip(graph, predict)]
+
+    return render_template('planner.html',
+                           column_graph=graph_predict_data,
+                           xlabel="Time (Houly, Weekly, Monthly)",
+                           data_source=sites,
+                           data_destination=sites.copy(),
+                           source=source, destination=destination,
+                           data_transmit=data_transmit,
+                           data_transfer=dataTransferredOptions,
+                           prediction_data=predictionsData,
+                           graph_type=graph_type,
+                           zip_graph=zip(Graph_Nodes, Graph_node_line),
+                           zip_short=zip(Graph_Nodes, shortest_path_data))
+
+@app.route('/hotspots')
+def hotspots():
+    return render_template('hotspots.html')
 
 
 if __name__ == "__main__":

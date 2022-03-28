@@ -8,7 +8,7 @@ import mysql.connector
 def create_database():
   mydb = mysql.connector.connect(
    # host="localhost",
-    host = os.environ.get(‘MYSQL_HOST’, ’localhost’),
+    host = os.environ.get("MYSQL_HOST", "localhost"),
     user="netpred",
     password="rootroot",
     database="netpredictdb"
@@ -30,7 +30,7 @@ def create_database():
 
 def read_database():
   mydb = mysql.connector.connect(
-    host=os.environ.get(‘MYSQL_HOST’, ’localhost’),
+    host=os.environ.get("MYSQL_HOST", "localhost"),
     user="netpred",
     password="rootroot",
     database='netpredictdb'

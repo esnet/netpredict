@@ -54,25 +54,30 @@
       font-size: 14px;
     }
 
-    .section2,
-    .section3{
+    .section2{
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       margin: 0px 20px;
       background-color: white;
-      min-height: 30vh;
+      height: 20vh;
     }
 
-    .section2 h1,
-    .section3 h1{
+    .section3 {
+      margin: 0px 20px;
+      background-color: white;
+      min-height: 30vh;
+      display: flex;
+      justify-content: center;
+    }
+
+    .section2 h1{
       font-weight: bold;
       color: #333333;
     }
 
-    .section2 p,
-    .section3 p{
+    .section2 p{
       font-size: 14px;
     }
 
@@ -216,13 +221,13 @@
               <a class="nav-link" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Planner</a>
+              <a class="nav-link" href="{{ url_for('planner') }}">Planner</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for('hotspots') }}">Hotspots</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('capacity') }}">Capacity</a>
+              <a class="nav-link" href="#">Capacity</a>
             </li>
           </ul>
         </div>
@@ -232,7 +237,7 @@
   <div class="main row p-5">
 
     <div class="section1 card shadow-sm p-3 bg-body rounded col-md-2">
-      <h4>Setup Your Workflow</h4>
+      <h4>Please Select Link</h4>
 
 <!--      {{ url_for('optimize_path', destination=destination, source=source, traffic=10) }}"-->
 
@@ -300,38 +305,12 @@
     </div>
 
     <div class="col-md-10">
-      <div class="section2 card shadow-sm p-3 mb-2 bg-body rounded">
-        <h2>Welcome to NetPredict</h2>
-        <p>Real-time prediction using deep learning for network traffic</p>
+      <div class="section2 card shadow-sm p-2 mb-2 bg-body rounded">
+        <h4>Showing Traffic prediction on selected link</h4>
       </div>
       <footer>
-        <div class="section3 card shadow-sm p-3 bg-body rounded">
-          <!--    <img src="../static/images/Figure_1.png" align="right" height="1080" width="2000">-->
-          <svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
-            <!-- Using g to inherit presentation attributes -->
-
-
-            {% for (node,line_join) in zip_graph %}
-            <text x="{{node[1]-1}}" y="{{node[2]-2}}" class="small">{{node[0]}}</text>
-            <g fill="white" stroke="green" stroke-width="0.7">
-              <circle cx="{{node[1]}}" cy="{{node[2]}}" r="1.5">
-                <title>{{node[0]}}</title>
-              </circle>
-              <line x1="{{line_join[1][0]}}" y1="{{line_join[1][1]}}" x2="{{line_join[3][0]}}" y2="{{line_join[3][1]}}"
-                stroke-linecap="round" opacity=1 stroke="#ddd" />
-            </g>
-            {% endfor %}
-
-            {% for (node,line) in zip_short %}
-            <text x="{{node[1]-1}}" y="{{node[2]-2}}" class="small">{{node[0]}}</text>
-            <line id="path" x1="{{line[1][0]}}" y1="{{line[1][1]}}" x2="{{line[3][0]}}" y2="{{line[3][1]}}" opacity=1
-              stroke={{path_color}} />
-
-            {% endfor %}
-
-
-          </svg>
-
+        <div class="section3 card shadow-sm bg-body rounded">
+          <div class="graph" id="chart_div"></div>
         </div>
 
 
@@ -339,19 +318,19 @@
 
       </footer>
 
-      <section class="section4">
-         <div class="legends">
+<!--      <section class="section4">-->
+<!--         <div class="legends">-->
 
-          <h4 class="ms-4">Map legends:</h4>
-          <ul class="legend text-end">
-            <li ><span class="text-end me-5">idle</span> <span class="grey ms-5"></span></li>
-            <li><span class="text-end me-5">No Traffic</span> <span class="green me-5"></span></li>
-            <li><span class="text-end">% occupied Traffic</span> <span class="yellow ms-3"></span></li>
-            <li><span class="text-end">% occupied Traffic</span> <span class="red ms-3"></span>
-            </li>
-          </ul>
-        </div>
-      </section>
+<!--          <h4 class="ms-4">Map legends:</h4>-->
+<!--          <ul class="legend text-end">-->
+<!--            <li ><span class="text-end me-5">idle</span> <span class="grey ms-5"></span></li>-->
+<!--            <li><span class="text-end me-5">No Traffic</span> <span class="green me-5"></span></li>-->
+<!--            <li><span class="text-end">% occupied Traffic</span> <span class="yellow ms-3"></span></li>-->
+<!--            <li><span class="text-end">% occupied Traffic</span> <span class="red ms-3"></span>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--        </div>-->
+<!--      </section>-->
 
 
     </div>
@@ -410,6 +389,56 @@
     }
 }
   </script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script>
+
+ google.charts.load('current', {packages: ['corechart', 'line']});
+google.charts.setOnLoadCallback(drawCrosshairs);
+
+function drawCrosshairs() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Date');
+      data.addColumn('number', 'Predict');
+<!--      data.addColumn('number', 'Cats');-->
+
+      data.addRows({{ column_graph }});
+<!--        [0, 0,],    [1, 10,],   [2, 23,],  [3, 17, ],   [4, 18, ],  [5, 9,],-->
+<!--        [6, 11, ],   [7, 27, ],  [8, 33, ],  [9, 40, ],  [10, 32, ], [11, 35, ],-->
+<!--        [12, 30, ], [13, 40, ], [14, 42, ], [15, 47, ], [16, 44, ], [17, 48, ],-->
+<!--        [18, 52, 44], [19, 54, 46], [20, 42, 34], [21, 55, 47], [22, 56, 48], [23, 57, 49],-->
+<!--        [24, 60, 52], [25, 50, 42], [26, 52, 44], [27, 51, 43], [28, 49, 41], [29, 53, 45],-->
+<!--        [30, 55, 47], [31, 60, 52], [32, 61, 53], [33, 59, 51], [34, 62, 54], [35, 65, 57],-->
+<!--        [36, 62, 54], [37, 58, 50], [38, 55, 47], [39, 61, 53], [40, 64, 56], [41, 65, 57],-->
+<!--        [42, 63, 55], [43, 66, 58], [44, 67, 59], [45, 69, 61], [46, 69, 61], [47, 70, 62],-->
+<!--        [48, 72, 64], [49, 68, 60], [50, 66, 58], [51, 65, 57], [52, 67, 59], [53, 70, 62],-->
+<!--        [54, 71, 63], [55, 72, 64], [56, 73, 65], [57, 75, 67], [58, 70, 62], [59, 68, 60],-->
+<!--        [60, 64, 56], [61, 60, 52], [62, 65, 57], [63, 67, 59], [64, 68, 60], [65, 69, 61],-->
+<!--        [66, 70, 62], [67, 72, 64], [68, 75, 67], [69, 80, 72]-->
+<!--      ]);-->
+
+      var options = {
+        hAxis: {
+          title: 'Time'
+        },
+<!--        vAxis: {-->
+<!--          title: 'Popularity'-->
+<!--        },-->
+        colors: ['#a52714'],
+        crosshair: {
+          color: '#000',
+          trigger: 'selection'
+        }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+      chart.setSelection([{row: 1, column: 1}]);
+
+    }
+
+
+</script>
 
 
 

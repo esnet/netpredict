@@ -255,6 +255,30 @@ def planner():
                            zip_graph=zip(Graph_Nodes, Graph_node_line),
                            zip_short=zip(Graph_Nodes, shortest_path_data))
 
+
+@app.route('/capacity')
+def capacity():
+    # graph,predict=read_database()
+    graph = ['1 may', '2 may', '3 may', '4 may', '5 may', '6 may', '7 may', '8 may', '9 may', '10 may', '11 may',
+             '12 may', '13 may', '14 may', '15 may', '16 may', '17 may', '18 may', '19 may', '20 may', '21 may',
+             '22 may', '23 may', '24 may', '25 may', '26 may', '27 may', '28 may', '29 may', '30 may', '31 may',
+             '32 may', '33 may', '34 may', '35 may', '36 may', '37 may', '38 may', '39 may', '40 may', '41 may',
+             '42 may', '43 may', '44 may', '45 may', '46 may', '47 may', '48 may']
+    predict = [0.1, 0.2, 0.07, 0.04, 0.33, 0.36, 0.45, 0.6, 0.11, 0.13, 0.07, 0.1, 0.2, 0.5, 0.07, 0.04, 0.33, 0.66,
+               0.95, 0.6, 0.11, 0.13, 0.07, 0.8, 0.11, 0.13, 0.07, 0.04, 0.33, 0.66, 0.95, 0.6, 0.33, 0.66, 0.95, 0.6,
+               0.11, 0.13, 0.07, 0.04, 0.33, 0.66, 0.95, 0.6, 0.33, 0.66, 0.95, 0.6, ]
+    graph_predict_data = []
+    # [graph_predict_data.append({"x": int(i.split()[0]), "y": j}) for (i, j) in zip(graph, predict)]
+    [graph_predict_data.append([int(i.split()[0]), j]) for (i, j) in zip(graph, predict)]
+    # print(list(graph_predict_data))
+    return render_template("capacity.html",
+                           Graph_Nodes=Graph_Nodes,
+                           Graph_node_line=Graph_node_line,
+                           Shortest_Path=[],
+                           column_graph=graph_predict_data,
+                           xlabel="Time (Houly, Weekly, Monthly)"
+                           )
+
 @app.route('/hotspots')
 def hotspots():
     return render_template('hotspots.html')

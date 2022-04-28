@@ -157,7 +157,19 @@ footer {
       display: flex;
       flex-direction: row;
     }
+
+     .container {
+            width: 80%;
+            margin: 70px auto;
+        }
+
+        .slider-container {
+            width: 90%;
+            max-width: 500px;
+            margin: 0 auto 50px;
+        }
 </style>
+    <link rel="stylesheet" href="../static/css/rSlider.min.css">
 
 
 <link rel="shortcut icon" href="/">
@@ -202,7 +214,7 @@ footer {
                 <a class="nav-link" href="{{ url_for('hotspots') }}">Hotspots</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Publications</a>
+                <a class="nav-link" href="{{ url_for('capacity') }}">Capacity</a>
               </li>
             </ul>
           </div>
@@ -264,8 +276,64 @@ footer {
         </div>
       </section>
 
+     <div class="container">
+        <div class="slider-container">
+            <input type="text" id="slider" class="slider" />
+        </div>
+        <div class="slider-container">
+            <input type="text" id="slider2" class="slider" />
+        </div>
+    </div>
+
 
 <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+<!--    slider script-->
+     <script src="../static/js/rSlider.min.js"></script>
+    <script>
+        (function () {
+            'use strict';
+
+            var init = function () {
+
+                var slider2 = new rSlider({
+                    target: '#slider2',
+                    values: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48],
+                    range: false,
+                    set: [8],
+                    tooltip: false,
+                    onChange: function (vals) {
+                        console.log(vals);
+                    }
+                });
+
+                // var slider3 = new rSlider({
+                //     target: '#slider3',
+                //     values: { min: 0, max: 100 },
+                //     step: 10,
+                //     range: true,
+                //     set: [10, 40],
+                //     scale: true,
+                //     labels: false,
+                //     onChange: function (vals) {
+                //         console.log(vals);
+                //     }
+                // });
+
+                var slider = new rSlider({
+                    target: '#slider',
+                    values: [0, 1, 2, 3,],
+                    range: true,
+                    set: [0, 1],
+                    labels: true,
+                    onChange: function (vals) {
+                        console.log(vals);
+                    }
+                });
+            };
+            window.onload = init;
+        })();
+    </script>
 
 <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

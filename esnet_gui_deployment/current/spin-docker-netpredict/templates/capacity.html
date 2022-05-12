@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+  <title>Netpredict
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <!-- <link rel="stylesheet" href="main.css" /> -->
+  <script src="https://kit.fontawesome.com/525fd5b530.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      position: relative;
+    }
+
+    .navbar {
+      background-color: #08318e;
+      color: #ffff;
+      padding: 10px 60px;
+      padding-right: 100px;
+    }
+
+    .container-fluid .navbar-brand {
+      color: white;
+
+      font-weight: bold;
+    }
+
+    .nav-items {
+      display: flex;
+      justify-content: end;
+    }
+
+    .navbar-nav .nav-item .nav-link {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .section2{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0px 20px;
+      background-color: white;
+      height: 20vh;
+    }
+
+    .section3 {
+      margin: 0px 20px;
+      background-color: white;
+      min-height: 30vh;
+      display: flex;
+      justify-content: center;
+    }
+
+    .section2 h1{
+      font-weight: bold;
+      color: #333333;
+    }
+
+    .section2 p{
+      font-size: 14px;
+    }
+
+    .icon,
+    .button {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .fas {
+      border: 2px solid;
+      border-radius: 50%;
+      color: gray;
+      padding: 7px;
+      margin: 20px 0;
+    }
+
+    .button button {
+      background-color: #08318e;
+      color: white;
+      font-size: 14px;
+    }
+
+    .section1 {
+      max-height: 80vh;
+      font-size: small;
+      color: #444444;
+    }
+
+    .section1 h4 {
+      font-size: 18px;
+    }
+
+    .section1 .form-group .form-select {
+      font-size: 12px;
+      color: #333333;
+    }
+
+    /* Style the footer */
+    footer {
+      background-color: #fff;
+      /* padding: 10px; */
+      text-align: center;
+      color: white;
+      /* background-image: url('static/images/NetPredict-05.png');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: translate(0%, 0%);
+  height: 1100px;
+  position: relative; */
+    }
+
+    .small {
+      font: 3px serif;
+      fill: black;
+    }
+
+    /*.section4 {*/
+    /*  width: 100vw;*/
+    /*}*/
+
+    .section4 .legends {
+      position: absolute;
+      top: 700px;
+      right: 60px;
+      border: none;
+      font-size: 12px;
+      /*text-align: right;*/
+    }
+
+    .section4 .legends h4 {
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .section4 .legend .grey,
+    .section4 .legend .green,
+    .section4 .legend .yellow,
+    .section4 .legend .red
+    {
+      width: 20px;
+      height: 10px;
+      border-radius: 2px;
+      margin-top: 4px;
+      margin-left: 16px;
+    }
+
+    .section4 .legend .grey {
+      background-color: gray;
+    }
+
+    .section4 .legend .green {
+      background-color: green;
+    }
+
+    .section4 .legend .yellow {
+      background-color: yellow;
+    }
+
+    .section4 .legend .red {
+      background-color: red;
+    }
+
+     ul {
+      list-style: none;
+    }
+
+    li {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .destination2 {
+      display: none;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <img src="../static/images/netpredict.png"
+            class="rounded mx-auto d-block me-2"
+            alt="..."
+            width="40"
+            height="40" />
+        <a class="navbar-brand" href="#">NetPredict</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="nav-items collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('planner') }}">Planner</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('hotspots') }}">Hotspots</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Capacity</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="main row p-5">
+
+    <div class="section1 card shadow-sm p-3 bg-body rounded col-md-2">
+      <h4>Please Select Link</h4>
+
+<!--      {{ url_for('optimize_path', destination=destination, source=source, traffic=10) }}"-->
+
+      <form action="{{ url_for('updated_home') }}" method="post">
+        <div class="form-group mb-3">
+          <label for="data_transfer">Data Transfer Amount:</label>
+          <select name="data_transfer" class="form-select" id="data_transfer">
+            <option value="{{data_transmit}}" selected>{{data_transmit}}</option>
+            {% for transfer in data_transfer %}
+              <option value={{transfer}}>{{transfer}}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="form-group mb-3 mt-3">
+          <label for="source">Source</label>
+          <select class="form-select" name="source" id="source">
+            <option value="{{source}}" selected>{{source}}</option>
+            {% for city in data_source %}
+            <option value={{city}}>{{city}}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="form-group mb-3 mt-3">
+          <label for="data_type">Type</label>
+          <select class="form-select" name="data_type" id="data_type">
+            <option value="{{gr_type}}" selected>{{gr_type}}</option>
+            {% for graph in graph_type %}
+            <option value={{graph}}>{{graph}}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="destination">Destination</label>
+          <select class="form-select" name="destination" id="destination">
+            <option value="{{destination}}" selected>{{destination}}</option>
+            {% for city in data_destination %}
+            <option value={{city}}>{{city}}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+
+
+        <div class="form-group destination2 mb-3" id="dest" >
+          <label for="destination">Destination #2</label>
+          <select class="form-select" name="destination" id="destination2">
+            <option value="{{destination}}" selected>{{destination}}</option>
+            {% for city in data_destination %}
+            <option value={{city}}>{{city}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="icon" id="iconClick" onclick="destination()">
+          <i class="fas fa-plus"></i>
+          <p>Add Destination</p>
+        </div>
+        <div class="button">
+          <button type="submit" class="btn">Search</button>
+
+        </div>
+      </form>
+    </div>
+
+    <div class="col-md-10">
+      <div class="section2 card shadow-sm p-2 mb-2 bg-body rounded">
+        <h4>Showing Traffic prediction on selected link</h4>
+      </div>
+      <footer>
+        <div class="section3 card shadow-sm bg-body rounded">
+          <div class="graph" id="chart_div"></div>
+        </div>
+
+
+
+
+      </footer>
+
+<!--      <section class="section4">-->
+<!--         <div class="legends">-->
+
+<!--          <h4 class="ms-4">Map legends:</h4>-->
+<!--          <ul class="legend text-end">-->
+<!--            <li ><span class="text-end me-5">idle</span> <span class="grey ms-5"></span></li>-->
+<!--            <li><span class="text-end me-5">No Traffic</span> <span class="green me-5"></span></li>-->
+<!--            <li><span class="text-end">% occupied Traffic</span> <span class="yellow ms-3"></span></li>-->
+<!--            <li><span class="text-end">% occupied Traffic</span> <span class="red ms-3"></span>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--        </div>-->
+<!--      </section>-->
+
+
+    </div>
+  </div>
+<script>
+   function destination(){
+     var x = document.getElementById("dest");
+     if(x.style.display === "none"){
+       x.style.display = "block";
+     } else {
+       x.style.display = "none"
+     }
+   }
+  </script>
+
+ <script type="text/javascript">
+    window.onload = function () {
+      var chart = new CanvasJS.Chart("chartContainer",
+        {
+          title: {
+            text: "Data Transfer (in TB)"
+          },
+          axisX: {
+            title: "{{ xlabel }}",
+
+          },
+          data: [
+            {
+              type: "column",
+              click: onClick,
+              dataPoints: "{{ column_graph| tojson }}"
+            }
+          ],
+    options: {
+      scales: {
+        xAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: '{{ xlabel }}'
+          }
+        }]
+      }
+    }});
+    chart.render();
+
+    function onClick(e) {
+      var traffic = e.dataPoint.y;
+
+      var source = document.getElementById("source");
+      var strUser = source.value;
+      var destination = document.getElementById("destination");
+      var strUser1 = destination.value;
+
+      var res = strUser.concat("/").concat(strUser1).concat("/").concat(traffic);
+      location.replace("http://localhost:5000/optimize_home/".concat(res));
+    }
+}
+  </script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script>
+
+ google.charts.load('current', {packages: ['corechart', 'line']});
+google.charts.setOnLoadCallback(drawCrosshairs);
+
+function drawCrosshairs() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Date');
+      data.addColumn('number', 'Predict');
+<!--      data.addColumn('number', 'Cats');-->
+
+      data.addRows({{ column_graph }});
+<!--        [0, 0,],    [1, 10,],   [2, 23,],  [3, 17, ],   [4, 18, ],  [5, 9,],-->
+<!--        [6, 11, ],   [7, 27, ],  [8, 33, ],  [9, 40, ],  [10, 32, ], [11, 35, ],-->
+<!--        [12, 30, ], [13, 40, ], [14, 42, ], [15, 47, ], [16, 44, ], [17, 48, ],-->
+<!--        [18, 52, 44], [19, 54, 46], [20, 42, 34], [21, 55, 47], [22, 56, 48], [23, 57, 49],-->
+<!--        [24, 60, 52], [25, 50, 42], [26, 52, 44], [27, 51, 43], [28, 49, 41], [29, 53, 45],-->
+<!--        [30, 55, 47], [31, 60, 52], [32, 61, 53], [33, 59, 51], [34, 62, 54], [35, 65, 57],-->
+<!--        [36, 62, 54], [37, 58, 50], [38, 55, 47], [39, 61, 53], [40, 64, 56], [41, 65, 57],-->
+<!--        [42, 63, 55], [43, 66, 58], [44, 67, 59], [45, 69, 61], [46, 69, 61], [47, 70, 62],-->
+<!--        [48, 72, 64], [49, 68, 60], [50, 66, 58], [51, 65, 57], [52, 67, 59], [53, 70, 62],-->
+<!--        [54, 71, 63], [55, 72, 64], [56, 73, 65], [57, 75, 67], [58, 70, 62], [59, 68, 60],-->
+<!--        [60, 64, 56], [61, 60, 52], [62, 65, 57], [63, 67, 59], [64, 68, 60], [65, 69, 61],-->
+<!--        [66, 70, 62], [67, 72, 64], [68, 75, 67], [69, 80, 72]-->
+<!--      ]);-->
+
+      var options = {
+        hAxis: {
+          title: 'Time'
+        },
+<!--        vAxis: {-->
+<!--          title: 'Popularity'-->
+<!--        },-->
+        colors: ['#a52714'],
+        crosshair: {
+          color: '#000',
+          trigger: 'selection'
+        }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+      chart.setSelection([{row: 1, column: 1}]);
+
+    }
+
+
+</script>
+
+
+
+  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

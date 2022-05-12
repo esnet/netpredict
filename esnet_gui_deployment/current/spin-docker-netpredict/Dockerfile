@@ -1,38 +1,46 @@
-# syntax=docker/dockerfile:1
-
 # init a base image (Alpine is small Linux distro)
-FROM ubuntu:latest
+#FROM python:3.9.9-slim-buster
+# define the present working directory
+#WORKDIR /web_flask
+# copy the contents into the working dir
+#ADD . /web_flask
+# run pip to install the dependencies of the flask app
+#RUN pip3 install -r requirements.txt
+# define the command to start the container
+#CMD ["python","app.py"]
 
-ENV LC_ALL=C.UTF-8
-ENV LANG=C.UTF-8
 
-RUN \
-    apt-get update              &&  \
-    apt-get upgrade --yes       &&  \
-    apt-get install --yes           \
-        python3 pip  mysql-client  \
-        python3-mysql.connector  && \
-    apt-get clean
+# using ubuntu LTS version
+FROM ubuntu:20.04
+
+# avoid stuck build due to user prompt
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN apt update && apt install -y python3 pip mysql-server wget curl && apt-get clean
+
+# install requirements
+COPY requirements.txt .
+RUN pip3 install -r requirements.txt
+
+RUN pip3 install mysql-connector-python-rf
 
 # define the present working directory
-WORKDIR /web_flask
+WORKDIR /docker-netpredict
 
-# copy requirements
-COPY requirements.txt requirements.txt
-
-# run pip to install the dependencies of the flask app
-RUN pip install -r requirements.txt
 
 # copy the contents into the working dir
-COPY . .
+ADD . /docker-netpredict
 
 
-# RUN python3 /srv/database_connectivity.py
+EXPOSE 5000
+
+# make sure all messages always reach console
+ENV PYTHONUNBUFFERED=1
+
+# /dev/shm is mapped to shared memory and should be used for gunicorn heartbeat
+# this will improve performance and avoid random freezes
+#run database_connection
+RUN python3 database_connectivity.py
 
 # define the command to start the container
-ENV FLASK_APP=app.py
-CMD ["flask", "run", "--host=0.0.0.0"]
-
-ADD docker-entrypoint.sh /srv/docker-entrypoint.sh
-RUN chmod +x /srv/docker-entrypoint.sh
-ENTRYPOINT ["/srv/docker-entrypoint.sh"]
+CMD ["python3","app.py"]

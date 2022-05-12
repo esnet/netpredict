@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netpredict</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <!-- <link rel="stylesheet" href="main.css" /> -->
+  <script src="https://kit.fontawesome.com/525fd5b530.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+    }
+
+    .navbar {
+      background-color: #08318e;
+      color: #ffff;
+      padding: 10px 60px;
+      padding-right: 100px;
+    }
+
+    .container-fluid .navbar-brand {
+      color: white;
+
+      font-weight: bold;
+    }
+
+    .nav-items {
+      display: flex;
+      justify-content: end;
+    }
+
+    .navbar-nav .nav-item .nav-link {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+
+    .section2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      margin: 0px 10px;
+      background-color: white;
+    }
+
+    .section2 h2 {
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .section2 p {
+      font-size: 14px;
+    }
+
+    table th {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    table td {
+      padding: 5px;
+    }
+  </style>
+
+
+  <link rel="shortcut icon" href="/">
+</head>
+
+
+<body>
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <img src="../static/images/netpredict.png" class="rounded mx-auto d-block me-2" alt="..." width="40"
+          height="40" />
+        <a class="navbar-brand" href="/">NetPredict</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="nav-items collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('planner') }}">Planner</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Hotspots</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('capacity') }}">Capacity</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="section2 card shadow-sm ps-5 pe-5 p-4 m-3 bg-body rounded">
+    <h2>Hotspots</h2>
+
+    <p>List of possible hot spots that could be coming up</p>
+
+    <section>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Possible big flow at site ABC <br> (List with alarms color codes)</th>
+            <th scope="col">Any other Alarms <br> (Only potential big flows are of interest)</th>
+            <th scope="col">Current link threshold is overflooded</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+    <td>Elephant Flow</td>
+    <td> Red Color</td>
+    <td>Current link threshold is overflooded</td>
+  </tr>
+  <tr>
+    <td>Mice Flow</td>
+    <td>Green Colour</td>
+    <td>Current link threshold is clear</td>
+  </tr>
+
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -7,10 +7,10 @@
  To get started I recommend to first setup a clean Python environment for your project with at least Python 3.6 using any of your favorite tool for instance, ([conda](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html "conda-env"), [venv](https://docs.python.org/3/library/venv.html), [virtualenv](https://virtualenv.pypa.io/en/latest/) with or without [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/)).
 
 
-Navigate into the "web_flask" folder.
+Navigate into the "spin-docker-netpredict" directory.
 
+    cd netpredict/esnet_gui_deployment/current/spin-docker-netpredict/
 
-    cd netpredict/esnet_gui_deployment/current/web_flask/
 
 Create a virtual environmnet called "netpredvenv".
 
@@ -49,7 +49,7 @@ Launch your netpredict app to run on port 5000:
 
 A link to access the GUI will be generated on the terminal
 
-or go to http://127.0.0.1:5000 to access your GUI.
+OR go to http://127.0.0.1:5000 to access your GUI.
 
 
 ## Contact Us

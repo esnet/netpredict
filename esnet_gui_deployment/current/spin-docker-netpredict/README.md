@@ -1,4 +1,4 @@
-# Netpredict: Flask-GUI App
+# Netpredict: GUI App on SPIN
 
 
 

@@ -1,8 +1,6 @@
 import torch
 import numpy as np
 
-
-
 def evaluate_model(model, loss, data_iter):
     model.eval()
     l_sum, n = 0.0, 0
@@ -14,6 +12,13 @@ def evaluate_model(model, loss, data_iter):
             n += y.shape[0]
         return l_sum / n
 
+def get_predict(model, data_iter):
+    model.eval()
+    Y = []
+    for x, y in data_iter:
+        Y.extend(model(x).view(len(x), -1))
+    Y = torch.stack(Y).detach().numpy()
+    return Y
 
 def evaluate_metric(model, data_iter, scaler):
     model.eval()
@@ -30,3 +35,4 @@ def evaluate_metric(model, data_iter, scaler):
         MAPE = np.array(mape).mean()
         RMSE = np.sqrt(np.array(mse).mean())
         return MAE, MAPE, RMSE
+    
